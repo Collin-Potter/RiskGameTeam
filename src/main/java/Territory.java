@@ -22,6 +22,10 @@ public class Territory extends Game{
         return this.name;
     }
 
+    public String getContinent(){
+        return this.continent;
+    }
+
     public void setTeam(String givenTeam){
         this.team = givenTeam;
     }
@@ -30,20 +34,28 @@ public class Territory extends Game{
         this.troopCount = amt;
     }
 
-    public int getIDByName(String givenName){
-        if(this.name.equalsIgnoreCase(givenName)){
-            return this.ID;
-        }else{
-            return 0;
-        }
+//    public int getIDByName(String givenName){
+//        if(this.name.equalsIgnoreCase(givenName)){
+//            return this.ID;
+//        }else{
+//            return 0;
+//        }
+//    }
+
+    public int getID(){
+        return this.ID;
     }
 
-    public void getConnections(){
+    public ArrayList<Integer> getConnections(){
         //WORK IN PROGRESS
-
+        return this.connectionID;
     }
 
     public String getTeam(){
         return this.team;
+    }
+
+    public int getTroopCount(){
+        return this.troopCount;
     }
 }

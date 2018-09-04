@@ -15,11 +15,7 @@ public class Game {
     public static void main(String[] args){
         fillRegions();
         gameSetUp();
-        for(Territory o: territoryList){
-            System.out.println(o.getName() + ": ");
-            o.getConnections();
-        }
-
+        newTroopDistribution();
     }
 
     public static void gameSetUp(){
@@ -29,7 +25,11 @@ public class Game {
         int rand;
         switch(playerAmt){
             case(2):
-
+                playerList.add(p1);
+                playerList.add(p2);
+                for(Player p:playerList){
+                    p.setTroopCount(40);
+                }
                 for(Territory o:territoryList){
                     rand = 1 + (int)(Math.random()*2);
                     switch(rand){
@@ -43,7 +43,12 @@ public class Game {
                 }
                 break;
             case(3):
-
+                playerList.add(p1);
+                playerList.add(p2);
+                playerList.add(p3);
+                for(Player p:playerList){
+                    p.setTroopCount(35);
+                }
                 for(Territory o:territoryList){
                     rand = 1 + (int)(Math.random()*3);
                     switch(rand){
@@ -60,6 +65,13 @@ public class Game {
                 }
                 break;
             case(4):
+                playerList.add(p1);
+                playerList.add(p2);
+                playerList.add(p3);
+                playerList.add(p4);
+                for(Player p:playerList){
+                    p.setTroopCount(30);
+                }
                 for(Territory o:territoryList){
                     rand = 1 + (int)(Math.random()*4);
                     switch(rand){
@@ -79,6 +91,14 @@ public class Game {
                 }
                 break;
             case(5):
+                playerList.add(p1);
+                playerList.add(p2);
+                playerList.add(p3);
+                playerList.add(p4);
+                playerList.add(p5);
+                for(Player p:playerList){
+                    p.setTroopCount(25);
+                }
                 for(Territory o:territoryList){
                     rand = 1 + (int)(Math.random()*5);
                     switch(rand){
@@ -101,6 +121,15 @@ public class Game {
                 }
                 break;
             case(6):
+                playerList.add(p1);
+                playerList.add(p2);
+                playerList.add(p3);
+                playerList.add(p4);
+                playerList.add(p5);
+                playerList.add(p6);
+                for(Player p:playerList){
+                    p.setTroopCount(20);
+                }
                 for(Territory o:territoryList){
                     rand = 1 + (int)(Math.random()*6);
                     switch(rand){
@@ -127,6 +156,30 @@ public class Game {
             break;
         }
         System.out.println("\n\nRandomizing ");
+    }
+
+    public static void newTroopDistribution(){
+        System.out.println("Adding one reinforcement to every region...");
+        for(Player p:playerList){
+            for(Territory t:territoryList){
+                if(t.getTeam().equals(p.getTeam())){
+                    p.incTerritoryCount();
+                    t.setTroopCount(1);
+                }
+            }
+        }
+        for(Player p:playerList){
+            if(p.getTroopCount() != 0){
+                System.out.println(p.getTeam() + " you have " + p.getTroopCount() + " troops to distribute...");
+                System.out.println("Current territories: \n");
+                for(Territory t:territoryList){
+                    if(t.getTeam().equals(p.getTeam())){
+                        System.out.printf("ID: %-5s Name: %-25s TroopCount: %-20d\n", t.getID(), t.getName(),t.getTroopCount());
+                    }
+                }
+                p.reinforceRegions();
+            }
+        }
     }
 
     public static void fillRegions(){
