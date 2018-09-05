@@ -99,5 +99,9 @@ public class Player {
 			}
 		}
 	}
+	
+	public void printPlayer(){
+		System.out.println(name + " is Player " + ID + " and has " + armies + " armies.");
+	}
 }
 
