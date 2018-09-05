@@ -18,6 +18,7 @@ public class Territory {
 	private int troopCount;
 	private boolean occupied;
 	private Player occupant;
+	private int[] adjacencies;
 	private ArrayList<Integer> adjTerritories;
 	
 	public Territory(int ID, String name, String continent){
@@ -27,7 +28,18 @@ public class Territory {
 		troopCount = 0;
 		occupied = false;
 		adjTerritories = new ArrayList<Integer>();
-		
+	}
+	
+	public Territory(int ID, String name, String continent, int adjacencies[]){
+		this.ID = ID;
+		this.name = name;
+		this.continent = continent;
+		troopCount = 0;
+		occupied = false;
+		adjTerritories = new ArrayList<Integer>();
+		for(int i = 0; i < adjacencies.length; i++){
+			adjTerritories.add(adjacencies[i]);
+		}
 	}
 	
 	//Standard Get Methods
@@ -61,13 +73,11 @@ public class Territory {
 	
 	//Adds list of all adjacent territories, to be used in construction of territories
     //Not to be used after whole board constructed
+	//Makes a deep copy of adjacencies list that it is given
     public void addAdjacencies(ArrayList<Integer> adjacencies){
-    	adjTerritories = adjacencies;
-    	System.out.println(name + " of " + continent + " is adjacent to: ");
-    	for(int i = 0; i < adjTerritories.size(); i++){
-    		System.out.println("-Territory ID: " + adjTerritories.get(i));
+    	for(int i = 0; i < adjacencies.size(); i++){
+    		adjTerritories.add(adjacencies.get(i));
     	}
-    	System.out.println();
     }
     
   //Player object set as occupant if that player controls the territory
