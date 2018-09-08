@@ -2,6 +2,8 @@ package player;
 
 import java.util.ArrayList;
 
+import territories.Territory;
+
 /**
  * Defines the properties of the Risk Player objects.
  * @author Grant Williams
@@ -15,16 +17,14 @@ public class Player {
 	private int armies; //keeps track of players remaining troop count
 	private int ID; //keeps track of which player this is (player1, player2, etc)
 	
-	private ArrayList<String> countries; //ArrayList to keep track of countries the player controls
-	private ArrayList<String> continents; //ArrayList to keep track of entire continents player controls
+	private ArrayList<Territory> territories; //ArrayList to keep track of territories the player controls
 	
 	//Constructor takes the name, army count, and color of player
 	public Player(String name, int armies, int ID){
 		this.name = name;
 		this.armies = armies;
 		this.ID = ID;
-		countries = new ArrayList<String>();
-		continents = new ArrayList<String>();
+		territories = new ArrayList<Territory>();
 	}
 	
 	//Standard Get Methods
@@ -40,12 +40,8 @@ public class Player {
 		return ID;
 	}
 	
-	public ArrayList<String> getCountries(){
-		return countries;
-	}
-	
-	public ArrayList<String> getContinents(){
-		return continents;
+	public ArrayList<Territory> getTerritories(){
+		return territories;
 	}
 	
 	//Increases player army count based on given number
@@ -60,46 +56,31 @@ public class Player {
 		System.out.println(name + " has lost " + num + " armies and now has " + armies + " remaining.");
 	}
 	
-	//Adds given country to player
-	public void addCountry(String country){
-		countries.add(country);
-		System.out.println(name + " now controls " + country);
+	//Adds given territory to player
+	public void addCountry(Territory t){
+		territories.add(t);
+		System.out.println(name + " now controls " + t.getName());
 	}
 	
-	//Allows for multiple countries to be given to player
-	public void addCountries(ArrayList<String> giveCountries){
-		for(int i = 0; i < giveCountries.size(); i++){
-			countries.add(giveCountries.get(i));
-			System.out.println(name + " now controls " + giveCountries.get(i));
+	//Allows for multiple territories to be given to player by deep copy
+	public void addTerritories(ArrayList<Territory> giveTerritories){
+		for(int i = 0; i < giveTerritories.size(); i++){
+			territories.add(giveTerritories.get(i));
+			System.out.println(name + " now controls " + giveTerritories.get(i).getName());
 		}
 	}
 	
 	//Removes given country from player
-	public void removeCountry(String country){
-		for(int i = 0; i < countries.size(); i++){
-			if(countries.get(i).equals(country)){
-				System.out.println(name + " has lost control of " + countries.get(i));
-				countries.remove(i);
+	public void removeCountry(int removeID){
+		for(int i = 0; i < territories.size(); i++){
+			if(territories.get(i).getID() == removeID){
+				System.out.println(name + " has lost control of " + territories.get(i).getName());
+				territories.remove(i);
 			}
 		}
 	}
 	
-	//Adds given continent to player, indicating that the player controls all countries on given continent
-	public void addContinent(String continent){
-		continents.add(continent);
-		System.out.println(name + " now controls all of " + continent);
-	}
-	
-	//Removes given continent from player, indicating that the player no longer controls all countries of given continent
-	public void removeContinent(String continent){
-		for(int i = 0; i < continents.size(); i++){
-			if(continents.get(i).equals(continent)){
-				continents.remove(i);
-				System.out.println(name + " no longer controls all of " + continent);
-			}
-		}
-	}
-	
+	//Prints info of Player object
 	public void printPlayer(){
 		System.out.println(name + " is Player " + ID + " and has " + armies + " armies.");
 	}

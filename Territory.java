@@ -18,7 +18,6 @@ public class Territory {
 	private int troopCount;
 	private boolean occupied;
 	private Player occupant;
-	private int[] adjacencies;
 	private ArrayList<Integer> adjTerritories;
 	
 	public Territory(int ID, String name, String continent){

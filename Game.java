@@ -1,11 +1,13 @@
 package Main;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 import events.Dice;
 import maps.WorldMap;
 import player.Player;
+import territories.Territory;
 
 /**
  * Game class manipulates all Risk objects to be called in main
@@ -19,6 +21,7 @@ public class Game {
 	private Scanner userInput;
 	private WorldMap world;
 	private ArrayList<Player> players;
+	private ArrayList<Territory> wTerritories;
 	private boolean validInput;
 	private Dice dice;
 	
@@ -26,6 +29,7 @@ public class Game {
 		userInput = new Scanner(System.in);
 		world = new WorldMap();
 		players = new ArrayList<Player>();
+		wTerritories = new ArrayList<Territory>();
 		validInput = false;
 		dice = new Dice();
 	}
@@ -38,6 +42,10 @@ public class Game {
 		world.createWorldMap();
 		world.printWorldMap();
 		
+		//Distribute territories of world map to players
+		distributeTerritories();
+		
+		//End of Game run function
 		userInput.close();
 	}
 	
@@ -95,4 +103,48 @@ public class Game {
 			players.get(i).printPlayer();
 		}
 	}
+	
+	//Returns a deep copy of a given ArrayList of Territories
+	private ArrayList<Territory> getDeepCopy(ArrayList<Territory> original){
+		ArrayList<Territory> copy = new ArrayList<Territory>();
+		for(int i = 0; i < original.size(); i++){
+			copy.add(original.get(i));
+		}
+		return copy;
+	}
+	
+	//Distributes all territories amongst amount of players
+	//To be called after player information is obtained and WorldMap created
+	private void distributeTerritories(){
+		int playerCount = players.size();
+		wTerritories = getDeepCopy(world.getWorldTerritories());
+		int player = 1;
+		Random random = new Random();
+		while(wTerritories.size() > 0){
+			if(wTerritories.size() < playerCount){
+				while(wTerritories.size() > 0){
+					int nextTerritory = random.nextInt(wTerritories.size());
+					Territory tempT = wTerritories.get(nextTerritory);
+					Player tempP = players.get(player-1);
+					tempP.addCountry(tempT);
+					tempT.setOccupant(tempP);
+					wTerritories.remove(nextTerritory);
+					player++;
+				}
+			}
+			else{
+				while(player <= playerCount){
+					int nextTerritory = random.nextInt(wTerritories.size());
+					Territory tempT = wTerritories.get(nextTerritory);
+					Player tempP = players.get(player-1);
+					tempP.addCountry(tempT);
+					tempT.setOccupant(tempP);
+					wTerritories.remove(nextTerritory);
+					player++;
+				}
+				player = 1;
+			}
+		}
+	}
+	
 }

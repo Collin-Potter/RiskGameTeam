@@ -202,15 +202,29 @@ public class WorldMap {
 		return worldTerritories;
 	}
 	
-	public void printWorldMap(){
-		for(int i = 0; i < worldTerritories.size(); i++){
-			Territory temp = worldTerritories.get(i);
-			System.out.println(temp.getName() + " of " + temp.getContinent() + " is adjacent to: ");
-			ArrayList<Integer> tmpAdjs = temp.getAdjacencies();
-			for(int k = 0; k < tmpAdjs.size(); k++){
-				System.out.println(" -Territory ID: " + tmpAdjs.get(k));
+	//Prints all territories of WorldMap
+	//Only to be called after createWorldMap() has been called
+		public void printWorldMap(){
+			for(int i = 0; i < worldTerritories.size(); i++){
+				Territory temp = worldTerritories.get(i);
+				System.out.println(temp.getName() + " of " + temp.getContinent() + " is adjacent to: ");
+				ArrayList<Integer> tempAdjs = temp.getAdjacencies();
+				for(int k = 0; k < tempAdjs.size(); k++){
+					int tempID = tempAdjs.get(k);
+					String tempName = getTerritoryName(tempID);
+					System.out.println(" -ID: " + tempID + ", Name: " + tempName);
+				}
+				System.out.println();
 			}
-			System.out.println();
 		}
+		
+	public String getTerritoryName(int ID){
+		String out = "Territory Not Found";
+		for(int i = 0; i < worldTerritories.size(); i++){
+			if(worldTerritories.get(i).getID() == ID){
+				out = worldTerritories.get(i).getName();
+			}
+		}
+		return out;
 	}
 }
