@@ -1,0 +1,42 @@
+1;Afghanistan;Asia;7,16,22,36,37
+2;Alaska;North America;3,20,27
+3;Alberta;North America;2,27,28,41
+4;Argentina;South America;5,29,38
+5;Brazil;South America;4,25,29,38
+6;Central America;North America;11,41,38
+7;China;Asia;1,16,23,32,33,37
+8;Congo;Africa;9,24,34
+9;East Africa;Africa;8,12,21,22,25,34
+10;Eastern Australia;Australia;24,39
+11;Eastern United States;North America;6,28,30,41
+12;Egypt;Africa;9,22,25,35
+13;Great Britain;Europe;15,26,31,40
+14;Greenland;North America;15,28,30,27
+15;Iceland;Europe;13,14,31
+16;India;Asia;1,7,22,32
+17;Indonesia;Australia;24,32,39
+18;Irkutsk;Asia;19,20,23,33,42
+19;Japan;Asia;18,20,23
+20;Kamchatka;Asia;2,18,19,42
+21;Madagascar;Africa;9,34
+22;Middle East;Asia;1,9,12,16,35,36
+23;Mongolia;Asia;7,18,19,33
+24;New Guinea;Australia;10,17,39
+25;North Africa;Africa;5,8,9,12,35,40
+26;Northern Europe;Europe;13,31,35,36,40
+27;Northwest Territory;North America;2,3,14,28
+28;Ontario;North America;3,11,14,27,28,41
+29;Peru;South America;4,5,38
+30;Quebec;North America;11,14,28
+31;Scandanavia;Europe;13,15,26,36
+32;Siam;Asia;7,16,17
+33;Siberia;Asia;7,18,23,37,42
+34;South Africa;Africa;8,9,21
+35;Southern Europe;Europe;12,22,25,26,36,40
+36;Ukraine;Europe;1,22,26,31,35,37
+37;Ural;Asia;1,7,33,36
+38;Venezuela;South America;5,6,29
+39;Western Australia;Australia;10,17,24
+40;Western Europe;Europe;13,25,26,35
+41;Western United States;North America;3,6,11,28,
+42;Yakutsk;Asia;18,20,33

@@ -1,6 +1,7 @@
 package player;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import territories.Territory;
 
@@ -14,15 +15,15 @@ import territories.Territory;
 public class Player {
 	
 	private String name; //keeps track of player's name
-	private int armies; //keeps track of players remaining troop count
+	private int troops; //keeps track of players remaining troop count
 	private int ID; //keeps track of which player this is (player1, player2, etc)
 	
 	private ArrayList<Territory> territories; //ArrayList to keep track of territories the player controls
 	
 	//Constructor takes the name, army count, and color of player
-	public Player(String name, int armies, int ID){
+	public Player(String name, int troops, int ID){
 		this.name = name;
-		this.armies = armies;
+		this.troops = troops;
 		this.ID = ID;
 		territories = new ArrayList<Territory>();
 	}
@@ -32,8 +33,8 @@ public class Player {
 		return name;
 	}
 	
-	public int getArmies(){
-		return armies;
+	public int getTroops(){
+		return troops;
 	}
 	
 	public int getID(){
@@ -45,21 +46,22 @@ public class Player {
 	}
 	
 	//Increases player army count based on given number
-	public void increaseArmies(int num){
-		armies = armies + num;
-		System.out.println(name + " has gained " + num + " armies and now has " + armies + " in total.");
+	public void increaseTroops(int num){
+		troops = troops + num;
+		//System.out.println(name + " has gained " + num + " troop(s) and now has " + troops + " in total.");
 	}
 	
 	//Decreases player army count based on given number
-	public void decreaseArmies(int num){
-		armies = armies - num;
-		System.out.println(name + " has lost " + num + " armies and now has " + armies + " remaining.");
+	public void decreaseTroops(int num){
+		troops = troops - num;
+		//System.out.println(name + " has lost " + num + " troop(s) and now has " + troops + " remaining.");
 	}
 	
 	//Adds given territory to player
-	public void addCountry(Territory t){
+	public void addTerritory(Territory t){
 		territories.add(t);
 		System.out.println(name + " now controls " + t.getName());
+		Collections.sort(territories, (t1, t2) -> t1.getID() - t2.getID()); //sorts territories into alphabetical order
 	}
 	
 	//Allows for multiple territories to be given to player by deep copy
@@ -68,6 +70,7 @@ public class Player {
 			territories.add(giveTerritories.get(i));
 			System.out.println(name + " now controls " + giveTerritories.get(i).getName());
 		}
+		Collections.sort(territories, (t1, t2) -> t1.getID() - t2.getID()); //sorts territories into alphabetical order
 	}
 	
 	//Removes given country from player
@@ -82,7 +85,8 @@ public class Player {
 	
 	//Prints info of Player object
 	public void printPlayer(){
-		System.out.println(name + " is Player " + ID + " and has " + armies + " armies.");
+		System.out.println(name + " is Player " + ID + " and has " + troops + " troop(s).");
 	}
+	
 }
 

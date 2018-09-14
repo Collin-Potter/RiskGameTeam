@@ -93,13 +93,13 @@ public class Territory {
     //Increases the territory's troopCount based on given number
     public void increaseTroopCount(int num) {
 		troopCount = troopCount + num;
-		System.out.println(occupant.getName() + " added " + troopCount + " armies to " + name + ".");
+		//System.out.println(occupant.getName() + " has " + troopCount + " troop(s) in " + name + ".");
 	}
 	
     //Decreases the territory's troopCount based on a given number
 	public void decreaseTroopCount(int num) {
 		troopCount = troopCount - num;
-		System.out.println(occupant.getName() + " lost " + troopCount + " armies in " + name + ".");
+		//System.out.println(occupant.getName() + " lost " + troopCount + " troop(s) in " + name + ".");
 	}
 }
 

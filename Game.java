@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
+import ascii.ASCII;
 import events.Dice;
-import maps.WorldMap;
+import events.Turn;
+import maps.MapReader;
 import player.Player;
 import territories.Territory;
 
@@ -19,31 +21,43 @@ import territories.Territory;
 public class Game {
 	
 	private Scanner userInput;
-	private WorldMap world;
+	private MapReader map;
 	private ArrayList<Player> players;
 	private ArrayList<Territory> wTerritories;
 	private boolean validInput;
 	private Dice dice;
+	private Turn turn;
+	private ASCII ascii;
+	private MapReader mapReader;
 	
 	public Game(){
 		userInput = new Scanner(System.in);
-		world = new WorldMap();
+		map = new MapReader();
 		players = new ArrayList<Player>();
 		wTerritories = new ArrayList<Territory>();
 		validInput = false;
 		dice = new Dice();
+		turn = new Turn();
+		ascii = new ASCII();
+		mapReader = new MapReader();
 	}
 	
 	public void run(){
+		//Display Banner
+		ascii.readASCII("C:\\Users\\grant\\Desktop\\School\\COSC\\COSC 4353\\Projects\\Risk Game\\myRiskGame\\src\\ascii\\asciiTitle");
+		
 		//Setting up players
 		getPlayerInfo();
 		
 		//Setting up world map
-		world.createWorldMap();
-		world.printWorldMap();
+		mapReader.readInMap("C:\\Users\\grant\\Desktop\\School\\COSC\\COSC 4353\\Projects\\Risk Game\\myRiskGame\\src\\maps\\worldmap");
+		mapReader.printWorldMap();
 		
 		//Distribute territories of world map to players
 		distributeTerritories();
+		
+		//Turn iteration
+		runOneTurn();
 		
 		//End of Game run function
 		userInput.close();
@@ -102,6 +116,7 @@ public class Game {
 		for(int i = 0; i < players.size(); i++){
 			players.get(i).printPlayer();
 		}
+		System.out.println();
 	}
 	
 	//Returns a deep copy of a given ArrayList of Territories
@@ -117,7 +132,7 @@ public class Game {
 	//To be called after player information is obtained and WorldMap created
 	private void distributeTerritories(){
 		int playerCount = players.size();
-		wTerritories = getDeepCopy(world.getWorldTerritories());
+		wTerritories = getDeepCopy(map.getMapTerritories());
 		int player = 1;
 		Random random = new Random();
 		while(wTerritories.size() > 0){
@@ -126,7 +141,7 @@ public class Game {
 					int nextTerritory = random.nextInt(wTerritories.size());
 					Territory tempT = wTerritories.get(nextTerritory);
 					Player tempP = players.get(player-1);
-					tempP.addCountry(tempT);
+					tempP.addTerritory(tempT);
 					tempT.setOccupant(tempP);
 					wTerritories.remove(nextTerritory);
 					player++;
@@ -137,13 +152,23 @@ public class Game {
 					int nextTerritory = random.nextInt(wTerritories.size());
 					Territory tempT = wTerritories.get(nextTerritory);
 					Player tempP = players.get(player-1);
-					tempP.addCountry(tempT);
+					tempP.addTerritory(tempT);
+					tempP.decreaseTroops(1);
 					tempT.setOccupant(tempP);
+					tempT.increaseTroopCount(1);
 					wTerritories.remove(nextTerritory);
 					player++;
 				}
 				player = 1;
 			}
+		}
+		System.out.println();
+	}
+	
+	//Runs one cycle of a turn between all players
+	private void runOneTurn(){
+		for(int i = 0; i < players.size(); i++){
+			turn.runTurn(players.get(i));
 		}
 	}
 	
