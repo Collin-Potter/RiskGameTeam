@@ -9,12 +9,11 @@ public class Territory extends Game{
     private int troopCount;
     private String continent;
 
-    public Territory(String n, int id, ArrayList<Integer> cID,String t, int tC, String con){
+    public Territory(String n, int id, String con, ArrayList<Integer> cID){
         this.name = n;
         this.ID = id;
         this.connectionID = cID;
-        this.team = t;
-        this.troopCount = tC;
+        this.troopCount = 1;
         this.continent = con;
     }
 
@@ -33,6 +32,8 @@ public class Territory extends Game{
     public void setTroopCount(int amt){
         this.troopCount = amt;
     }
+
+    public void addTroops(int i){ this.troopCount += i; }
 
 //    public int getIDByName(String givenName){
 //        if(this.name.equalsIgnoreCase(givenName)){
