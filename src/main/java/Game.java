@@ -127,10 +127,12 @@ public class Game {
                     System.out.println("Current territories: \n");
                     for (Territory t : territoryList) {
                         if (t.getTeam().equals(p.getTeam())) {
-                            System.out.printf("ID: %-5s Name: %-25s TroopCount: %-20d\n", t.getID(), t.getName(), t.getTroopCount());
+                            System.out.printf("ID: %-5s Name: %-25s TroopCount: %-5d", t.getID(), t.getName(), t.getTroopCount());
+                            System.out.printf(" Continent: %-10s\n", t.getContinent());
                         }
                     }
                     p.reinforceRegions(0);
+                    p.percentageInControl();
                 }
             }
         }
@@ -143,10 +145,11 @@ public class Game {
                 System.out.println("Current territories: \n");
                 for (Territory t : territoryList) {
                     if (t.getTeam().equals(p.getTeam())) {
-                        System.out.printf("ID: %-5s Name: %-25s TroopCount: %-20d\n", t.getID(), t.getName(), t.getTroopCount());
+                        System.out.printf("ID: %-5s Name: %-25s TroopCount: %-20d", t.getID(), t.getName(), t.getTroopCount());
                     }
                 }
                 p.reinforceRegions(1);
+                p.percentageInControl();
             }
         }
     }
