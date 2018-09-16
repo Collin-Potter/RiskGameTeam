@@ -18,7 +18,7 @@ public class Game {
         readFileTerritories();
         gameSetUp();
         newTroopDistribution();
-        reinforceTerritories();
+        reinforceTerritories(0);
     }
 
     public static void gameSetUp(){
@@ -100,11 +100,13 @@ public class Game {
         return copy;
     }
 
-    public static void reinforceTerritories(){
-        System.out.println("Reinforce Stage in Effect...");
-        for(Player p:playerList){
-            System.out.println(p.getTeam() + " you have " + p.getTerritoryCount() + " territories");
+    public static void reinforceTerritories(int stage){
+        if(stage != 1) {
+            System.out.println("Reinforce Stage in Effect...");
+            for (Player p : playerList) {
+                System.out.println(p.getTeam() + " you have " + p.getTerritoryCount() + " territories");
 
+            }
         }
     }
 

@@ -60,8 +60,15 @@ public class Player extends Game{
                     System.out.println(getTeam() + " enter ID of territory for desired reinforcement... ");
                     try {
                         tempID = Integer.parseInt(input.nextLine());
-                        inputIncorrect = false;
-                    } catch (Exception e) {
+                        for(Territory t: territoryList){
+                            if(t.getID() == tempID && t.getTeam().equals(this.team)){
+                                System.out.println(t.getTeam());
+                                inputIncorrect = false;
+                            }
+                        }
+                        if(inputIncorrect){
+                            System.out.println("Incorrect possible input");
+                        }                    } catch (Exception e) {
                         System.out.println("Incorrect input...");
                     }
                 }
@@ -92,7 +99,15 @@ public class Player extends Game{
                     System.out.println(getTeam() + " enter ID of territory for desired reinforcement... ");
                     try {
                         tempID = Integer.parseInt(input.nextLine());
-                        inputIncorrect = false;
+                        for(Territory t: territoryList){
+                            if(t.getID() == tempID && t.getTeam().equals(this.team)){
+                                System.out.println(t.getTeam());
+                                inputIncorrect = false;
+                            }
+                        }
+                        if(inputIncorrect){
+                            System.out.println("Incorrect possible input");
+                        }
                     } catch (Exception e) {
                         System.out.println("Incorrect input...");
                     }
