@@ -1,5 +1,5 @@
 import jdk.internal.util.xml.impl.Input;
-
+import java.util.*;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -17,13 +17,26 @@ public class Player extends Game{
     private final int totalAfrica = 6;
     private final int totalEU = 7;
     private final int totalAustralia = 4;
-
+    public ArrayList<Card> PlayerHand= new ArrayList();
+    private Dice dice = new Dice();
+    public void setDice (Dice newDice) {
+        this.dice = dice;
+    }
+    private ArrayList<Integer> countryID = new ArrayList<Integer>();
     public Player(int troops, String t, boolean turn, boolean playing, int ID){
         this.troopCount = troops;
         this.team = t;
         this.isTurn = turn;
         this.enabled = playing;
         this.ID = ID;
+    }
+    public ArrayList<Integer> getCountryID() {
+        for (Territory t : territoryList) {
+            if (t.getTeam().equals(this.team)) {
+                countryID.add(t.getID());
+            }
+        }
+        return this.countryID;
     }
 
     public int setTurn() { return (this.ID + 1); }

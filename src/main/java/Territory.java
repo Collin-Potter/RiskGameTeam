@@ -35,13 +35,16 @@ public class Territory extends Game{
 
     public void addTroops(int i){ this.troopCount += i; }
 
-//    public int getIDByName(String givenName){
-//        if(this.name.equalsIgnoreCase(givenName)){
-//            return this.ID;
-//        }else{
-//            return 0;
-//        }
-//    }
+
+    public Integer GetTroopsById(int Id){
+        int count =0;
+        for(Territory t: territoryList){
+            if(Id == t.getID()){
+                count = t.getTroopCount();
+            }
+        }
+        return count;
+    }
 
     public int getID(){
         return this.ID;
