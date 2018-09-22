@@ -60,7 +60,7 @@ public class Player {
 	//Adds given territory to player
 	public void addTerritory(Territory t){
 		territories.add(t);
-		System.out.println(name + " now controls " + t.getName());
+		//System.out.println(name + " now controls " + t.getName());
 		Collections.sort(territories, (t1, t2) -> t1.getID() - t2.getID()); //sorts territories into alphabetical order
 	}
 	
@@ -68,7 +68,7 @@ public class Player {
 	public void addTerritories(ArrayList<Territory> giveTerritories){
 		for(int i = 0; i < giveTerritories.size(); i++){
 			territories.add(giveTerritories.get(i));
-			System.out.println(name + " now controls " + giveTerritories.get(i).getName());
+			//System.out.println(name + " now controls " + giveTerritories.get(i).getName());
 		}
 		Collections.sort(territories, (t1, t2) -> t1.getID() - t2.getID()); //sorts territories into alphabetical order
 	}
@@ -78,6 +78,7 @@ public class Player {
 		for(int i = 0; i < territories.size(); i++){
 			if(territories.get(i).getID() == removeID){
 				System.out.println(name + " has lost control of " + territories.get(i).getName());
+				System.out.println("---------------------------------------------------------------------------------------------------------");
 				territories.remove(i);
 			}
 		}

@@ -218,11 +218,22 @@ public class WorldMap {
 			}
 		}
 		
+	//Returns Name of Territory that matches given ID	
 	public String getTerritoryName(int ID){
 		String out = "Territory Not Found";
 		for(int i = 0; i < worldTerritories.size(); i++){
 			if(worldTerritories.get(i).getID() == ID){
 				out = worldTerritories.get(i).getName();
+			}
+		}
+		return out;
+	}
+	
+	public int getTerritoryID(String name){
+		int out = 0;
+		for(int i = 0; i < worldTerritories.size(); i++){
+			if(worldTerritories.get(i).getName().matches(name)){
+				out = worldTerritories.get(i).getID();
 			}
 		}
 		return out;
