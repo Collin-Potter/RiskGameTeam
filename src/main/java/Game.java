@@ -12,13 +12,19 @@ public class Game {
     private static int UNTOUCHED_TERRITORIES = 42;
     public static ArrayList<Territory> territoryList = new ArrayList<Territory>();
     public static ArrayList<Player> playerList = new ArrayList<Player>();
+    public static ArrayList<Card> Cards = new ArrayList();
+    public static DeckofCards Deck = new DeckofCards(territoryList, Cards);
     public static Scanner input = new Scanner(System.in);
     public static ArrayList<String> territoryInformation = new ArrayList<String>();
+    public static Attack invade = new Attack();
+
     public static void main(String[] args){
         readFileTerritories();
         gameSetUp();
         newTroopDistribution();
         reinforceTerritories(0);
+        Deck.generate();
+        invade.attackRegion();
     }
 
     public static void gameSetUp(){
