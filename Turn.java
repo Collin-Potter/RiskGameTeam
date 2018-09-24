@@ -105,14 +105,14 @@ public class Turn {
 			System.out.println(player.getName() + " enter the ID of the Territory you want to place a troop in: ");
 			in = userInput.nextLine();
 			System.out.println("---------------------------------------------------------------------");
-			validInput = validPhaseOne(in, pTerr);
+			validInput = validIDInput(in, pTerr);
 			if(!validInput){
 				System.out.println("Invalid input. Please try again.");
 				System.out.println("---------------------------------------------------------------------");
 			}
 		}
 		int tempID = Integer.parseInt(in);
-		placeTroopInto(tempID, pTerr);
+		placeTroopsInto(tempID, pTerr, 1);
 		player.decreaseTroops(1);
 	}
 	
@@ -124,12 +124,12 @@ public class Turn {
 	//Fortify phase of turn
 	private void phaseThree(Player player){
 		//Check if fortification possible
-		ArrayList<Territory> playerT = player.getTerritories();
+		ArrayList<Territory> pTerr = player.getTerritories();
 		ArrayList<Territory> validT = new ArrayList<Territory>();
 		int validCount = 0;
-		for(int i = 0; i < playerT.size(); i++){
-			if(playerT.get(i).getTroopCount() >= 2){
-				validT.add(playerT.get(i));
+		for(int i = 0; i < pTerr.size(); i++){
+			if(checkTerritoryValidity(pTerr.get(i).getID(), player)){
+				validT.add(pTerr.get(i));
 				validCount++;
 			}
 		}
@@ -142,25 +142,95 @@ public class Turn {
 				System.out.println(" --Which is adjacent to: ");
 				ArrayList<Integer> tempAdj = temp.getAdjacencies();
 				for(int j = 0; j < tempAdj.size(); j++){
-					printIfValid(tempAdj.get(i), player);
+					printIfValid(tempAdj.get(j), player);
 				}
 				System.out.println();
 			}
 			System.out.println("---------------------------------------------------------------------");
-			System.out.println(player.getName() + " enter the ID of the territory you want to take troops from to fortify another.");
-			in = userInput.nextLine();
+			validInput = false;
+			in = "";
+			while(!validInput){
+				System.out.println(player.getName() + " enter the ID of the Territory you want to take troops from: ");
+				in = userInput.nextLine();
+				System.out.println("---------------------------------------------------------------------");
+				validInput = validIDInput(in, validT);
+				if(!validInput){
+					System.out.println("Invalid input or nonvalid ID. Please try again.");
+					System.out.println("---------------------------------------------------------------------");
+				}
+			}
+			
 			//Let player pick which territory to fortify
+			int territoryA = Integer.parseInt(in);
+			for(int i = 0; i < wTerr.size(); i++){
+				if(wTerr.get(i).getID() == territoryA){
+					ArrayList<Integer> tempAdjs = wTerr.get(i).getAdjacencies();
+					System.out.println(wTerr.get(i).getName() + " has " + (wTerr.get(i).getTroopCount()-1) + " troops that it can send to fortify to one of the following territories: ");
+					for(int j = 0; j < wTerr.size(); j++){
+						for(int k = 0; k < tempAdjs.size(); k++){
+							if(wTerr.get(j).getID() == tempAdjs.get(k)){
+								printIfValid(tempAdjs.get(k), player);
+							}
+						}
+					}
+				}
+			}
+			System.out.println("---------------------------------------------------------------------");
+			validInput = false;
+			in = "";
+			while(!validInput){
+				System.out.println(player.getName() + " enter the ID of the Territory you want to place a troop in: ");
+				in = userInput.nextLine();
+				System.out.println("---------------------------------------------------------------------");
+				validInput = validIDInput(in, pTerr);
+				if(!validInput){
+					System.out.println("Invalid input. Please try again.");
+					System.out.println("---------------------------------------------------------------------");
+				}
+			}
+			
+			//Let player pick how many troops to fortify B with from A
+			int territoryB = Integer.parseInt(in);
+			int totalTroops = 0;
+			String aName = "";
+			String bName = "";
+			for(int i = 0; i < wTerr.size(); i++){
+				if(wTerr.get(i).getID() == territoryA){
+					aName = wTerr.get(i).getName();
+					totalTroops = wTerr.get(i).getTroopCount();
+				}
+				if(wTerr.get(i).getID() == territoryB){
+					bName = wTerr.get(i).getName();
+				}
+			}
+			validInput = false;
+			in = "";
+			while(!validInput){
+				System.out.println(player.getName() + " enter the amount of troops you want to take from " + aName + " and place into " + bName);
+				System.out.println("(Note: There are " + (totalTroops-1) + " total troops that can be moved from " + aName + "): ");
+				in = userInput.nextLine();
+				System.out.println("---------------------------------------------------------------------");
+				validInput = validAmountInput(in, totalTroops);
+				if(!validInput){
+					System.out.println("Invalid input or amount of troops to move. Please try again.");
+					System.out.println("---------------------------------------------------------------------");
+				}
+			}
+			
 			//Fortify into territory A from territory B
+			int amount = Integer.parseInt(in);
+			removeTroopsFrom(territoryA, pTerr, amount);
+			placeTroopsInto(territoryB, pTerr, amount);
 		}
 		else{
 			System.out.println(player.getName() + " can not fortify at this time.");
 		}
 	}
 	
-	//Checks the validity of input for phaseOne method
-	private boolean validPhaseOne(String input, ArrayList<Territory> pTerr){
+	//Checks the validity of input for phaseOne and phaseThree methods
+	private boolean validIDInput(String input, ArrayList<Territory> pTerr){
 		try{
-			int check = Integer.parseInt(in);
+			int check = Integer.parseInt(input);
 			for(int i = 0; i < pTerr.size(); i++){
 				if(check == pTerr.get(i).getID()){
 					return true;
@@ -172,15 +242,41 @@ public class Turn {
 		}
 		
 	}
+
+	//Checks the validity of input for phaseThree method
+	private boolean validAmountInput(String input, int totalAmount){
+		try{
+			int check = Integer.parseInt(input);
+			if(check < (totalAmount) && check > 0){
+				return true;
+			}
+			else{
+
+				return false;
+			}
+		}catch(NumberFormatException e){
+			return false;
+		}
+	}
 	
 	//Places troop into territory by given ID
-	private void placeTroopInto(int ID, ArrayList<Territory> pTerr){
+	private void placeTroopsInto(int ID, ArrayList<Territory> pTerr, int amount){
 		for(int i = 0; i < pTerr.size(); i++){
 			if(pTerr.get(i).getID() == ID){
-				System.out.println("Placing one troop in " + pTerr.get(i).getName() + "...");
+				System.out.println("Placing " + amount + " troops in " + pTerr.get(i).getName() + "...");
 				System.out.println("---------------------------------------------------------------------");
-				pTerr.get(i).increaseTroopCount(1);
-				//System.out.println();
+				pTerr.get(i).increaseTroopCount(amount);
+			}
+		}
+	}
+	
+	//Removes troop from territory given by ID
+	private void removeTroopsFrom(int ID, ArrayList<Territory> pTerr, int amount){
+		for(int i = 0; i < pTerr.size(); i++){
+			if(pTerr.get(i).getID() == ID){
+				System.out.println("Removing " + amount + " troop(s) from " + pTerr.get(i).getName() + "...");
+				System.out.println("---------------------------------------------------------------------");
+				pTerr.get(i).decreaseTroopCount(amount);
 			}
 		}
 	}
@@ -210,11 +306,34 @@ public class Turn {
 		System.out.println();
 	}
 	
+	//Checks if territory has troopCount above 2 and is adjacent to at least one territory controlled by the same player
+	private boolean checkTerritoryValidity(int ID, Player p){
+		for(int i = 0; i < wTerr.size(); i++){
+			if(wTerr.get(i).getID() == ID && wTerr.get(i).getTroopCount() > 1){
+				ArrayList<Integer> tempAdjs = wTerr.get(i).getAdjacencies();
+				int count = 0;
+				for(int j = 0; j < wTerr.size(); j++){
+					for(int k = 0; k < tempAdjs.size(); k++){
+						if(wTerr.get(j).getID() == tempAdjs.get(k) && wTerr.get(j).getOccupant().getID() == p.getID()){
+							count++;
+						}
+					}
+				}
+				
+				if(count > 0){
+					return true;
+				}
+			}
+		}
+		return false;
+		
+	}
+	
 	//Prints territory info based on ID and player occupant to be used in phaseThree method
 	private void printIfValid(int ID, Player p){
 		for(int i = 0; i < wTerr.size(); i++){
 			if(wTerr.get(i).getID() == ID && wTerr.get(i).getOccupant().getID() == p.getID()){
-				System.out.print("--> ID: " + ID + wTerr.get(i).getName() + ", Troop Count:");
+				System.out.print(" --> ID: " + ID + ", Name: " + wTerr.get(i).getName() + ", Troop Count:" + wTerr.get(i).getTroopCount() + "\n");
 			}
 		}
 	}
