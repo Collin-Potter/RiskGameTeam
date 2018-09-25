@@ -28,19 +28,29 @@ public class Game {
     }
 
     public static void gameSetUp(){
-        boolean isValid = false;
         String pAmt;
+        Scanner input = new Scanner(System.in);
+        boolean isValid = false;
+        int imStressed;
         do {
             System.out.println("Enter player amount...");
             pAmt = input.nextLine();
-            if((pAmt.equals("2")||pAmt.equals("3")||pAmt.equals("4")||pAmt.equals("5")||pAmt.equals("6"))){
+            if(Integer.parseInt(pAmt) == 2||
+                    Integer.parseInt(pAmt) == 3||
+                    Integer.parseInt(pAmt) == 4||
+                    Integer.parseInt(pAmt) == 5||
+                    Integer.parseInt(pAmt) == 6){
                 isValid = true;
             }
-        }while(!isValid);
+            imStressed = new HelperClass().undo();
+        }while(imStressed == 1 || !isValid);
         String playerName;
         for(int i = 0; i < Integer.parseInt(pAmt); i++){
-            System.out.println("Enter player " + (i+1) + "'s name...");
-            playerName = input.nextLine();
+            do {
+                System.out.println("Enter player " + (i + 1) + "'s name...");
+                playerName = input.nextLine();
+                imStressed = new HelperClass().undo();
+            } while(imStressed == 1);
             playerList.add(new Player(0,playerName,false,false, (i+1)));
         }
         switch(playerList.size()){
