@@ -1,4 +1,6 @@
 language: java
-mvn install -DskipTests=true -Dmaven.javadoc.skip=true
-Installed: true
-Script: mvn test
+jdk:
+  - oraclejdk8
+install: true
+Script: mvn -f RiskGameTeam/pom.xml test
+
