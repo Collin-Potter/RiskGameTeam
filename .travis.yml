@@ -2,4 +2,4 @@ language: java
 jdk:
   - oraclejdk8
 install: true
-script: mvn -f RiskGameTeam/pom.xml test
+script: mvn -f riskGame/pom.xml test
