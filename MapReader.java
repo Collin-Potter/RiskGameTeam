@@ -43,17 +43,16 @@ public class MapReader {
 			String line = null;
 			String[] tokens = null;
 			int countID = 1;
+			tAdjs = new ArrayList<Integer>();
 			while((line = br.readLine()) != null){
 				tokens = line.split(";");
-				for(int i = 0; i < tokens.length; i++){
-					tID = countID; //Territory ID
-					tName = tokens[0]; //Territory Name
-					tContinent = tokens[1]; //Territory Continent
-					String[] adjs = tokens[2].split(","); //Split adjacency portion
-					tAdjs = new ArrayList<Integer>();
-					for(int j = 0; j < adjs.length; j++){
-						tAdjs.add(Integer.parseInt(adjs[j])); 
-					}
+				tID = countID; //Territory ID
+				tName = tokens[0]; //Territory Name
+				tContinent = tokens[1]; //Territory Continent
+				String[] adjs = tokens[2].split(","); //Split adjacency portion
+				tAdjs.clear();
+				for(int j = 0; j < adjs.length; j++){
+					tAdjs.add(Integer.parseInt(adjs[j])); 
 				}
 				countID++;
 				Territory t = new Territory(tID, tName, tContinent);

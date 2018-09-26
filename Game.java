@@ -5,7 +5,6 @@ import java.util.Random;
 import java.util.Scanner;
 
 import ascii.ASCII;
-import events.Dice;
 import events.Turn;
 import maps.MapReader;
 import maps.WorldMap;
@@ -22,27 +21,28 @@ import territories.Territory;
 public class Game {
 	
 	private Scanner userInput;
-	private MapReader map;
+	private MapReader mapReader;
 	private ArrayList<Player> players;
-	private ArrayList<Territory> wTerritories;
+	private ArrayList<Territory> wTerr;
 	private boolean validInput;
-	private Dice dice;
 	private Turn turn;
 	private ASCII ascii;
-	private MapReader mapReader;
 	private WorldMap world;
+	private String eqBar;
+	private String daBar;
 	
 	public Game(){
 		userInput = new Scanner(System.in);
-		map = new MapReader();
+		mapReader = new MapReader();
 		players = new ArrayList<Player>();
-		wTerritories = new ArrayList<Territory>();
+		wTerr = new ArrayList<Territory>();
 		validInput = false;
-		dice = new Dice();
 		turn = new Turn();
 		ascii = new ASCII();
-		mapReader = new MapReader();
 		world = new WorldMap();
+		eqBar = "+=============================================================================================================================================================+";
+		daBar = "---------------------------------------------------------------------------------------------------------------------------------------------------------------";
+	
 	}
 	
 	public void run(){
@@ -50,13 +50,13 @@ public class Game {
 		ascii.readASCII("C:\\Users\\grant\\Desktop\\School\\COSC\\COSC 4353\\Projects\\Risk Game\\myRiskGame\\src\\ascii\\asciiTitle");
 		
 		System.out.println("GAME SETUP:");
-		System.out.println("+=============================================================================================================================================================+");
+		System.out.println(eqBar);
 		
 		//Setting up players
 		getPlayerInfo();
 		
-		//Setting up world map
-		System.out.println("---------------------------------------------------------------------");
+		//Setting up world mapReader
+		System.out.println(daBar);
 		//mapReader.readInMap("C:\\Users\\grant\\Desktop\\School\\COSC\\COSC 4353\\Projects\\Risk Game\\myRiskGame\\src\\maps\\worldmap");
 		//mapReader.printWorldMap();
 		//System.out.println("Map Created...");
@@ -64,14 +64,14 @@ public class Game {
 		world.createWorldMap();
 		//world.printWorldMap();
 		System.out.println("World Created...");
-		System.out.println("---------------------------------------------------------------------");		
-		//Distribute territories of world map to players
+		System.out.println(daBar);		
+		//Distribute territories of world mapReader to players
 		distributeTerritories();
 		System.out.println("Territories Distributed...");
-		System.out.println("---------------------------------------------------------------------");
+		System.out.println(daBar);
 		
 		System.out.println("GAME SETUP COMPLETE");
-		System.out.println("+=============================================================================================================================================================+");;
+		System.out.println(eqBar);;
 		
 		//Turn iteration
 		runOneTurn(1);
@@ -90,13 +90,13 @@ public class Game {
 			System.out.println("How many players?(2, 3, 4, 5, or 6)");
 			in = userInput.nextLine();
 			if(!(in.equals("2") || in.equals("3") || in.equals("4") || in.equals("5") || in.equals("6"))){
-				System.out.println("---------------------------------------------------------------------");
+				System.out.println(daBar);
 				System.out.println("Invalid input. Please try again.");
-				System.out.println("---------------------------------------------------------------------");
+				System.out.println(daBar);
 				}
 			else{
 				numPlayers = Integer.parseInt(in);
-				System.out.println("---------------------------------------------------------------------");
+				System.out.println(daBar);
 				validInput = true;
 			}
 		}
@@ -133,7 +133,7 @@ public class Game {
 			in = userInput.nextLine();
 			Player temp = new Player(in, numTroops, i);
 			players.add(temp);
-			System.out.println("---------------------------------------------------------------------");
+			System.out.println(daBar);
 			}
 		for(int i = 0; i < players.size(); i++){
 			players.get(i).printPlayer();
@@ -153,34 +153,35 @@ public class Game {
 	//To be called after player information is obtained and WorldMap created
 	private void distributeTerritories(){
 		int playerCount = players.size();
-		//wTerritories = getDeepCopy(map.getMapTerritories());
-		wTerritories = getDeepCopy(world.getWorldTerritories());
+		//wTerr = getDeepCopy(mapReader.getMapTerritories());
+		wTerr = getDeepCopy(world.getWorldTerritories());
 		int player = 1;
 		Random random = new Random();
-		while(wTerritories.size() > 0){
-			if(wTerritories.size() < playerCount){
-				while(wTerritories.size() > 0){
-					int nextTerritory = random.nextInt(wTerritories.size());
-					Territory tempT = wTerritories.get(nextTerritory);
+		while(wTerr.size() > 0){
+			if(wTerr.size() < playerCount){
+				while(wTerr.size() > 0){
+					int nextTerritory = random.nextInt(wTerr.size());
+					Territory tempT = wTerr.get(nextTerritory);
+					System.out.println(tempT.getName());
 					Player tempP = players.get(player-1);
 					tempP.addTerritory(tempT);
 					tempP.decreaseTroops(1);
 					tempT.setOccupant(tempP);
 					tempT.increaseTroopCount(1);
-					wTerritories.remove(nextTerritory);
+					wTerr.remove(nextTerritory);
 					player++;
 				}
 			}
 			else{
 				while(player <= playerCount){
-					int nextTerritory = random.nextInt(wTerritories.size());
-					Territory tempT = wTerritories.get(nextTerritory);
+					int nextTerritory = random.nextInt(wTerr.size());
+					Territory tempT = wTerr.get(nextTerritory);
 					Player tempP = players.get(player-1);
 					tempP.addTerritory(tempT);
 					tempP.decreaseTroops(1);
 					tempT.setOccupant(tempP);
 					tempT.increaseTroopCount(1);
-					wTerritories.remove(nextTerritory);
+					wTerr.remove(nextTerritory);
 					player++;
 				}
 				player = 1;
