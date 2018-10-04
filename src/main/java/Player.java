@@ -87,6 +87,7 @@ public class Player extends Game{
                 for (Territory t : territoryList) {
                     if (t.getID() == tempID && t.getTeam().equals(this.team)) {
                         System.out.println("Reinforcing " + t.getName() + "...");
+                        Replay.recordAction(this.team + " reinforced " + t.getName() + " with 1 troop");
                         this.troopCount -= 1;
                         t.addTroops(1);
                         System.out.println("You now have " + this.troopCount + " possible reinforcements left");

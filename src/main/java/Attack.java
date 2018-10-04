@@ -38,9 +38,10 @@ public class Attack extends Game {
                 Scanner input = new Scanner(System.in);
                 int tempID = 0;
                 boolean inputIncorrect = true;
+                String X = "";
                 while (inputIncorrect == true) {
                     System.out.println(" enter ID of the territory which you will ATTACK FROM... ");
-                    String X = input.nextLine();
+                    X = input.nextLine();
                     try {
 
                         tempID = Integer.parseInt(X);
@@ -66,9 +67,10 @@ public class Attack extends Game {
                 Scanner iID = new Scanner(System.in);
                 int tempiID = 0;
                 boolean iIDIncorrect = true;
+                String Y = "";
                 while (iIDIncorrect == true) {
                     System.out.println(" enter ID of the territory which you will Invade... ");
-                    String Y = iID.nextLine();
+                    Y = iID.nextLine();
                     try {
                         tempiID = Integer.parseInt(Y);
                         if (eligibleInvasions.contains(tempiID)) {
@@ -82,6 +84,8 @@ public class Attack extends Game {
                         System.out.println("Incorrect input...");
                     }
                 }
+                Replay.recordAction(p.getTeam() + " has decided to attack " + territoryList.get(Integer.parseInt(Y)).getName()
+                                                                        + " from " + territoryList.get(Integer.parseInt(X)).getName());
                 Territory Attacker = InWarCounties.get(0);
                 Territory Defender = InWarCounties.get(1);
                 boolean win = false;
@@ -151,6 +155,7 @@ public class Attack extends Game {
                         dice.compareFaceValue(AttackerDice, DefenderDice, InWarCounties.get(0), InWarCounties.get(1));
                         //If Invader win
                         if (Defender.getTroopCount() == 0) {
+                            Replay.recordAction(p.getTeam() + " has won the invasion and taken the region");
                             // InvasionStatus = false;
                             win = true;
                             System.out.println(Defender.getTeam() + " You have to place armies on your new territory... ");
@@ -160,7 +165,7 @@ public class Attack extends Game {
                             boolean check1 = true;
                             while (check1 == true) {
                                 System.out.println(" How many units are you transferring... ");
-                                String X = in.nextLine();
+                                X = in.nextLine();
                                 try {
                                     temp = Integer.parseInt(X);
                                     // for (Territory t : territoryList) {
