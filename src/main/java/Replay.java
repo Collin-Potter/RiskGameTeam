@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Replay {
-    private static AWSCredentials credentials = new BasicAWSCredentials("AKIAJITWKPSYRN4EAOWQ", "Qr5sgWWPwZeO1780Ta1JPim2pkYmxA/NLT6R62VU");
+    private static AWSCredentials credentials = new BasicAWSCredentials("", "");
     private static AmazonS3 s3client = new AmazonS3Client(credentials);
     private static File currentDir = new File(".");
     private static File parentDir = currentDir.getAbsoluteFile();
