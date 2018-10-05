@@ -55,6 +55,7 @@ public class Attack extends Game {
                         System.out.println("Incorrect input...");
                     }
                 }
+                new HelperClass().undo();           
                 System.out.println(" You may Invade one of the following... ");
                 for (Territory t : territoryList) {
                     if (!t.getTeam().equals(p.getTeam()) && t.getConnections().contains(tempID)) {
@@ -82,6 +83,7 @@ public class Attack extends Game {
                         System.out.println("Incorrect input...");
                     }
                 }
+                new HelperClass().undo();           
                 Territory Attacker = InWarCounties.get(0);
                 Territory Defender = InWarCounties.get(1);
                 boolean win = false;
@@ -176,6 +178,7 @@ public class Attack extends Game {
                                 }
                             }
                         }
+                        new HelperClass().undo();           
 
 
                         if (win) {
