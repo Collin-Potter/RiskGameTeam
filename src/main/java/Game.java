@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Test;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -20,14 +21,12 @@ public class Game {
     public static Attack invade = new Attack();
 
     public static void main(String[] args){
-        Replay.initialize();
         readFileTerritories();
         gameSetUp();
         newTroopDistribution();
         reinforceTerritories(0);
         Deck.generate();
         invade.attackRegion();
-        Replay.stopReplay();
     }
 
     public static void gameSetUp(){
@@ -47,7 +46,6 @@ public class Game {
             }
             imStressed = new HelperClass().undo();
         }while(imStressed == 1 || !isValid);
-        Replay.recordAction("Player Amount: " + pAmt);
         String playerName;
         for(int i = 0; i < Integer.parseInt(pAmt); i++){
             do {
@@ -56,7 +54,6 @@ public class Game {
                 imStressed = new HelperClass().undo();
             } while(imStressed == 1);
             playerList.add(new Player(0,playerName,false,false, (i+1)));
-            Replay.recordAction("Player created: " + playerName);
         }
         switch(playerList.size()){
             case(2):
@@ -126,7 +123,7 @@ public class Game {
             System.out.println("Reinforce Stage in Effect...");
             for (Player p : playerList) {
                 System.out.println(p.getTeam() + " you have " + p.getTerritoryCount() + " territories");
-                Replay.recordAction(p.getTeam() + " has " + p.getTerritoryCount() + " territories");
+
             }
         }
     }

@@ -36,8 +36,8 @@ public class Territory extends Game{
     public void addTroops(int i){ this.troopCount += i; }
 
 
-    public Integer GetTroopsById(int Id){
-        int count =0;
+    public int GetTroopsById(int Id){
+        int count = 0 ;
         for(Territory t: territoryList){
             if(Id == t.getID()){
                 count = t.getTroopCount();

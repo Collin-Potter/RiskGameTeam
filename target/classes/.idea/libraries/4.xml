@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="4">
+    <CLASSES>
+      <root url="file://$MAVEN_REPOSITORY$/junit/junit/4.12" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$MAVEN_REPOSITORY$/junit/junit/4.12" />
+    </SOURCES>
+    <jarDirectory url="file://$MAVEN_REPOSITORY$/junit/junit/4.12" recursive="false" />
+    <jarDirectory url="file://$MAVEN_REPOSITORY$/junit/junit/4.12" recursive="false" type="SOURCES" />
+  </library>
+</component>

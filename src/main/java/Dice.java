@@ -6,6 +6,7 @@ public class Dice extends Game{
     private int roll;
     private Integer[] diceArray;
     private Random die;
+    public boolean comparison;
     public Dice() {}
     public Integer[] roll(int numberOfDice) {
         diceArray = new Integer[numberOfDice];
@@ -55,5 +56,6 @@ public class Dice extends Game{
                     }
                 }
             }
+           comparison=true;
         }
     }

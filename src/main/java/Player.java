@@ -1,12 +1,13 @@
 import java.util.*;
 import java.util.Scanner;
 
-public class Player extends Game{
+public class Player extends Game {
     private static final int MAP_REGION_AMOUNT = 42;
     private int troopCount;
     private String team;
     private boolean isTurn;
-    private boolean enabled;
+    private boolean enabled ;
+    public boolean checker = true ;
     private int territoryCount;
     private int ID;
     private final int totalNA = 9;
@@ -15,21 +16,26 @@ public class Player extends Game{
     private final int totalAfrica = 6;
     private final int totalEU = 7;
     private final int totalAustralia = 4;
-    public ArrayList<Card> PlayerHand= new ArrayList();
+    public int TestPrecentage;
+    public ArrayList<Card> PlayerHand = new ArrayList();
     private Dice dice = new Dice();
-    public void setDice (Dice newDice) {
+
+    public void setDice(Dice newDice) {
         this.dice = dice;
     }
+
     private ArrayList<Integer> countryID = new ArrayList<Integer>();
-    public Player(int troops, String t, boolean turn, boolean playing, int ID){
+
+    public Player(int troops, String t, boolean turn, boolean playing, int ID) {
         this.troopCount = troops;
         this.team = t;
         this.isTurn = turn;
         this.enabled = playing;
         this.ID = ID;
     }
-    public ArrayList<Integer> getCountryID() {
-        for (Territory t : territoryList) {
+
+    public ArrayList<Integer> getCountryID(ArrayList<Territory> list) {
+        for (Territory t : list) {
             if (t.getTeam().equals(this.team)) {
                 countryID.add(t.getID());
             }
@@ -37,32 +43,44 @@ public class Player extends Game{
         return this.countryID;
     }
 
-    public int setTurn() { return (this.ID + 1); }
+    public int setTurn() {
+        return (this.ID + 1);
+    }
 
-    public void setTroopCount(int i){
+    public void setTroopCount(int i) {
         this.troopCount = i;
     }
 
-    public void addTroops(int i){ this.troopCount += i; }
+    public void addTroops(int i) {
+        this.troopCount += i;
+    }
 
-    public void decTroopCount(int i) { this.troopCount -= i; }
+    public void decTroopCount(int i) {
+        this.troopCount -= i;
+    }
 
-    public int getTroopCount(){
+    public int getTroopCount() {
         return this.troopCount;
     }
 
-    public String getTeam(){
+    public String getTeam() {
         return this.team;
     }
 
-    public int getTerritoryCount() { return this.territoryCount; }
+    public int getTerritoryCount() {
+        return this.territoryCount;
+    }
 
-    public void setTerritoryCount(int numT) { this.territoryCount = numT; }
+    public void setTerritoryCount(int numT) {
+        this.territoryCount = numT;
+    }
 
-    public void incTerritoryCount(){ this.territoryCount++; }
+    public void incTerritoryCount() {
+        this.territoryCount++;
+    }
 
-    public void reinforceRegions(int type){
-        if(type == 0) {
+    public void reinforceRegions(int type) {
+        if (type == 0) {
             Scanner input = new Scanner(System.in);
             if (this.troopCount != 0) {
                 int tempID = 0;
@@ -71,15 +89,16 @@ public class Player extends Game{
                     System.out.println(getTeam() + " enter ID of territory for desired reinforcement... ");
                     try {
                         tempID = Integer.parseInt(input.nextLine());
-                        for(Territory t: territoryList){
-                            if(t.getID() == tempID && t.getTeam().equals(this.team)){
+                        for (Territory t : territoryList) {
+                            if (t.getID() == tempID && t.getTeam().equals(this.team)) {
                                 System.out.println(t.getTeam());
                                 inputIncorrect = false;
                             }
                         }
-                        if(inputIncorrect){
+                        if (inputIncorrect) {
                             System.out.println("Incorrect possible input");
-                        }                    } catch (Exception e) {
+                        }
+                    } catch (Exception e) {
                         System.out.println("Incorrect input...");
                     }
                 }
@@ -103,7 +122,7 @@ public class Player extends Game{
                     }
                 }
             }
-        }else if(type == 1){
+        } else if (type == 1) {
             if (this.troopCount != 0) {
                 int tempID = 0;
                 boolean inputIncorrect = true;
@@ -111,13 +130,13 @@ public class Player extends Game{
                     System.out.println(getTeam() + " enter ID of territory for desired reinforcement... ");
                     try {
                         tempID = Integer.parseInt(input.nextLine());
-                        for(Territory t: territoryList){
-                            if(t.getID() == tempID && t.getTeam().equals(this.team)){
+                        for (Territory t : territoryList) {
+                            if (t.getID() == tempID && t.getTeam().equals(this.team)) {
                                 System.out.println(t.getTeam());
                                 inputIncorrect = false;
                             }
                         }
-                        if(inputIncorrect){
+                        if (inputIncorrect) {
                             System.out.println("Incorrect possible input");
                         }
                     } catch (Exception e) {
@@ -127,7 +146,7 @@ public class Player extends Game{
 
                 for (Territory t : territoryList) {
                     if (t.getID() == tempID && t.getTeam().equals(this.team)) {
-                        while(inputIncorrect) {
+                        while (inputIncorrect) {
                             System.out.println("You have " + this.troopCount + " possible reinforcements");
                             try {
                                 System.out.println("How many would you like to reinforce with?");
@@ -153,41 +172,42 @@ public class Player extends Game{
                     }
                 }
             }
-        }
+        }else{checker = false; }
+
     }
 
-    public void percentageInControl(){
+    public void percentageInControl() {
         double numNA = 0;
         double numSA = 0;
         double numAsia = 0;
         double numAfrica = 0;
         double numEurope = 0;
         double numAustralia = 0;
-        for(Territory t: territoryList){
-            if(t.getTeam() == this.team){
-                if(t.getContinent().equals("North America")){
+        for (Territory t : territoryList) {
+            if (t.getTeam() == this.team) {
+                if (t.getContinent().equals("North America")) {
                     numNA++;
-                }else if(t.getContinent().equals("South America")){
+                } else if (t.getContinent().equals("South America")) {
                     numSA++;
-                }else if(t.getContinent().equals("Asia")){
+                } else if (t.getContinent().equals("Asia")) {
                     numAsia++;
                 } else if (t.getContinent().equals("Africa")) {
                     numAfrica++;
-                } else if(t.getContinent().equals("Europe")){
+                } else if (t.getContinent().equals("Europe")) {
                     numEurope++;
-                }else if(t.getContinent().equals("Australia")){
+                } else if (t.getContinent().equals("Australia")) {
                     numAustralia++;
                 }
             }
         }
-        double percentageWorld = Math.round((((double)this.territoryCount)/MAP_REGION_AMOUNT)*100);
-        double percentageNA = Math.round((numNA/totalNA)*100);
-        double percentageSA = Math.round((numSA/totalSA)*100);
-        double percentageAsia = Math.round((numAsia/totalAsia)*100);
-        double percentageAfrica = Math.round((numAfrica/totalAfrica)*100);
-        double percentageEurope = Math.round((numEurope/totalEU)*100);
-        double percentageAustralia = Math.round((numAustralia/totalAustralia)*100);
-
+        double percentageWorld = Math.round((((double) this.territoryCount) / MAP_REGION_AMOUNT) * 100);
+        double percentageNA = Math.round((numNA / totalNA) * 100);
+        double percentageSA = Math.round((numSA / totalSA) * 100);
+        double percentageAsia = Math.round((numAsia / totalAsia) * 100);
+        double percentageAfrica = Math.round((numAfrica / totalAfrica) * 100);
+        double percentageEurope = Math.round((numEurope / totalEU) * 100);
+        double percentageAustralia = Math.round((numAustralia / totalAustralia) * 100);
+        TestPrecentage = 0;
         System.out.println(this.team + " currently has control of...\n" +
                 "North America: %" + percentageNA + "\n" +
                 "South America: %" + percentageSA + "\n" +
@@ -198,15 +218,4 @@ public class Player extends Game{
                 "The World    : %" + percentageWorld);
     }
 
-    public void attackRegion(){
-
-    }
-
-    public void defendRegion(){
-
-    }
-
-    public void isPlaying(boolean play){
-        this.enabled = play;
-    }
 }
