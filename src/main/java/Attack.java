@@ -27,7 +27,7 @@ public class Attack extends Game {
                         String AlreadyPrinted = new String();
 
                         for (int i = 0; i < t.getConnections().size(); i++)
-                            if (!p.getCountryID().contains(t.getConnections().get(i)) && !AlreadyPrinted.equals(t.getName())) {
+                            if (!p.getCountryID(territoryList).contains(t.getConnections().get(i)) && !AlreadyPrinted.equals(t.getName())) {
                                 System.out.println("ID: " + t.getID() +
                                         "  Country Name: " + t.getName() + " Your troops: " + t.getTroopCount());
                                 AlreadyPrinted = t.getName();

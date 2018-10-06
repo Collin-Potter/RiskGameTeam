@@ -1,4 +1,3 @@
-import org.junit.jupiter.api.Test;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -8,7 +7,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
-
 public class Game {
     private static final int MAP_REGION_AMOUNT = 42;
     private static int UNTOUCHED_TERRITORIES = 42;
