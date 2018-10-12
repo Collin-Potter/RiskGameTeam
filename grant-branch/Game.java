@@ -30,6 +30,7 @@ public class Game {
 	private WorldMap world;
 	private String eqBar;
 	private String daBar;
+	private Helper helper;
 	
 	public Game(){
 		userInput = new Scanner(System.in);
@@ -40,6 +41,7 @@ public class Game {
 		turn = new Turn();
 		ascii = new ASCII();
 		world = new WorldMap();
+		helper = new Helper();
 		eqBar = "+=============================================================================================================================================================+";
 		daBar = "---------------------------------------------------------------------------------------------------------------------------------------------------------------";
 	
@@ -64,7 +66,8 @@ public class Game {
 		world.createWorldMap();
 		//world.printWorldMap();
 		System.out.println("World Created...");
-		System.out.println(daBar);		
+		System.out.println(daBar);	
+		
 		//Distribute territories of world mapReader to players
 		distributeTerritories();
 		System.out.println("Territories Distributed...");
@@ -97,7 +100,7 @@ public class Game {
 			else{
 				numPlayers = Integer.parseInt(in);
 				System.out.println(daBar);
-				validInput = true;
+				validInput = helper.confirmDialog("Are you sure you want " + numPlayers + " players?");
 			}
 		}
 		return numPlayers;
@@ -126,15 +129,21 @@ public class Game {
 	private void getPlayerInfo(){
 		validInput = false;
 		String in = "";
+		String playerName = "";
 		int numPlayers = getPlayerCount();
 		int numTroops = getTroopCount(numPlayers);
 		for(int i = 1; i <= numPlayers; i++){
-			System.out.println("Enter Name for Player " + i + ": ");
-			in = userInput.nextLine();
-			Player temp = new Player(in, numTroops, i);
-			players.add(temp);
-			System.out.println(daBar);
+			validInput = false;
+			while(!validInput){
+				System.out.println("Enter name for player " + i + ": ");
+				in = userInput.nextLine();
+				playerName = in;
+				System.out.println(daBar);
+				validInput = helper.confirmDialog("Player " + i + " is named " + playerName + "?");
 			}
+			Player temp = new Player(playerName, numTroops, i);
+			players.add(temp);
+		}
 		for(int i = 0; i < players.size(); i++){
 			players.get(i).printPlayer();
 		}
