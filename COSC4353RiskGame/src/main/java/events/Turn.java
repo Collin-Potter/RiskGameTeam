@@ -78,13 +78,17 @@ public class Turn {
 			playerCount = players.size();
 			System.out.println("Randomly Distributing Reinforcements for all Players...");
 			System.out.println(helper.daBar);
-			while(playerCount > 0){
+			playerCount = 0;
+			while(playerCount < players.size()){
+				playerCount = 0;
 				for(int i = 0; i < players.size(); i++){
 					if(players.get(i).getTroops() > 0){
 						randomReinforcementPhase(players.get(i));
 					}
 					else{
-						playerCount--;
+						playerCount++;
+						//System.out.println(players.get(i).getName() + " is out of reinforcements...");
+						//System.out.println(helper.daBar);
 					}
 				}
 			}
@@ -97,14 +101,15 @@ public class Turn {
 			}
 		}
 		else{ //have players choose troops distribution
-			playerCount = players.size();
-			while(playerCount > 0){
+			playerCount = 0;
+			while(playerCount < players.size()){
+				playerCount = 0;
 				for(int i = 0; i < players.size(); i++){
 					if(players.get(i).getTroops() > 0){
 						reinforcementPhase(players.get(i));
 					}
 					else{
-						playerCount--;
+						playerCount++;
 						System.out.println(players.get(i).getName() + " is out of reinforcements...");
 						System.out.println(helper.daBar);
 					}
@@ -118,19 +123,32 @@ public class Turn {
 		System.out.println("COMMENCING ATTACK PHASE OF TURN " + turnCount + ": ");
 		System.out.println(helper.eqBar);
 		for(int i = 0; i < players.size(); i++){
-			attackPhase(players.get(i));
+			if(!checkWinCondition() && !players.get(i).getTerritories().isEmpty()){
+				attackPhase(players.get(i));
+			}
+			else{
+				if(players.get(i).getTerritories().isEmpty()){
+					String temp = players.get(i).getName() + " has been defeated on turn " + turnCount + "!";
+					System.out.println(temp);
+					System.out.println(helper.daBar);
+					twitterHandler.postTweet(temp);
+					players.remove(players.get(i));
+				}
+			}
 		}
 		System.out.println("ATTACK PHASE TURN " + turnCount + " COMPLETE");
 		System.out.println(helper.eqBar);
 		
-		//Fortify Phase
-		System.out.println("COMMENCING FORTIFY PHASE OF TURN " + turnCount + ": ");
-		System.out.println(helper.eqBar);
-		for(int i = 0; i < players.size(); i++){
-			fortifyPhase(players.get(i));
+		if(!checkWinCondition()){
+			//Fortify Phase
+			System.out.println("COMMENCING FORTIFY PHASE OF TURN " + turnCount + ": ");
+			System.out.println(helper.eqBar);
+			for(int i = 0; i < players.size(); i++){
+				fortifyPhase(players.get(i));
+			}
+			System.out.println("FORTIFY PHASE OF TURN " + turnCount + " COMPLETE");
+			System.out.println(helper.eqBar);
 		}
-		System.out.println("FORTIFY PHASE OF TURN " + turnCount + " COMPLETE");
-		System.out.println(helper.eqBar);
 		
 		//Tweets game status at end of turn
 		System.out.println("Posting update for turn " + turnCount + " on Twitter...");
@@ -144,21 +162,16 @@ public class Turn {
 		for(int i = 0; i < players.size(); i++){
 			ArrayList<Territory> pTerr = players.get(i).getTerritories();
 			String temp = "";
-			if(pTerr.size() < 1){ //player has no territories remaining
-				temp = players.get(i).getName() + " has been defeated on turn " + turnCount + "!";
-				System.out.println(helper.daBar);
-				twitterHandler.postTweet(temp);
-				players.remove(players.get(i));
-			}
 			if(pTerr.size() == 42){ //player controls all territories
-				temp = players.get(i).getName() + " controls all territories and has won the game on turn" + turnCount + "!";
+				temp = players.get(i).getName() + " controls all territories and has won the game on turn " + turnCount + "!";
+				System.out.println(temp);
 				System.out.println(helper.daBar);
 				twitterHandler.postTweet(temp);
 				winConditionMet = true;
 			}
 		}
 	}
-	
+
 	//Returns state of winCondition
 	public boolean checkWinCondition(){
 		return winConditionMet;
@@ -172,12 +185,6 @@ public class Turn {
 		}
 		else{
 			tweet = tweet + p.getName() + " gained " + p.getRecentlyAdded() + " territories  on turn " + turnCount + "\n";
-		}
-		if(p.getRecentlyLost() == 0){
-			tweet = tweet + p.getName() + " did not lose any territories on turn " + turnCount + "\n";
-		}
-		else{
-			tweet = tweet + p.getName() + " has lost " + p.getRecentlyLost() + " territories  on turn " + turnCount + "\n";
 		}
 		return tweet;
 	}
@@ -193,6 +200,9 @@ public class Turn {
 		}
 		wTerr.get(findIndexOf(tempID, wTerr)).increaseTroopCount(1);
 		player.decreaseTroops(1);
+		System.out.println("One troop placed into " + wTerr.get(findIndexOf(tempID, wTerr)).getName() 
+				+ ", " + player.getName() + " has " + player.getTroops() + " reinforcement(s) remaining.");
+		System.out.println(helper.daBar);
 	}
 	
 	//Standard Reinforcement phase of turn
@@ -236,7 +246,6 @@ public class Turn {
 		System.out.println(helper.daBar);
 		boolean endAttackPhase = false;
 		player.setRecentlyAdded(0);
-		player.setRecentlyLost(0);
 		validInput = false; 
 		in = "";
 		while(!validInput){ //give player option to skip attack phase
@@ -355,16 +364,13 @@ public class Turn {
 								System.out.println(player.getName() + " has defeated " + territoryB.getOccupant().getName() + "'s troops and now controls " + territoryB.getName() + "!");
 								System.out.println(helper.daBar);
 								territoryB.getOccupant().removeTerritory(bID);
-								territoryB.getOccupant().setRecentlyLost(player.getRecentlyAdded() + 1);
 								player.addTerritory(territoryB);
 								territoryB.setOccupant(player);
 								int setTroops = availableTroops(territoryA, territoryB);
 								//Place troops into territory B from territory A
 								territoryA.decreaseTroopCount(setTroops);
-								System.out.println(player.getName() + " has lost " + setTroops + " troop(s) in " + territoryA.getName() + ".");
-								System.out.println(helper.daBar);
 								territoryB.setTroopCount(setTroops);
-								System.out.println(player.getName() + " has gained " + setTroops + " troop(s) in " + territoryB.getName() + ".");
+								System.out.println(player.getName() + " has moved " + setTroops + " troop(s) from " + territoryA.getName() + " into " + territoryB.getName() + ".");
 								System.out.println(helper.daBar);
 								player.setRecentlyAdded(player.getRecentlyAdded() + 1);
 								canAttack = false;
@@ -511,111 +517,133 @@ public class Turn {
 		}
 		if(validCount > 0){
 			boolean skipFortify = false;
-			goBack = true;
-			while(goBack){
-				//Let player pick which to fortify from
-				System.out.println("TERRITORIES WITH SPARE TROOPS FOR " + player.getName().toUpperCase() + ": ");
-				//System.out.println(getPlayerTable(validT)); 
-				printTerrTable(validT);
+			validInput = false; 
+			in = "";
+			while(!validInput){ //give player option to skip attack phase
+				System.out.println(player.getName() + ", would you like to skip the fortify phase this turn?");
+				System.out.println("Y/N");
+				in = userInput.nextLine();
 				System.out.println(helper.daBar);
-				validInput = false;
-				in = "";
-				while(!validInput){
-					System.out.println(player.getName() + " enter the ID of the Territory you want to take troops from: ");
-					in = userInput.nextLine();
+				if(!(in.equals("Y") || in.equals("N") || in.equals("y") || in.equals("n"))){
+					System.out.println("Invalid input. Please try again.");
 					System.out.println(helper.daBar);
-					validInput = validIDInput(in, validT);
-					if(!validInput){
-						System.out.println("Invalid input or nonvalid ID. Please try again.");
+				}
+				else{
+					if(in.equals("Y") || in.equals("y")){ //player is choosing to skip attack phase
+						validInput = helper.confirmDialog("Are you sure you want to skip the fortify phase this turn?");
+						skipFortify = true;
+					}
+					else{ //player is not skipping fortify phase
+						validInput = helper.confirmDialog("Are you sure you do not want to skip the fortify phase this turn?");
+						skipFortify = false;
+					}
+				}
+			}
+			if(!skipFortify){
+				goBack = true;
+				while(goBack){
+					//Let player pick which to fortify from
+					System.out.println("TERRITORIES WITH SPARE TROOPS FOR " + player.getName().toUpperCase() + ": ");
+					//System.out.println(getPlayerTable(validT)); 
+					printTerrTable(validT);
+					System.out.println(helper.daBar);
+					validInput = false;
+					in = "";
+					while(!validInput){
+						System.out.println(player.getName() + " enter the ID of the Territory you want to take troops from: ");
+						in = userInput.nextLine();
 						System.out.println(helper.daBar);
-					}
-					else{
-						int tempID = Integer.parseInt(in);
-						validInput = helper.confirmDialog("Take troops from " + wTerr.get(findIndexOf(tempID, wTerr)).getName() + "?");
-					}
-				}
-				
-				//Let player pick which territory to fortify
-				int aID = Integer.parseInt(in);
-				Territory territoryA = wTerr.get(findIndexOf(aID, wTerr));
-				ArrayList<Integer> tempAdj = territoryA.getAdjacencies();
-				ArrayList<Territory> vTerr = new ArrayList<Territory>();
-				for(int i = 0; i < tempAdj.size(); i++){
-					Territory tempTerr = wTerr.get(findIndexOf(tempAdj.get(i), wTerr));
-					if(tempTerr.getOccupant().getID() == player.getID()){
-						vTerr.add(tempTerr);
-					}
-				}
-				System.out.println("TERRITORIES THAT " + territoryA.getName().toUpperCase() + " CAN SEND TROOPS TO:");
-				//System.out.println(getPlayerTable(vTerr));
-				printTerrTable(vTerr);
-				System.out.println(helper.daBar);
-				
-				validInput = false;
-				in = "";
-				while(!validInput){
-					System.out.println(player.getName() + " enter the ID of the Territory you want to place a troop in: ");
-					System.out.println("(Or enter G to go back to select another territory to take troops from)");
-					in = userInput.nextLine();
-					System.out.println(helper.daBar);
-					if(in.equals("G") || in.equals("g")){ //go back
-						validInput = helper.confirmDialog("Are you sure you want to go back to select another territory to take troops from?");
-						if(validInput){
-							goBack = true;
-						}
-					}
-					else{
-						goBack = false;
-					}
-					if (!goBack){
-						validInput = validIDInput(in, pTerr);
+						validInput = validIDInput(in, validT);
 						if(!validInput){
-							System.out.println("Invalid input. Please try again.");
+							System.out.println("Invalid input or nonvalid ID. Please try again.");
 							System.out.println(helper.daBar);
 						}
 						else{
 							int tempID = Integer.parseInt(in);
-							validInput = helper.confirmDialog("Place troops into " + wTerr.get(findIndexOf(tempID, wTerr)).getName() + "?");
-						}
-					}
-				}
-				if(!goBack){
-					//Let player pick how many troops to fortify B with from A
-					int bID = Integer.parseInt(in);
-					Territory territoryB = wTerr.get(findIndexOf(bID, wTerr));
-					int totalTroops = territoryA.getTroopCount();
-				
-					validInput = false;
-					in = "";
-					int amount = 0;
-					while(!validInput){
-						System.out.println(player.getName() + " enter the amount of troops you want to take from " + territoryA.getName() + " and place into " + territoryB.getName());
-						System.out.println("(Note: Only " + (totalTroops-1) + " troops in total can be moved from " + territoryA.getName() + "): ");
-						in = userInput.nextLine();
-						System.out.println(helper.daBar);
-						validInput = validAmountInput(in, totalTroops, 0);
-						if(!validInput){
-							System.out.println("Invalid input or amount of troops to move. Please try again.");
-							System.out.println(helper.daBar);
-						}
-						else{
-							amount = Integer.parseInt(in);
-							validInput = helper.confirmDialog("Place " + amount + " troops into " + territoryB.getName() + "?");
+							validInput = helper.confirmDialog("Take troops from " + wTerr.get(findIndexOf(tempID, wTerr)).getName() + "?");
 						}
 					}
 					
-					//Fortify into territory A from territory B
-					territoryA.decreaseTroopCount(amount);
-					System.out.println(player.getName() + " has lost " + amount + " troop(s) in " + territoryB.getName() + ".");
+					//Let player pick which territory to fortify
+					int aID = Integer.parseInt(in);
+					Territory territoryA = wTerr.get(findIndexOf(aID, wTerr));
+					ArrayList<Integer> tempAdj = territoryA.getAdjacencies();
+					ArrayList<Territory> vTerr = new ArrayList<Territory>();
+					for(int i = 0; i < tempAdj.size(); i++){
+						Territory tempTerr = wTerr.get(findIndexOf(tempAdj.get(i), wTerr));
+						if(tempTerr.getOccupant().getID() == player.getID()){
+							vTerr.add(tempTerr);
+						}
+					}
+					System.out.println("TERRITORIES THAT " + territoryA.getName().toUpperCase() + " CAN SEND TROOPS TO:");
+					//System.out.println(getPlayerTable(vTerr));
+					printTerrTable(vTerr);
 					System.out.println(helper.daBar);
-					territoryB.increaseTroopCount(amount);
-					System.out.println(player.getName() + " has gained " + amount + " troop(s) in " + territoryA.getName() + ".");
-					System.out.println(helper.daBar);
+					
+					validInput = false;
+					in = "";
+					while(!validInput){
+						System.out.println(player.getName() + " enter the ID of the Territory you want to place a troop in: ");
+						System.out.println("(Or enter G to go back to select another territory to take troops from)");
+						in = userInput.nextLine();
+						System.out.println(helper.daBar);
+						if(in.equals("G") || in.equals("g")){ //go back
+							validInput = helper.confirmDialog("Are you sure you want to go back to select another territory to take troops from?");
+							if(validInput){
+								goBack = true;
+							}
+						}
+						else{
+							goBack = false;
+						}
+						if (!goBack){
+							validInput = validIDInput(in, pTerr);
+							if(!validInput){
+								System.out.println("Invalid input. Please try again.");
+								System.out.println(helper.daBar);
+							}
+							else{
+								int tempID = Integer.parseInt(in);
+								validInput = helper.confirmDialog("Place troops into " + wTerr.get(findIndexOf(tempID, wTerr)).getName() + "?");
+							}
+						}
+					}
+					if(!goBack){
+						//Let player pick how many troops to fortify B with from A
+						int bID = Integer.parseInt(in);
+						Territory territoryB = wTerr.get(findIndexOf(bID, wTerr));
+						int totalTroops = territoryA.getTroopCount();
+					
+						validInput = false;
+						in = "";
+						int amount = 0;
+						while(!validInput){
+							System.out.println(player.getName() + " enter the amount of troops you want to take from " + territoryA.getName() + " and place into " + territoryB.getName());
+							System.out.println("(Note: Only " + (totalTroops-1) + " troops in total can be moved from " + territoryA.getName() + "): ");
+							in = userInput.nextLine();
+							System.out.println(helper.daBar);
+							validInput = validAmountInput(in, totalTroops, 0);
+							if(!validInput){
+								System.out.println("Invalid input or amount of troops to move. Please try again.");
+								System.out.println(helper.daBar);
+							}
+							else{
+								amount = Integer.parseInt(in);
+								validInput = helper.confirmDialog("Place " + amount + " troops into " + territoryB.getName() + "?");
+							}
+						}
+						
+						//Fortify into territory B from territory A
+						territoryA.decreaseTroopCount(amount);
+						territoryB.increaseTroopCount(amount);
+						System.out.println(player.getName() + " has moved " + amount + " troop(s) from " + territoryA.getName() + " into " + territoryB.getName() + ".");
+						System.out.println(helper.daBar);
+					}
 				}
 			}
 		}
 		else{
-			System.out.println(player.getName() + " can not fortify at this time.");
+			System.out.println(player.getName() + " will not fortify at this time.");
 			System.out.println(helper.daBar);
 		}
 	}

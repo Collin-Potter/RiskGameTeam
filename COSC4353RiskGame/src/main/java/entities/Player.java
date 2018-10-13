@@ -19,7 +19,6 @@ public class Player {
 	private int troops; //keeps track of players remaining troop count
 	private int ID; //keeps track of which player this is (player1, player2, etc)
 	private int recentlyAddedTerr; //keeps track of how many territories a player acquires per turn
-	private int recentlyLostTerr; //keeps track of how many territories lost by a player in a turn
 	
 	private ArrayList<Territory> territories; //ArrayList to keep track of territories the player controls
 	
@@ -29,7 +28,6 @@ public class Player {
 		this.troops = troops;
 		this.ID = ID;
 		recentlyAddedTerr = 0;
-		recentlyLostTerr = 0;
 		territories = new ArrayList<Territory>();
 	}
 	
@@ -54,20 +52,11 @@ public class Player {
 		return recentlyAddedTerr;
 	}
 	
-	public int getRecentlyLost() {
-		return recentlyLostTerr;
-	}
-	
 	//Set recently added to number given
 	public void setRecentlyAdded(int num){
 		recentlyAddedTerr = num;
 	}
-	
-	//Set recently lost to number given
-	public void setRecentlyLost(int recentlyLostTerr) {
-		this.recentlyLostTerr = recentlyLostTerr;
-	}
-	
+
 	//Increases player army count based on given number
 	public void increaseTroops(int num){
 		troops = troops + num;
