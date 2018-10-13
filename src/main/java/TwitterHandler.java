@@ -1,6 +1,4 @@
-
 import java.util.List;
-
 import twitter4j.Status;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
@@ -46,10 +44,8 @@ public class TwitterHandler {
 				twitterHandler.destroyStatus(st.getId());
 			}
 		} catch (IllegalStateException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (TwitterException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
