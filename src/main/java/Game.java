@@ -8,8 +8,8 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 public class Game {
-    private static final int MAP_REGION_AMOUNT = 42;
-    private static int UNTOUCHED_TERRITORIES = 42;
+    //private static final int MAP_REGION_AMOUNT = 42;
+   // private static int UNTOUCHED_TERRITORIES = 42;
     public static ArrayList<Territory> territoryList = new ArrayList<Territory>();
     public static ArrayList<Player> playerList = new ArrayList<Player>();
     public static ArrayList<Card> Cards = new ArrayList();
@@ -17,6 +17,9 @@ public class Game {
     public static Scanner input = new Scanner(System.in);
     public static ArrayList<String> territoryInformation = new ArrayList<String>();
     public static Attack invade = new Attack();
+    public static TwitterHandler twitterHandler = new TwitterHandler();
+    private int tweetTerr = 0; //keeps track of how many territories each player won in a turn for tweet functionality
+    private int turnCount = 0; //keeps track of current turn number 
 
     public static void main(String[] args){
         readFileTerritories();
@@ -82,6 +85,17 @@ public class Game {
             default:
                 break;
         }
+        //Delete old tweets
+  		System.out.println("Deleting old tweets...");
+  		twitterHandler.deleteTweets();
+        //Tweet about game's creation
+  		System.out.println("Updating Twitter for new game...");
+  		String tweet  = "A new game has been created by: \n";
+  		for(int i = 0; i < playerList.size(); i++){
+  			tweet = tweet + " -" + playerList.get(i).getTeam() + "\n";
+  		}
+  		twitterHandler.postTweet(tweet);
+  		tweet = "";
         System.out.println("Randomizing initial territory control...");
         int player = 1;
         Random random = new Random();
