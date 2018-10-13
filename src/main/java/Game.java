@@ -8,8 +8,8 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 public class Game {
-    //private static final int MAP_REGION_AMOUNT = 42;
-   // private static int UNTOUCHED_TERRITORIES = 42;
+    //private static final int MAP_REGION_AMOUNT = 42; //NOT USED
+   // private static int UNTOUCHED_TERRITORIES = 42; //NOT USED
     public static ArrayList<Territory> territoryList = new ArrayList<Territory>();
     public static ArrayList<Player> playerList = new ArrayList<Player>();
     public static ArrayList<Card> Cards = new ArrayList();
