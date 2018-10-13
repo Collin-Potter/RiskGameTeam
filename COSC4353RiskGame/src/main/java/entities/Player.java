@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import entities.Territory;
+import main.Helper;
 
 /**
  * Defines the properties of the Risk Player objects.
@@ -17,6 +18,8 @@ public class Player {
 	private String name; //keeps track of player's name
 	private int troops; //keeps track of players remaining troop count
 	private int ID; //keeps track of which player this is (player1, player2, etc)
+	private int recentlyAddedTerr; //keeps track of how many territories a player acquires per turn
+	private int recentlyLostTerr; //keeps track of how many territories lost by a player in a turn
 	
 	private ArrayList<Territory> territories; //ArrayList to keep track of territories the player controls
 	
@@ -25,6 +28,8 @@ public class Player {
 		this.name = name;
 		this.troops = troops;
 		this.ID = ID;
+		recentlyAddedTerr = 0;
+		recentlyLostTerr = 0;
 		territories = new ArrayList<Territory>();
 	}
 	
@@ -43,6 +48,24 @@ public class Player {
 	
 	public ArrayList<Territory> getTerritories(){
 		return territories;
+	}
+	
+	public int getRecentlyAdded(){
+		return recentlyAddedTerr;
+	}
+	
+	public int getRecentlyLost() {
+		return recentlyLostTerr;
+	}
+	
+	//Set recently added to number given
+	public void setRecentlyAdded(int num){
+		recentlyAddedTerr = num;
+	}
+	
+	//Set recently lost to number given
+	public void setRecentlyLost(int recentlyLostTerr) {
+		this.recentlyLostTerr = recentlyLostTerr;
 	}
 	
 	//Increases player army count based on given number
@@ -73,12 +96,10 @@ public class Player {
 		Collections.sort(territories, (t1, t2) -> t1.getID() - t2.getID()); //sorts territories into alphabetical order
 	}
 	
-	//Removes given country from player
-	public void removeCountry(int removeID){
+	//Removes given territory from player
+	public void removeTerritory(int removeID){
 		for(int i = 0; i < territories.size(); i++){
 			if(territories.get(i).getID() == removeID){
-				System.out.println(name + " has lost control of " + territories.get(i).getName());
-				System.out.println("---------------------------------------------------------------------------------------------------------");
 				territories.remove(i);
 			}
 		}
@@ -88,6 +109,5 @@ public class Player {
 	public void printPlayer(){
 		System.out.println(name + " is Player " + ID + " and has " + troops + " troop(s).");
 	}
-	
 }
 

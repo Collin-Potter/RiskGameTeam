@@ -1,6 +1,9 @@
 package main;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+
+import entities.Territory;
 
 /**
  * Helper class to be used throughout Risk game for methods that need to be used often and in different classes
@@ -12,12 +15,14 @@ import java.util.Scanner;
 public class Helper {
 
 	private Scanner userInput;
-	private String daBar;
+	public String daBar;
+	public String eqBar;
 	
 	
 	public Helper(){
 		userInput = new Scanner(System.in);
 		daBar = "---------------------------------------------------------------------------------------------------------------------------------------------------------------";
+		eqBar = "+=============================================================================================================================================================+";
 	}
 	
 	//Runs loop to confirm users input
@@ -46,6 +51,15 @@ public class Helper {
 			}
 		}
 		return out;
+	}
+	
+	//Returns a deep copy of a given ArrayList of Territories
+	public ArrayList<Territory> getDeepCopy(ArrayList<Territory> original){
+		ArrayList<Territory> copy = new ArrayList<Territory>();
+		for(int i = 0; i < original.size(); i++){
+			copy.add(original.get(i));
+		}
+		return copy;
 	}
 	
 }

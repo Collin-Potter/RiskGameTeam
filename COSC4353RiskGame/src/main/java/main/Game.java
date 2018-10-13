@@ -29,8 +29,6 @@ public class Game {
 	private Turn turn;
 	private ASCII ascii;
 	private WorldMap world;
-	private String eqBar;
-	private String daBar;
 	private Helper helper;
 	private TwitterHandler twitterHandler;
 	
@@ -45,9 +43,6 @@ public class Game {
 		world = new WorldMap();
 		helper = new Helper();
 		twitterHandler = new TwitterHandler();
-		eqBar = "+=============================================================================================================================================================+";
-		daBar = "---------------------------------------------------------------------------------------------------------------------------------------------------------------";
-	
 	}
 	
 	public void run(){
@@ -55,16 +50,16 @@ public class Game {
 		ascii.readASCII("C:\\Users\\grant\\Desktop\\School\\COSC\\COSC 4353\\Projects\\Risk Game\\myRiskGame\\src\\ascii\\asciiTitle");
 		
 		System.out.println("GAME SETUP:");
-		System.out.println(eqBar);
+		System.out.println(helper.eqBar);
 		
 		//Setting up players
 		getPlayerInfo();
-		System.out.println(daBar);
+		System.out.println(helper.daBar);
 		
 		//Delete old tweets
 		System.out.println("Deleting old tweets...");
 		twitterHandler.deleteTweets();
-		System.out.println(daBar);
+		System.out.println(helper.daBar);
 		
 		//Tweet about game's creation
 		System.out.println("Updating Twitter for new game...");
@@ -74,7 +69,7 @@ public class Game {
 		}
 		twitterHandler.postTweet(tweet);
 		tweet = "";
-		System.out.println(daBar);
+		System.out.println(helper.daBar);
 		
 		//Setting up MapReader
 		//System.out.println(daBar);
@@ -86,19 +81,22 @@ public class Game {
 		world.createWorldMap();
 		//world.printWorldMap();
 		System.out.println("World Created...");
-		System.out.println(daBar);	
+		System.out.println(helper.daBar);	
 		
 		//Distribute territories of world mapReader to players
 		distributeTerritories();
 		System.out.println("Territories Distributed...");
-		System.out.println(daBar);
+		System.out.println(helper.daBar);
 		
 		System.out.println("GAME SETUP COMPLETE");
-		System.out.println(eqBar);
+		System.out.println(helper.eqBar);
 		
-		//Turn iteration
-		runTurn(1);
-		runTurn(2);
+		//Run turns of Game
+		int turnCount = 1;
+		while(turn.checkWinCondition() == false){
+			turn.runTurn(players, turnCount, helper.getDeepCopy(world.getWorldTerritories()));
+			turnCount++;
+		}
 		
 		//End of Game run function
 		userInput.close();
@@ -113,13 +111,13 @@ public class Game {
 			System.out.println("How many players?(2, 3, 4, 5, or 6)");
 			in = userInput.nextLine();
 			if(!(in.equals("2") || in.equals("3") || in.equals("4") || in.equals("5") || in.equals("6"))){
-				System.out.println(daBar);
+				System.out.println(helper.daBar);
 				System.out.println("Invalid input. Please try again.");
-				System.out.println(daBar);
+				System.out.println(helper.daBar);
 				}
 			else{
 				numPlayers = Integer.parseInt(in);
-				System.out.println(daBar);
+				System.out.println(helper.daBar);
 				validInput = helper.confirmDialog("Are you sure you want " + numPlayers + " players?");
 			}
 		}
@@ -158,7 +156,7 @@ public class Game {
 				System.out.println("Enter name for player " + i + ": ");
 				in = userInput.nextLine();
 				playerName = in;
-				System.out.println(daBar);
+				System.out.println(helper.daBar);
 				validInput = helper.confirmDialog("Player " + i + " is named " + playerName + "?");
 			}
 			Player temp = new Player(playerName, numTroops, i);
@@ -169,21 +167,12 @@ public class Game {
 		}
 	}
 	
-	//Returns a deep copy of a given ArrayList of Territories
-	private ArrayList<Territory> getDeepCopy(ArrayList<Territory> original){
-		ArrayList<Territory> copy = new ArrayList<Territory>();
-		for(int i = 0; i < original.size(); i++){
-			copy.add(original.get(i));
-		}
-		return copy;
-	}
-	
 	//Distributes all territories amongst amount of players
 	//To be called after player information is obtained and WorldMap created
 	private void distributeTerritories(){
 		int playerCount = players.size();
 		//wTerr = getDeepCopy(mapReader.getMapTerritories());
-		wTerr = getDeepCopy(world.getWorldTerritories());
+		wTerr = helper.getDeepCopy(world.getWorldTerritories());
 		int player = 1;
 		Random random = new Random();
 		while(wTerr.size() > 0){
@@ -216,10 +205,4 @@ public class Game {
 			}
 		}
 	}
-	
-	//Runs one cycle of a turn between all players
-	private void runTurn(int turnCount){
-		turn.runTurn(players, turnCount, getDeepCopy(world.getWorldTerritories()));
-	}
-	
 }
