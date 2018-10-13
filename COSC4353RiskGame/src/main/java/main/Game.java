@@ -54,7 +54,6 @@ public class Game {
 		
 		//Setting up players
 		getPlayerInfo();
-		System.out.println(helper.daBar);
 		
 		//Delete old tweets
 		System.out.println("Deleting old tweets...");
@@ -164,6 +163,7 @@ public class Game {
 		}
 		for(int i = 0; i < players.size(); i++){
 			players.get(i).printPlayer();
+			System.out.println(helper.daBar);
 		}
 	}
 	

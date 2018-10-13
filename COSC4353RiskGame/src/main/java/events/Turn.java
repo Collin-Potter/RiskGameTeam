@@ -235,6 +235,30 @@ public class Turn {
 		System.out.println("ATTACK OPTIONS FOR " + player.getName().toUpperCase() + ": ");
 		System.out.println(helper.daBar);
 		boolean endAttackPhase = false;
+		player.setRecentlyAdded(0);
+		player.setRecentlyLost(0);
+		validInput = false; 
+		in = "";
+		while(!validInput){ //give player option to skip attack phase
+			System.out.println(player.getName() + ", would you like to skip the attack phase this turn?");
+			System.out.println("Y/N");
+			in = userInput.nextLine();
+			System.out.println(helper.daBar);
+			if(!(in.equals("Y") || in.equals("N") || in.equals("y") || in.equals("n"))){
+				System.out.println("Invalid input. Please try again.");
+				System.out.println(helper.daBar);
+			}
+			else{
+				if(in.equals("Y") || in.equals("y")){ //player is choosing to skip attack pahse
+					validInput = helper.confirmDialog("Are you sure you want to skip the attack phase this turn?");
+					endAttackPhase = true;
+				}
+				else{ //player is not skipping attack phase
+					validInput = helper.confirmDialog("Are you sure you do not want to skip the attack phase this turn?");
+					endAttackPhase = false;
+				}
+			}
+		}
 		while(!endAttackPhase){
 			//Check if attacking is possible
 			ArrayList<Territory> pTerr = player.getTerritories();
@@ -339,7 +363,7 @@ public class Turn {
 								territoryA.decreaseTroopCount(setTroops);
 								System.out.println(player.getName() + " has lost " + setTroops + " troop(s) in " + territoryA.getName() + ".");
 								System.out.println(helper.daBar);
-								territoryB.increaseTroopCount(setTroops);
+								territoryB.setTroopCount(setTroops);
 								System.out.println(player.getName() + " has gained " + setTroops + " troop(s) in " + territoryB.getName() + ".");
 								System.out.println(helper.daBar);
 								player.setRecentlyAdded(player.getRecentlyAdded() + 1);
@@ -427,7 +451,7 @@ public class Turn {
 			else{
 				System.out.println(player.getName() + " can not attack at this time.");
 				System.out.println(helper.daBar);
-				endAttackPhase = false;
+				endAttackPhase = true;
 			}
 		}
 	}
@@ -486,6 +510,7 @@ public class Turn {
 			}
 		}
 		if(validCount > 0){
+			boolean skipFortify = false;
 			goBack = true;
 			while(goBack){
 				//Let player pick which to fortify from
