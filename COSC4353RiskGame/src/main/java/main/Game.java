@@ -74,13 +74,15 @@ public class Game {
 		}
 		twitterHandler.postTweet(tweet);
 		tweet = "";
-		
-		//Setting up world mapReader
 		System.out.println(daBar);
+		
+		//Setting up MapReader
+		//System.out.println(daBar);
 		//mapReader.readInMap("C:\\Users\\grant\\Desktop\\School\\COSC\\COSC 4353\\Projects\\Risk Game\\myRiskGame\\src\\maps\\worldmap");
 		//mapReader.printWorldMap();
 		//System.out.println("Map Created...");
 		
+		//Setting up WorldMap
 		world.createWorldMap();
 		//world.printWorldMap();
 		System.out.println("World Created...");
@@ -95,8 +97,8 @@ public class Game {
 		System.out.println(eqBar);
 		
 		//Turn iteration
-		runTurns(1);
-		//runOneTurn(2);
+		runTurn(1);
+		runTurn(2);
 		
 		//End of Game run function
 		userInput.close();
@@ -216,7 +218,7 @@ public class Game {
 	}
 	
 	//Runs one cycle of a turn between all players
-	private void runTurns(int turnCount){
+	private void runTurn(int turnCount){
 		turn.runTurn(players, turnCount, getDeepCopy(world.getWorldTerritories()));
 	}
 	

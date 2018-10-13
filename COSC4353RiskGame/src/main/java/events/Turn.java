@@ -95,8 +95,9 @@ public class Turn {
 			}
 			for(int i = 0; i < players.size(); i++){
 				ArrayList<Territory> pTerr = players.get(i).getTerritories();
-				System.out.println("TROOP DISTRIBUTION: ");
-				System.out.println(pTerr);//printTerrTable(pTerr);
+				System.out.println("TROOP DISTRIBUTION FOR " + players.get(i).getName().toUpperCase() + ": ");
+				//System.out.println(getPlayerTable(pTerr));
+				printTerrTable(pTerr);
 				System.out.println(daBar);
 			}
 		}
@@ -171,8 +172,9 @@ public class Turn {
 	
 	//Standard Reinforcement phase of turn
 	private void reinforcementPhase(Player player){
-		System.out.println("REINFORCEMENT FOR PLAYER " + player.getID() + ": ");
-		System.out.println(daBar);
+		//System.out.println(eqBar);
+		//System.out.println("REINFORCEMENT ROUND FOR  " + player.getName().toUpperCase() + ": ");
+		//System.out.println(eqBar);
 		
 		ArrayList<Territory> pTerr = player.getTerritories();
 		validInput = false; 
@@ -182,8 +184,9 @@ public class Turn {
 		//System.out.println(getPlayerTable(pTerr));
 		//System.out.println(daBar);
 		
-		System.out.println("Current Territories: ");
-		System.out.println(getPlayerTable(pTerr));//printTerrTable(pTerr);
+		System.out.println("REINFORCEMENT OPTIONS FOR " + player.getName().toUpperCase() + ": ");
+		//System.out.println(getPlayerTable(pTerr));
+		printTerrTable(pTerr);
 		System.out.println(daBar);
 		
 		System.out.println(player.getName() + " you have " + player.getTroops() + " troops to distribute...");
@@ -206,19 +209,20 @@ public class Turn {
 		}
 		wTerr.get(findIndexOf(tempID, wTerr)).increaseTroopCount(1);
 		System.out.println("One troop placed in " + wTerr.get(findIndexOf(tempID, wTerr)).getName() + " by " + player.getName());
+		System.out.println(daBar);
 		player.decreaseTroops(1);
 	}
 	
 	//Attack phase of turn
 	private void attackPhase(Player player){
-		System.out.println("ATTACK FOR PLAYER " + player.getID() + ": ");
+		System.out.println("ATTACK OPTIONS FOR " + player.getName().toUpperCase() + ": ");
 		System.out.println(daBar);
 	}
 	
 	//Fortify phase of turn
 	private void fortifyPhase(Player player){
 		
-		System.out.println("FORTIFICATION FOR PLAYER " + player.getID() + ": ");
+		System.out.println("FORTIFICATION OPTIONS FOR " + player.getName().toUpperCase() + ": ");
 		System.out.println(daBar);
 		
 		//Check if fortification possible
@@ -236,7 +240,8 @@ public class Turn {
 			while(goBack){
 				//Let player pick which to fortify from
 				System.out.println("Current valid territories for " + player.getName());
-				System.out.println(getPlayerTable(validT)); //printTerrTable(validT);
+				//System.out.println(getPlayerTable(validT)); 
+				printTerrTable(validT);
 				System.out.println(daBar);
 				validInput = false;
 				in = "";
@@ -267,7 +272,8 @@ public class Turn {
 					}
 				}
 				System.out.println(territoryA.getName() + " has " + (territoryA.getTroopCount()-1) + " troops that it can send to fortify to one of the following territories: ");
-				System.out.println(getPlayerTable(vTerr));//printTerrTable(vTerr);
+				//System.out.println(getPlayerTable(vTerr));
+				printTerrTable(vTerr);
 				
 				System.out.println(daBar);
 				validInput = false;
@@ -381,7 +387,6 @@ public class Turn {
 		return out;
 	}
 	
-	/*
 	//Prints info of territory for reinforcementPhase method
 	private void printTerrInfo(Territory t, ArrayList<Territory> wTerr){
 		//ID Section
@@ -458,7 +463,6 @@ public class Turn {
 		}
 		System.out.print("'\n");
 	}
-	*/
 
 	//Returns amount of troops to be given to player at beginning of reinforcementPhase
 	private int bonusTroopCalculation(Player player){
@@ -529,6 +533,7 @@ public class Turn {
 		return false;
 	}
 	
+	/*String version of player table, some issues present
 	//Returns string table of players territories
 	private String getPlayerTable(ArrayList<Territory> pTerr){
 		String tableHeader = "|| ID ||         NAME        || TROOPS ||                                             ADJACENCT TO                                                     ||";
@@ -608,4 +613,5 @@ public class Turn {
 		info = info + "||\n";
 		return info;
 	}
+	*/
 }
