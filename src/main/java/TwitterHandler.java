@@ -14,10 +14,10 @@ import twitter4j.auth.AccessToken;
 
 public class TwitterHandler {
 	
-	private static String consumerKeyStr = "XkfwxXM3s61NM0ofhnMs2qRXv";
-	private static String consumerSecretStr = "C1F1JUuReT3rftv4SqCxubWOlo67NkDus8vqiiShgyyIGeL4mY";
-	private static String accessTokenStr = "1050478756991787015-nURgfJuD6HtyCjLjMjuleb0frGs7Ra";
-	private static String accessTokenSecretStr = "oUGCAnlJ3gJHHtBXhmpgjY0NvZrqsJ08l6R18TpimGBiv";
+	private static String consumerKeyStr = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+	private static String consumerSecretStr = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+	private static String accessTokenStr = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+	private static String accessTokenSecretStr = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
 	private Twitter twitterHandler;
 
 	public TwitterHandler(){
