@@ -1,6 +1,6 @@
-package twitter;
 
 import java.util.List;
+import java.util.Scanner;
 
 import twitter4j.Status;
 import twitter4j.Twitter;
@@ -22,10 +22,28 @@ public class TwitterHandler {
 	private static String accessTokenStr = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
 	private static String accessTokenSecretStr = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
 	private Twitter twitterHandler;
+	private Scanner userInput;
 
 	public TwitterHandler(){
 		twitterHandler = new TwitterFactory().getInstance();
-	
+		String in = "";
+		userInput = new Scanner(System.in);
+		
+		//Get private Twitter info from user
+		System.out.println("Enter Consumer Key for Twitter API: ");
+		in = userInput.nextLine();
+		consumerKeyStr = in;
+		System.out.println("Enter Consumer Secret Key for Twitter API: ");
+		in = userInput.nextLine();
+		consumerSecretStr = in;
+		System.out.println("Enter Access Token for Twitter API: ");
+		in = userInput.nextLine();
+		accessTokenStr = in;
+		System.out.println("Enter Access Token Secret for Twitter API: ");
+		in = userInput.nextLine();
+		accessTokenSecretStr = in;
+		
+		//Authenticate user
 		twitterHandler.setOAuthConsumer(consumerKeyStr, consumerSecretStr);
 		AccessToken accessToken = new AccessToken(accessTokenStr, accessTokenSecretStr);
 	
@@ -42,9 +60,11 @@ public class TwitterHandler {
 	
 	public void deleteTweets(){
 		try {
-			List<Status> status = twitterHandler.getUserTimeline();
-			for(Status st: status){
-				twitterHandler.destroyStatus(st.getId());
+			while(!twitterHandler.getUserTimeline().isEmpty()){
+				List<Status> status = twitterHandler.getUserTimeline();
+				for(Status st: status){
+					twitterHandler.destroyStatus(st.getId());
+				}
 			}
 		} catch (IllegalStateException e) {
 			// TODO Auto-generated catch block
