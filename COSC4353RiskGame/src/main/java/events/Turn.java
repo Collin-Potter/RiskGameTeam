@@ -774,21 +774,27 @@ public class Turn {
 		int bonus = tempTerr.size()/3;
 		int[] continents = new int[6];
 		for(int i = 0; i < tempTerr.size(); i++){
-			switch(tempTerr.get(i).getContinent()){
-			case "Africa":
+			String cont = tempTerr.get(i).getContinent();
+			if(cont.equals("Africa")){
 				continents[0]++;
-			case "Asia":
+			}
+			else if(cont.equals("Asia")){
 				continents[1]++;
-			case "Australia":
+			}
+			else if(cont.equals("Australia")){
 				continents[2]++;
-			case "Europe":
+			}
+			else if(cont.equals("Europe")){
 				continents[3]++;
-			case "North America":
+			}
+			else if(cont.equals("North America")){
 				continents[4]++;
-			case "South America":
+			}
+			else if(cont.equals("South America")){
 				continents[5]++;
 			}
 		}
+		System.out.println(helper.daBar);
 		if(continents[0] == 6){
 			bonus = bonus + 3; //Adds bonus for controlling all of Africa
 			System.out.println(player.getName() + " was awarded 3 bonus troops for controlling all of Africa...");
