@@ -16,6 +16,7 @@ public class Game {
     public static DeckofCards Deck = new DeckofCards(territoryList, Cards);
     public static Scanner input = new Scanner(System.in);
     public static ArrayList<String> territoryInformation = new ArrayList<String>();
+    public static Warning DisplayWarning = new Warning();
     public static Attack invade = new Attack();
     public static TwitterHandler twitterHandler = new TwitterHandler();
     private int tweetTerr = 0; //keeps track of how many territories each player won in a turn for tweet functionality
@@ -27,6 +28,7 @@ public class Game {
         newTroopDistribution();
         reinforceTerritories(0);
         Deck.generate();
+        invade.registerObserver(DisplayWarning);
         invade.attackRegion();
     }
 
