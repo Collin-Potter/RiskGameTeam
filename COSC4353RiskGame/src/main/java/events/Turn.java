@@ -27,14 +27,14 @@ public class Turn {
 	private TwitterHandler twitterHandler;
 	private boolean winConditionMet;
 	
-	public Turn(){
+	public Turn(TwitterHandler twitterHandler){
 		userInput = new Scanner(System.in);
 		validInput = false;
 		goBack = false;
 		in = "";
 		wTerr = new ArrayList<Territory>();
 		helper = new Helper();
-		twitterHandler = new TwitterHandler();
+		this.twitterHandler = twitterHandler;
 		winConditionMet = false;}
 	
 	public void runTurn(ArrayList<Player> players, int turnCount, ArrayList<Territory> wTerritories){
