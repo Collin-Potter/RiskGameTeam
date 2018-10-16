@@ -38,7 +38,7 @@ public class Game {
 		players = new ArrayList<Player>();
 		wTerr = new ArrayList<Territory>();
 		validInput = false;
-		turn = new Turn();
+		turn = new Turn(twitterHandler);
 		ascii = new ASCII();
 		world = new WorldMap();
 		helper = new Helper();
@@ -47,7 +47,7 @@ public class Game {
 	
 	public void run(){
 		//Display Banner
-		ascii.readASCII("C:\\Users\\grant\\Desktop\\School\\COSC\\COSC 4353\\Projects\\Risk Game\\myRiskGame\\src\\ascii\\asciiTitle");
+		ascii.readASCII("C:\\Users\\grant\\git\\RiskGameGrant\\COSC4353RiskGame\\src\\main\\java\\ascii\\asciiTitle");
 		
 		System.out.println("GAME SETUP:");
 		System.out.println(helper.eqBar);

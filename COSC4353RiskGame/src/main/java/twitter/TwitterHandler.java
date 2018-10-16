@@ -59,7 +59,7 @@ public class TwitterHandler {
 		*/
 		
 		//Get Twitter credentials
-		readInCredentials("C:\\Users\\grant\\git\\RiskGameGrantBranch\\COSC4353RiskGame\\src\\main\\java\\twitter\\twitterCredentials");
+		readInCredentials("C:\\Users\\grant\\git\\RiskGameGrant\\COSC4353RiskGame\\src\\main\\java\\twitter\\twitterCredentials");
 		
 		//Authenticate user
 		twitterHandler.setOAuthConsumer(consumerKeyStr, consumerSecretStr);
