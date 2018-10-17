@@ -20,10 +20,13 @@ public class ASCII {
 		line = "";
 	}
 	//Reads in text file and prints verbatim
-	public void readASCII(String filename){
+	public void readASCII(String filepath){
 		try{
-			fr = new FileReader(filename);
-			br = new BufferedReader(fr);
+			File currentDir = new File(".");
+	        File parentDir = currentDir.getAbsoluteFile();
+	        File newFile = new File(parentDir + filepath);
+	        fr = new FileReader(newFile);
+	        br = new BufferedReader(fr);
 			while((line = br.readLine()) != null){
 				System.out.println(line);
 			}
