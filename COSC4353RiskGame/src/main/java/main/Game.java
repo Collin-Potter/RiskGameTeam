@@ -38,11 +38,11 @@ public class Game {
 		players = new ArrayList<Player>();
 		wTerr = new ArrayList<Territory>();
 		validInput = false;
+		twitterHandler = new TwitterHandler();
 		turn = new Turn(twitterHandler);
 		ascii = new ASCII();
 		world = new WorldMap();
 		helper = new Helper();
-		twitterHandler = new TwitterHandler();
 	}
 	
 	public void run(){
