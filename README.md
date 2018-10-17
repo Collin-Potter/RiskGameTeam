@@ -1,10 +1,15 @@
 # RiskGameTeam
 
 Welcome to CSG's Risk Game:
+
   Contributors:
+  
    -Collin P.
+   
    -Grant W.
+   
    -Justin G.
+   
    -Sanaz F.
    
 See Wiki for more information on project
