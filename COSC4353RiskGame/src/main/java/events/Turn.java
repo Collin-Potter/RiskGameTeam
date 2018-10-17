@@ -75,6 +75,7 @@ public class Turn {
 				else{ //User selects N
 					validInput = helper.confirmDialog("Are you sure you do not want to randomly distribute reinforcements for all players?");
 					randomTroops = false;
+					/////////////
 				}
 			}
 		}
