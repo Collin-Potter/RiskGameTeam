@@ -47,7 +47,7 @@ public class Game {
 	
 	public void run(){
 		//Display Banner
-		ascii.readASCII("C:\\Users\\grant\\git\\RiskGameGrant\\COSC4353RiskGame\\src\\main\\java\\ascii\\asciiTitle");
+		ascii.readASCII("/src/main/java/ascii/asciiTitle");
 		
 		System.out.println("GAME SETUP:");
 		System.out.println(helper.eqBar);
