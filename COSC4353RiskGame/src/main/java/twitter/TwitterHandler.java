@@ -5,9 +5,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
-import java.util.Scanner;
+//import java.util.Scanner;
 
-import main.Helper;
+//import main.Helper;
 import twitter4j.Status;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
@@ -28,16 +28,16 @@ public class TwitterHandler {
 	private static String accessTokenStr = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
 	private static String accessTokenSecretStr = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
 	private Twitter twitterHandler;
-	private Scanner userInput;
-	private Helper helper;
+	//private Scanner userInput;
+	//private Helper helper;
 	private BufferedReader br;
 	private FileReader fr;
 
 	public TwitterHandler(){
 		twitterHandler = new TwitterFactory().getInstance();
-		helper = new Helper();
-		String in = "";
-		userInput = new Scanner(System.in);
+		//helper = new Helper();
+		//String in = "";
+		//userInput = new Scanner(System.in);
 		
 		/*
 		//Get private Twitter info from user
