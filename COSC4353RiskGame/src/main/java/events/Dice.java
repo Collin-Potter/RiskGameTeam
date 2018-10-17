@@ -28,7 +28,7 @@ public class Dice {
 		
 		for(int i = 0; i < diceArray.length; i++) {
 			die = new Random();
-			roll = die.nextInt(5) + 1;
+			roll = die.nextInt(6) + 1;
 			diceArray[i] = roll;
 		}
 		

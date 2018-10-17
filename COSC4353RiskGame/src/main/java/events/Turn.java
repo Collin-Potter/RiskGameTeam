@@ -26,16 +26,19 @@ public class Turn {
 	private Helper helper;
 	private TwitterHandler twitterHandler;
 	private boolean winConditionMet;
+	private Dice dice;
 	
-	public Turn(TwitterHandler twitterHandler){
+	public Turn(TwitterHandler twitter){
 		userInput = new Scanner(System.in);
 		validInput = false;
 		goBack = false;
 		in = "";
 		wTerr = new ArrayList<Territory>();
 		helper = new Helper();
-		this.twitterHandler = twitterHandler;
-		winConditionMet = false;}
+	    twitterHandler = twitter;
+		winConditionMet = false;
+		dice = new Dice();
+		}
 	
 	public void runTurn(ArrayList<Player> players, int turnCount, ArrayList<Territory> wTerritories){
 		wTerr = wTerritories;
@@ -259,11 +262,11 @@ public class Turn {
 			}
 			else{
 				if(in.equals("Y") || in.equals("y")){ //player is choosing to skip attack pahse
-					validInput = helper.confirmDialog("Are you sure you want to skip the attack phase this turn?");
+					validInput = helper.confirmDialog(player.getName() + ", are you sure you want to skip the attack phase this turn?");
 					endAttackPhase = true;
 				}
 				else{ //player is not skipping attack phase
-					validInput = helper.confirmDialog("Are you sure you do not want to skip the attack phase this turn?");
+					validInput = helper.confirmDialog(player.getName() + ", are you sure you do not want to skip the attack phase this turn?");
 					endAttackPhase = false;
 				}
 			}
@@ -329,7 +332,7 @@ public class Turn {
 						in = userInput.nextLine();
 						System.out.println(helper.daBar);
 						if(in.equals("G") || in.equals("g")){ //go back
-							validInput = helper.confirmDialog("Are you sure you want to go back to select another territory to attack from?");
+							validInput = helper.confirmDialog(player.getName() + ", are you sure you want to go back to select another territory to attack from?");
 							if(validInput){
 								goBack = true;
 							}
@@ -360,13 +363,14 @@ public class Turn {
 						int attackCount = 0;
 						while(canAttack){ //while attack still possible
 							int totalTroops = territoryA.getTroopCount();
-							if(victory){ //take territoryB from other player and give to current player and assign troops to new territory
-								System.out.println(player.getName() + " has defeated " + territoryB.getOccupant().getName() + "'s troops and now controls " + territoryB.getName() + "!");
+							if(victory && territoryB.getTroopCount() < 1){ //take territoryB from other player and give to current player and assign troops to new territory
+								System.out.println(player.getName() + " has defeated all of " + territoryB.getOccupant().getName() + "'s troops and thus has conquered " + territoryB.getName() + "!");
 								System.out.println(helper.daBar);
 								territoryB.getOccupant().removeTerritory(bID);
 								player.addTerritory(territoryB);
 								territoryB.setOccupant(player);
 								int setTroops = availableTroops(territoryA, territoryB);
+								
 								//Place troops into territory B from territory A
 								territoryA.decreaseTroopCount(setTroops);
 								territoryB.setTroopCount(setTroops);
@@ -376,37 +380,40 @@ public class Turn {
 								canAttack = false;
 							}
 							else{
-								if(attackCount > 0){
-									//Ask if player wants to attack again
-									validInput = false;
-									in = "";
-									while(!validInput){ //ask user whether or not they want to end attacking
-										System.out.println("Would you like to attack" + territoryB.getName() + " again?");
-										System.out.println("Y/N");
-										in = userInput.nextLine();
-										System.out.println(helper.daBar);
-										if(!(in.equals("Y") || in.equals("N") || in.equals("y") || in.equals("n"))){
-											System.out.println("Invalid input. Please try again.");
+								if(attackCount > 0 && territoryA.getTroopCount() > 1){
+									if(!victory){
+										//Ask if player wants to attack again
+										validInput = false;
+										in = "";
+										while(!validInput){ //ask user whether or not they want to keep attacking same territory
+											System.out.println(player.getName() + ", would you like to attack " + territoryB.getName() + " again?");
+											System.out.println("Y/N");
+											in = userInput.nextLine();
 											System.out.println(helper.daBar);
-										}
-										else{
-											if(in.equals("Y") || in.equals("y")){
-												validInput = helper.confirmDialog("Are you sure you want to attack " + territoryB.getName() + " again?");
-												canAttack = true;
-												attackCount++;
-												
-											}
-											else{ //User selects N
-												validInput = helper.confirmDialog("Are you sure you want to stop attacking " + territoryB.getName() + "?");
-												canAttack = false;
-												System.out.println(player.getName() + " stopped the attack on " + territoryB.getName() + " after " + attackCount + " attempts.");
+											if(!(in.equals("Y") || in.equals("N") || in.equals("y") || in.equals("n"))){
+												System.out.println("Invalid input. Please try again.");
 												System.out.println(helper.daBar);
+											}
+											else{
+												if(in.equals("Y") || in.equals("y")){
+													validInput = helper.confirmDialog(player.getName() + ", are you sure you want to attack " + territoryB.getName() + " again?");
+													canAttack = true;
+													attackCount++;
+													
+												}
+												else{ //User selects N
+													validInput = helper.confirmDialog(player.getName() + ", are you sure you want to stop attacking " + territoryB.getName() + "?");
+													canAttack = false;
+													System.out.println(player.getName() + " stopped the attack on " + territoryB.getName() + " after " + attackCount + " attempt(s).");
+													System.out.println(helper.daBar);
+												}
 											}
 										}
 									}
 									//Attacking again
-									if(totalTroops > 1){ //can still attack with territory a
+									if(totalTroops > 1 && canAttack){ //can still attack with territory a
 										victory = runAttack(territoryA, territoryB);
+										attackCount++;
 									}
 									else{ //can no longer attack with territory a
 										canAttack = false;
@@ -417,6 +424,7 @@ public class Turn {
 								else{ //first time attacking
 									if(totalTroops > 1){ //can still attack with territory a
 										victory = runAttack(territoryA, territoryB);
+										attackCount++;
 									}
 									else{ //can no longer attack with territory a
 										canAttack = false;
@@ -431,7 +439,7 @@ public class Turn {
 						validInput = false;
 						in = "";
 						while(!validInput){ //ask user whether or not they want to end attacking
-							System.out.println("Would you like to continue attack phase?");
+							System.out.println(player.getName() + ", would you like to continue attack phase?");
 							System.out.println("Y/N");
 							in = userInput.nextLine();
 							System.out.println(helper.daBar);
@@ -441,12 +449,12 @@ public class Turn {
 							}
 							else{
 								if(in.equals("Y") || in.equals("y")){
-									validInput = helper.confirmDialog("Are you sure you want to continue attacking?");
+									validInput = helper.confirmDialog(player.getName() + ", are you sure you want to continue attacking?");
 									endAttackPhase = false;
 									
 								}
 								else{ //User selects N
-									validInput = helper.confirmDialog("So you want to end your attack phase of the turn?");
+									validInput = helper.confirmDialog(player.getName() + ", you want to end your attack phase of the turn?");
 									endAttackPhase = true;
 								}
 							}
@@ -485,8 +493,8 @@ public class Turn {
 				}
 			}
 			else{
-				System.out.println("Only " + (a.getTroopCount() - 1) + " troops available in " + a.getName() + " to send to " + b.getName());
-				System.out.println(helper.daBar);
+				System.out.println("Only " + (a.getTroopCount() - 1) + " troops available in " + a.getName() + " to send to " + b.getName() + ".");
+				//System.out.println(helper.daBar);
 				troopCount = a.getTroopCount() - 1;
 				validInput = true;
 			}
@@ -496,8 +504,65 @@ public class Turn {
 
 	//Returns of owners of territory a is victorious for one round of battle
 	private boolean runAttack(Territory a, Territory b) {
+		int aDice = 0;
+		int bDice = 0;
+		int[] aResults;
+		int[] bResults;
 		
-		return true;
+		//Get number of Dice for territory A
+		if(a.getTroopCount() > 4){
+			aDice = 3;
+		}
+		else{
+			aDice = a.getTroopCount() - 1;
+		}
+		
+		//Get number of Dice for territory B
+		if(b.getTroopCount() >= 2){
+			bDice = 2;
+		}
+		else{
+			bDice = b.getTroopCount();
+		}
+		
+		//Get array of rolled dice
+		aResults = dice.roll(aDice);
+		bResults = dice.roll(bDice);
+		
+		//Find maximum value of rolled dice for A
+		int aMax = 0;
+		for(int i = 0; i < aResults.length; i++){
+			if(aResults[i] > aMax){
+				aMax = aResults[i];
+			}
+		}
+		System.out.println(a.getOccupant().getName() + " rolled a max of " + aMax);
+		//Find maximum value of rolled dice for A
+		int bMax = 0;
+		for(int i = 0; i < bResults.length; i++){
+			if(bResults[i] > bMax){
+				bMax = bResults[i];
+			}
+		}
+		System.out.println(b.getOccupant().getName() + " rolled a max of " + bMax);
+		System.out.println(helper.daBar);
+		//Compare results
+		if(aMax > bMax){ //results in favor of A
+			b.decreaseTroopCount(1);
+			System.out.println(a.getOccupant().getName() + " rolled a higher max and " + b.getOccupant().getName() + " has lost a troop in " + b.getName() + "!");
+			if(b.getTroopCount() > 0){
+				System.out.println("(" + b.getOccupant().getName() + " has " + b.getTroopCount() + " troop(s) remaining in " + b.getName() + ")");
+			}
+			System.out.println(helper.daBar);
+			return true;
+		}
+		else{ //results in favor of B
+			a.decreaseTroopCount(1);
+			System.out.println(b.getOccupant().getName() + " rolled a higher max and successfully defended " + b.getName() + " from the attack by " + a.getOccupant().getName() + "!");
+			System.out.println("(" + a.getOccupant().getName() + " has " + a.getTroopCount() + " troop(s) remaining in " + a.getName() + ")");
+			System.out.println(helper.daBar);
+			return false;
+		}
 	}
 
 	//Fortify phase of turn
@@ -530,11 +595,11 @@ public class Turn {
 				}
 				else{
 					if(in.equals("Y") || in.equals("y")){ //player is choosing to skip attack phase
-						validInput = helper.confirmDialog("Are you sure you want to skip the fortify phase this turn?");
+						validInput = helper.confirmDialog(player.getName() + ", are you sure you want to skip the fortify phase this turn?");
 						skipFortify = true;
 					}
 					else{ //player is not skipping fortify phase
-						validInput = helper.confirmDialog("Are you sure you do not want to skip the fortify phase this turn?");
+						validInput = helper.confirmDialog(player.getName() + ", are you sure you do not want to skip the fortify phase this turn?");
 						skipFortify = false;
 					}
 				}
@@ -588,7 +653,7 @@ public class Turn {
 						in = userInput.nextLine();
 						System.out.println(helper.daBar);
 						if(in.equals("G") || in.equals("g")){ //go back
-							validInput = helper.confirmDialog("Are you sure you want to go back to select another territory to take troops from?");
+							validInput = helper.confirmDialog(player.getName() + ", are you sure you want to go back to select another territory to take troops from?");
 							if(validInput){
 								goBack = true;
 							}
@@ -794,7 +859,7 @@ public class Turn {
 				continents[5]++;
 			}
 		}
-		System.out.println(helper.daBar);
+		//System.out.println(helper.daBar);
 		if(continents[0] == 6){
 			bonus = bonus + 3; //Adds bonus for controlling all of Africa
 			System.out.println(player.getName() + " was awarded 3 bonus troops for controlling all of Africa...");
