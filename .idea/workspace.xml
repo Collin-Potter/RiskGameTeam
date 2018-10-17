@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="087f274c-ab32-4c48-b81e-7ced91bde2fe" name="Default Changelist" comment="Merged sanaz branch and implemented undo() method in HelperClass">
-      <change afterPath="$PROJECT_DIR$/src/main/java/PaymentDirectory/CreditInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/PaymentDirectory/TestClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="087f274c-ab32-4c48-b81e-7ced91bde2fe" name="Default Changelist" comment="Attempting to remove twitterUsername.txt from GitHub repository">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -111,8 +108,26 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
+            <state relative-caret-position="81">
+              <caret line="3" column="14" lean-forward="true" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="twitterCredentials" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/twitterCredentials">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="81">
+              <caret line="3" column="8" lean-forward="true" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="twitterUsername.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/twitterUsername.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="27">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -143,6 +158,7 @@
         <option value="$PROJECT_DIR$/src/main/java/Game.java" />
         <option value="$PROJECT_DIR$/src/main/java/Attack.java" />
         <option value="$PROJECT_DIR$/src/main/resources/replayDocument" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -249,6 +265,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\capar\Desktop\Computer Science Things\Java Projects\RiskGameTeam\src\main\resources" />
       <recent name="C:\Users\capar\Desktop\Java Projects\RiskGameTeam\src\test\java" />
       <recent name="C:\Users\capar\Desktop\Java Projects\RiskGameTeam\src\test" />
     </key>
@@ -316,7 +333,21 @@
       <option name="project" value="LOCAL" />
       <updated>1537720411146</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Attempting to remove twitterUsername.txt from GitHub repository">
+      <created>1539779855229</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1539779855229</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Attempting to remove twitterUsername.txt from GitHub repository">
+      <created>1539779957288</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1539779957288</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -409,10 +440,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merged sanaz branch and implemented undo() method in HelperClass" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merged sanaz branch and implemented undo() method in HelperClass" />
+    <MESSAGE value="Attempting to remove twitterUsername.txt from GitHub repository" />
+    <option name="LAST_COMMIT_MESSAGE" value="Attempting to remove twitterUsername.txt from GitHub repository" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/Attack.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Card.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/world-map">
       <provider selected="true" editor-type-id="text-editor">
@@ -650,9 +681,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/SubjectInterface.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Observer.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Warning.java" />
-    <entry file="file://$PROJECT_DIR$/twitterUsername.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Replay.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
@@ -721,10 +749,24 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/replayDocument">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/twitterUsername.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/twitterCredentials">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" column="8" lean-forward="true" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
+        <state relative-caret-position="81">
+          <caret line="3" column="14" lean-forward="true" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
         </state>
       </provider>
     </entry>
