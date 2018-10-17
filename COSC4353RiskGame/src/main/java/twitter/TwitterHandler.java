@@ -1,6 +1,7 @@
 package twitter;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
@@ -59,7 +60,7 @@ public class TwitterHandler {
 		*/
 		
 		//Get Twitter credentials
-		readInCredentials("C:\\Users\\grant\\git\\RiskGameGrant\\COSC4353RiskGame\\src\\main\\java\\twitter\\twitterCredentials");
+        readInCredentials("/src/main/java/twitter/twitterCredentials");
 		
 		//Authenticate user
 		twitterHandler.setOAuthConsumer(consumerKeyStr, consumerSecretStr);
@@ -91,10 +92,13 @@ public class TwitterHandler {
 		}
 	}
 	
-	private void readInCredentials(String filename){
+	private void readInCredentials(String filepath){
 		try{
-			fr = new FileReader(filename);
-			br = new BufferedReader(fr);
+			File currentDir = new File(".");
+	        File parentDir = currentDir.getAbsoluteFile();
+	        File newFile = new File(parentDir + filepath);
+	        fr = new FileReader(newFile);
+	        br = new BufferedReader(fr);
 			String line = null;
 			int count = 0;
 			while((line = br.readLine()) != null){
