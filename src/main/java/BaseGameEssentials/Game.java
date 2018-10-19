@@ -57,9 +57,7 @@ public class Game {
             } while(imStressed == 1);
             playerList.add(new Player(0,playerName,false,false, (i+1)));
         }
-//        for(Player p: playerList){
-//            p.beginCreditTransaction();
-//        }
+        creditTransaction();
         switch(playerList.size()){
             case(2):
                 for(Player p: playerList){
@@ -217,6 +215,12 @@ public class Game {
             }
         }catch(Exception e){
             e.printStackTrace();
+        }
+    }
+
+    public static void creditTransaction(){
+        for(Player p: playerList){
+            p.beginCreditTransaction();
         }
     }
 }
