@@ -1,9 +1,15 @@
+package BaseGameEssentials;
+
+import BaseGameEssentials.Card;
+import BaseGameEssentials.Game;
+import BaseGameEssentials.Territory;
+
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Collections;
 
 public class DeckofCards extends Game {
-   // private Game Regions;
+   // private BaseGameEssentials.Game Regions;
     private ArrayList<Territory> countries = new ArrayList();
     private ArrayList<Card> set = new ArrayList();
 
@@ -38,8 +44,8 @@ public class DeckofCards extends Game {
      }
 
      public void ShowCard( Card element){
-         System.out.println("Type of Card: " + element.getType() );
-         System.out.println("Country on the Card: " + element.getCountry() );
-         System.out.println("Worth of Card: " + element.getWorth() +" Armies");
+         System.out.println("Type of BaseGameEssentials.Card: " + element.getType() );
+         System.out.println("Country on the BaseGameEssentials.Card: " + element.getCountry() );
+         System.out.println("Worth of BaseGameEssentials.Card: " + element.getWorth() +" Armies");
      }
 }

@@ -1,3 +1,5 @@
+package BaseGameEssentials;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
@@ -203,7 +205,7 @@ public class Attack extends Game implements SubjectInterface {
                                     String X = in.nextLine();
                                     try {
                                         temp = Integer.parseInt(X);
-                                        // for (Territory t : territoryList) {
+                                        // for (BaseGameEssentials.Territory t : territoryList) {
                                         if (Attacker.getTroopCount() > temp) {
                                             Attacker.setTroopCount(Attacker.getTroopCount() - temp);
                                             Defender.setTroopCount(temp);

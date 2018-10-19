@@ -1,3 +1,6 @@
+import BaseGameEssentials.Card;
+import BaseGameEssentials.DeckofCards;
+import BaseGameEssentials.Territory;
 import org.junit.Test;
 
 import java.util.ArrayList;

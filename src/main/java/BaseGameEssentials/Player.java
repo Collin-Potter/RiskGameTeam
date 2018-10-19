@@ -1,3 +1,8 @@
+package BaseGameEssentials;
+
+import PaymentDirectory.CreditInterface;
+import PaymentDirectory.ProxyCreditTransaction;
+
 import java.util.*;
 import java.util.Scanner;
 
@@ -19,6 +24,61 @@ public class Player extends Game {
     public int TestPrecentage;
     public ArrayList<Card> PlayerHand = new ArrayList();
     private Dice dice = new Dice();
+    private int credits;
+    private int numUndo;
+    private int totCards;
+
+    public int getNumUndo() {
+        return numUndo;
+    }
+
+    public void setNumUndo(int numUndo) {
+        this.numUndo = numUndo;
+    }
+
+    public int getTotCards() {
+        return totCards;
+    }
+
+    public void setTotCards(int totCards) {
+        this.totCards = totCards;
+    }
+
+    public ArrayList<Card> getInfantryCardsList() {
+        return infantryCardsList;
+    }
+
+    public void setInfantryCardsList(ArrayList<Card> infantryCardsList) {
+        this.infantryCardsList = infantryCardsList;
+    }
+
+    public ArrayList<Card> getCalvalryCardsList() {
+        return calvalryCardsList;
+    }
+
+    public void setCalvalryCardsList(ArrayList<Card> calvalryCardsList) {
+        this.calvalryCardsList = calvalryCardsList;
+    }
+
+    public ArrayList<Card> getArtillaryCardsList() {
+        return artillaryCardsList;
+    }
+
+    public void setArtillaryCardsList(ArrayList<Card> artillaryCardsList) {
+        this.artillaryCardsList = artillaryCardsList;
+    }
+
+    private ArrayList<Card> infantryCardsList = new ArrayList<Card>();
+    private ArrayList<Card> calvalryCardsList = new ArrayList<Card>();
+    private ArrayList<Card> artillaryCardsList = new ArrayList<Card>();
+
+    public int getCredits() {
+        return credits;
+    }
+
+    public void setCredits(int credits) {
+        this.credits = credits;
+    }
 
     public void setDice(Dice newDice) {
         this.dice = dice;
@@ -77,6 +137,12 @@ public class Player extends Game {
 
     public void incTerritoryCount() {
         this.territoryCount++;
+    }
+
+    public void beginCreditTransaction(){
+        CreditInterface creditTransaction = new ProxyCreditTransaction();
+        creditTransaction.display();
+        System.out.println("\n\n");
     }
 
     public void reinforceRegions(int type) {

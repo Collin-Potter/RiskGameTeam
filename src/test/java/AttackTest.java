@@ -1,3 +1,5 @@
+import BaseGameEssentials.Attack;
+import BaseGameEssentials.Dice;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

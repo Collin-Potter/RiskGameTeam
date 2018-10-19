@@ -1,10 +1,9 @@
+package BaseGameEssentials;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.nio.Buffer;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 public class Game {
@@ -58,6 +57,9 @@ public class Game {
             } while(imStressed == 1);
             playerList.add(new Player(0,playerName,false,false, (i+1)));
         }
+//        for(Player p: playerList){
+//            p.beginCreditTransaction();
+//        }
         switch(playerList.size()){
             case(2):
                 for(Player p: playerList){
@@ -209,7 +211,7 @@ public class Game {
                 }
                 territoryList.add(new Territory(tempArray[0],Integer.parseInt(tempArray[1]),tempArray[2],tempConnectArray));
             }
-            System.out.println("Current Territory List");
+            System.out.println("Current BaseGameEssentials.Territory List");
             for(Territory t: territoryList){
                 System.out.printf("%-5d %-25s %-15s\n", t.getID(), t.getName(), t.getContinent());
             }

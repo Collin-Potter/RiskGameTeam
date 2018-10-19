@@ -1,3 +1,5 @@
+package BaseGameEssentials;
+
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.services.s3.AmazonS3;
@@ -29,7 +31,7 @@ public class Replay {
         }
     }
 
-    //Takes String value of Player decision and records to replayDocument through BufferedWriter
+    //Takes String value of BaseGameEssentials.Player decision and records to replayDocument through BufferedWriter
     public static void recordAction(String input){
         try{
             br.write(input + "\n");

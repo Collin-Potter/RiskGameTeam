@@ -1,4 +1,5 @@
-import java.lang.reflect.Array;
+package BaseGameEssentials;
+
 import java.util.ArrayList;
 
 public class Territory extends Game{

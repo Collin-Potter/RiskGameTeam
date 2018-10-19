@@ -1,8 +1,10 @@
+package BaseGameEssentials;
+
 import javax.swing.*;
 import javax.swing.plaf.ColorUIResource;
 import java.awt.*;
 
-public class Warning implements Observer{
+public class Warning implements Observer {
 
 public Frame frame;
     public void Warn(String PlayerName, String Country) {
@@ -15,7 +17,7 @@ public Frame frame;
         UI.put("Panel.background",new ColorUIResource(255, 146, 199));
         String Message =  PlayerName +", you will be attacked in "+ Country + ". :( \n"+
                          "you MUST click OK and face your enemy.";
-        JOptionPane.showMessageDialog(frame,Message,"Invasion Warning",JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(frame,Message,"Invasion BaseGameEssentials.Warning",JOptionPane.WARNING_MESSAGE);
 
 
 

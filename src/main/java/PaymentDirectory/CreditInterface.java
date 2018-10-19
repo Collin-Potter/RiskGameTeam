@@ -1,4 +1,5 @@
 package PaymentDirectory;
 
-public class CreditInterface {
+public interface CreditInterface {
+    void display();
 }

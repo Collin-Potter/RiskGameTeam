@@ -1,8 +1,14 @@
+package BaseGameEssentials;
+
+import BaseGameEssentials.Game;
+import BaseGameEssentials.Player;
+import BaseGameEssentials.Territory;
+
 import java.util.*;
 import java.util.Random;
 import java.util.Arrays;
 
-public class Dice extends Game{
+public class Dice extends Game {
     private int roll;
     private Integer[] diceArray;
     private Random die;

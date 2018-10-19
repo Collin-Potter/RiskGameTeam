@@ -1,3 +1,5 @@
+package BaseGameEssentials;
+
 import java.util.Scanner;
 public class HelperClass {
     public int undo(){

@@ -1,4 +1,6 @@
-import java.util.ArrayList;
+package BaseGameEssentials;
+
+import BaseGameEssentials.Territory;
 
 public class Card {
 
