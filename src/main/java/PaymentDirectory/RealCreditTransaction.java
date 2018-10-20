@@ -1,5 +1,7 @@
 package PaymentDirectory;
 
+import BaseGameEssentials.*;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.io.IOException;
@@ -10,15 +12,23 @@ import java.util.Scanner;
 public class RealCreditTransaction implements CreditInterface {
 
     private int userInput;
+    private Player currentPlayer;
 
-    public RealCreditTransaction(int userInput){
+    public RealCreditTransaction(int userInput, Player currentPlayer){
+        this.currentPlayer = currentPlayer;
         this.userInput = userInput;
+        display(currentPlayer);
         beginTransaction(userInput);
     }
 
     @Override
-    public void display() {
-        System.out.println("Beginning \"" + userInput + "\"");
+    public void display(Player currentPlayer) {
+        System.out.println("Displaying Selection Menu for " + currentPlayer.getTeam() + "...\n" +
+                "You currently have " + currentPlayer.getCredits() + " credits\n" +
+                "You currently have " + currentPlayer.getInfantryCardsList().size() + " infantry cards\n" +
+                "You currently have " + currentPlayer.getCalvalryCardsList().size() + " cavalry cards\n" +
+                "You currently have " + currentPlayer.getArtillaryCardsList().size() + " artillery cards\n" +
+                "You currently have " + currentPlayer.getNumUndo() + "undo actions");
     }
 
     private void beginTransaction(int userInput) {
@@ -41,27 +51,28 @@ public class RealCreditTransaction implements CreditInterface {
                 break;
             case (5):
                 System.out.println("\"Continue Without Credits\" selected...");
+                currentPlayer.setShopping(false);
                 break;
             default:
                 System.out.println("Please enter a valid menu option");
                 break;
         }
     }
-    private void run(){
+    private void run(int transactionType){
         JPane jpane = new JPane();
-        jpane.displayGUI();
+        jpane.displayGUI(transactionType, currentPlayer);
     }
     private void purchaseCredit(){
-        run();
+        run(1);
     }
     private void purchaseCards(){
-        run();
+        run(2);
     }
     private void purchaseUndoActions(){
-        run();
+        run(3);
     }
     private void transferCredits(){
-        run();
+        run(4);
     }
 
 }

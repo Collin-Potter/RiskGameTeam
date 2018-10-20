@@ -1,5 +1,7 @@
 package PaymentDirectory;
 
+import BaseGameEssentials.*;
+
 public interface CreditInterface {
-    void display();
+    void display(Player currentPlayer);
 }

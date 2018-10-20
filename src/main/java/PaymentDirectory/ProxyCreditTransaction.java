@@ -1,5 +1,7 @@
 package PaymentDirectory;
 
+import BaseGameEssentials.*;
+
 import java.util.Scanner;
 
 public class ProxyCreditTransaction implements CreditInterface {
@@ -7,7 +9,7 @@ public class ProxyCreditTransaction implements CreditInterface {
     private RealCreditTransaction realCreditTransaction;
 
     @Override
-    public void display() {
+    public void display(Player currentPlayer) {
         Scanner keyboard = new Scanner(System.in);
         boolean inputIncorrect = true;
         while (inputIncorrect) {
@@ -17,10 +19,10 @@ public class ProxyCreditTransaction implements CreditInterface {
                 int userInput = Integer.parseInt(input);
                 inputIncorrect = false;
                 if(realCreditTransaction == null){
-                    realCreditTransaction = new RealCreditTransaction(userInput);
+                    realCreditTransaction = new RealCreditTransaction(userInput, currentPlayer);
                 }
-                realCreditTransaction.display();
             } catch (Exception e) {
+                e.printStackTrace();
                 System.out.println("Please select one of the previous options...");
             }
         }

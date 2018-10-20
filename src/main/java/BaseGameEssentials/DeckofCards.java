@@ -44,8 +44,8 @@ public class DeckofCards extends Game {
      }
 
      public void ShowCard( Card element){
-         System.out.println("Type of BaseGameEssentials.Card: " + element.getType() );
-         System.out.println("Country on the BaseGameEssentials.Card: " + element.getCountry() );
-         System.out.println("Worth of BaseGameEssentials.Card: " + element.getWorth() +" Armies");
+         System.out.println("Type of Card: " + element.getType() );
+         System.out.println("Country on the Card: " + element.getCountry() );
+         System.out.println("Worth of Card: " + element.getWorth() +" Armies");
      }
 }

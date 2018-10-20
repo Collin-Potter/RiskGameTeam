@@ -24,9 +24,13 @@ public class Player extends Game {
     public int TestPrecentage;
     public ArrayList<Card> PlayerHand = new ArrayList();
     private Dice dice = new Dice();
-    private int credits;
-    private int numUndo;
-    private int totCards;
+    private int credits = 0;
+    private int numUndo = 0;
+    private boolean playerStillShopping = true;
+
+    public void setShopping(boolean b){
+        playerStillShopping = b;
+    }
 
     public int getNumUndo() {
         return numUndo;
@@ -36,36 +40,28 @@ public class Player extends Game {
         this.numUndo = numUndo;
     }
 
-    public int getTotCards() {
-        return totCards;
-    }
-
-    public void setTotCards(int totCards) {
-        this.totCards = totCards;
-    }
-
-    public ArrayList<Card> getInfantryCardsList() {
+    public ArrayList<BaseGameEssentials.Card> getInfantryCardsList() {
         return infantryCardsList;
     }
 
-    public void setInfantryCardsList(ArrayList<Card> infantryCardsList) {
-        this.infantryCardsList = infantryCardsList;
+    public void addInfantryCardsList(BaseGameEssentials.Card infantryCardsList) {
+        this.infantryCardsList.add(infantryCardsList);
     }
 
-    public ArrayList<Card> getCalvalryCardsList() {
+    public ArrayList<BaseGameEssentials.Card> getCalvalryCardsList() {
         return calvalryCardsList;
     }
 
-    public void setCalvalryCardsList(ArrayList<Card> calvalryCardsList) {
-        this.calvalryCardsList = calvalryCardsList;
+    public void addCalvalryCardsList(BaseGameEssentials.Card calvalryCardsList) {
+        this.calvalryCardsList.add(calvalryCardsList);
     }
 
-    public ArrayList<Card> getArtillaryCardsList() {
+    public ArrayList<BaseGameEssentials.Card> getArtillaryCardsList() {
         return artillaryCardsList;
     }
 
-    public void setArtillaryCardsList(ArrayList<Card> artillaryCardsList) {
-        this.artillaryCardsList = artillaryCardsList;
+    public void addArtillaryCardsList(BaseGameEssentials.Card artillaryCardsList) {
+        this.artillaryCardsList.add(artillaryCardsList);
     }
 
     private ArrayList<Card> infantryCardsList = new ArrayList<Card>();
@@ -140,9 +136,11 @@ public class Player extends Game {
     }
 
     public void beginCreditTransaction(){
-        CreditInterface creditTransaction = new ProxyCreditTransaction();
-        creditTransaction.display();
-        System.out.println("\n\n");
+        while(playerStillShopping) {
+            CreditInterface creditTransaction = new ProxyCreditTransaction();
+            creditTransaction.display(this);
+            System.out.println("\n");
+        }
     }
 
     public void reinforceRegions(int type) {
