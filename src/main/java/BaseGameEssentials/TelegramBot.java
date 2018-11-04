@@ -9,7 +9,7 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
-//This class creates the instance of the bot to be manioulated by the bot handler class
+//This class sets up the functionality and credentials of the TelegramBot to be called and created by the TelegramBotHandler class
 public class TelegramBot extends TelegramLongPollingBot {
 	
 	private static String botKeyStr = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
@@ -23,8 +23,11 @@ public class TelegramBot extends TelegramLongPollingBot {
 	}
 	
     @Override
+	//This method is called whenever the Bot recieves a message
+	//This method is the core functionality of the Bot
     public void onUpdateReceived(Update update) {
     	// We check if the update has a message and the message has text
+	    //This method (currently) will echo the message sent by the user
         if (update.hasMessage() && update.getMessage().hasText()) {
             // Set variables
             String message_text = update.getMessage().getText();
