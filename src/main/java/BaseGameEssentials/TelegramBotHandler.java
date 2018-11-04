@@ -2,7 +2,7 @@ import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
-//This class creqtes instance of TelegramBot class
+//This class creates instance of TelegramBot class
 //This is the class called by the main (Game) class
 public class TelegramBotHandler {
 	
