@@ -140,7 +140,16 @@ public class TelegramBot extends TelegramLongPollingBot {
 					} catch (TelegramApiException e) {
 						e.printStackTrace();
 					}
-					TelegramTerritoryDistribution();
+					message_text = "Randomizing territory control...";
+					SendMessage message3 = new SendMessage() // Create a message object object
+							.setChatId(chat_id)
+							.setText(message_text);
+					try {
+						execute(message3);
+					}catch (TelegramApiException e) {
+						e.printStackTrace();
+					}
+					TelegramTerritoryDistribution(); // Distribute territories among players
 				}
 			} else {
 				System.out.println("User enrolled already.");

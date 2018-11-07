@@ -245,31 +245,122 @@ public class Game{
         }
     }
     /*
-     TODO: Method to distribute the territories randomly among the three telegram players and sends out the result to telegram bot.
-     TODO: Also sends instruction to the players about the next step for example the format to send a command for reinforcement is
-     TODO: /reinforce@CSGSanaz_bot#42 and the format for attack command is /attack@CSGSanaz_bot#33#40 the first number is territory id attacking from
-     TODO: the second number is the territory id to be attacked.
+     Method to distribute the territories randomly among the three telegram players and sends out the result to telegram bot.
+     Also sends instruction to the players about the next step for example the format to send a command for reinforcement is
+     /reinforce@CSGSanaz_bot#42 and the format for attack command is /attack@CSGSanaz_bot#33#40 the first number is territory id attacking from
+     the second number is the territory id to be attacked.
      @Param: No parameters required
      */
     public static void TelegramTerritoryDistribution() {
-        System.out.println("test1");
+        //Delete old tweets
+        System.out.println("Deleting old tweets...");
+        twitterHandler.deleteTweets();
+        //Tweet about game's creation
+        System.out.println("Updating Twitter for new game...");
+        String tweet  = "A new game has been created by: \n";
+        for(int i = 0; i < playerList.size(); i++){
+            tweet = tweet + " -" + playerList.get(i).getTeam() + "\n";
+        }
+        twitterHandler.postTweet(tweet);
+        tweet = "";
+        System.out.println("Randomizing initial territory control...");
+        int player = 1;
+        Random random = new Random();
+        ArrayList<Territory> wTerritories = getDeepCopy(territoryList);
+        while(wTerritories.size() > 0){
+            if(wTerritories.size() < playerList.size()){
+                while(wTerritories.size() > 0){
+                    int nextTerritory = random.nextInt(wTerritories.size());
+                    Territory tempT = wTerritories.get(nextTerritory);
+                    Player tempP = playerList.get(player-1);
+                    tempT.setTeam(tempP.getTeam());
+                    wTerritories.remove(nextTerritory);
+                    player++;
+                }
+            }else{
+                while(player <= playerList.size()){
+                    int nextTerritory = random.nextInt(wTerritories.size());
+                    Territory tempT = wTerritories.get(nextTerritory);
+                    Player tempP = playerList.get(player-1);
+                    tempT.setTeam(tempP.getTeam());
+                    wTerritories.remove(nextTerritory);
+                    player++;
+                }
+                player = 1;
+            }
+        }
     }
     /*
-    TODO: Method should implement reinforcement by adding one troop to the requested territory,
-    TODO:checks if its the players turn to reinforce, checks if the given territory ID belong to this player
+    Method should implement reinforcement by adding one troop to the requested territory,
+    checks if its the players turn to reinforce, checks if the given territory ID belong to this player
     @Param :  player name and territory id to reinforce
      */
     public static void TelegramReinforce(String Player, int ID){
-        System.out.println("Player");
-        System.out.println(ID);
+        String tempTerritoryName = "ERROR";
+        for(Territory t: territoryList){
+            if(t.getID() == ID){
+                tempTerritoryName = t.getName();
+            }
+        }
+        System.out.println(Player + " has requested to reinforce " + tempTerritoryName );
+        for(Player p: playerList){
+            if(p.getTeam().equals(Player) && p.getTroopCount() > 0){
+                for(Territory t: territoryList) {
+                    if(t.getID() == ID) {
+                        t.addTroops(1);
+                    }
+                }
+                System.out.println(Player + " has reinforced " + tempTerritoryName);
+            }else if(p.getTeam().equals(Player) && p.getTroopCount() == 0){
+                System.out.println(Player + " is out of reinforcements");
+            }
+        }
     }
     /*
     TODO: Method should implement Telegram attack functionality
     @Param : player name, Id if the territory that player is attacking from and Id of the territory that the player is invading.
      */
     public static void TelegramAttack(String Player, int from, int to){
-        System.out.println("Player");
-        System.out.println(from);
-        System.out.println(to);
+//        System.out.println("Player");
+//        System.out.println(from);
+//        System.out.println(to);
+//        for(Player p: playerList){
+//            if(p.getTeam().equals(Player)){ // Find attacking player
+//                for(Territory attackingTerritory: territoryList){
+//                    if(attackingTerritory.getTeam().equals(p.getTeam()) && attackingTerritory.getTroopCount() > 1){ // Guarantee territory chosen to attack with is under Player's control and has more than 1 troop
+//                        for(Territory defendingTerritory: territoryList){
+//                            if(!(defendingTerritory.getTeam().equals(p.getTeam()))){ //Guarantee territory chosen to attack is not under Player's control
+//                                //Fulfill attack request
+//                                boolean NotEnoughTroops = false;
+//                                Integer[] AttackerDice;
+//                                Integer[] DefenderDice;
+//                                Dice dice = new Dice();
+//                                System.out.println(Player + " is attacking " + defendingTerritory.getName() + " from " + attackingTerritory.getName());
+//                                if(p.getTroopCount() >= 3) {
+//                                    AttackerDice = new Integer[3];
+//                                    AttackerDice = dice.roll(3);
+//                                } else if (p.getTroopCount() == 2) {
+//                                    AttackerDice = new Integer[2];
+//                                    AttackerDice = dice.roll(2);
+//                                } else if (p.getTroopCount() == 1) {
+//                                    NotEnoughTroops = true;
+//                                    System.out.println(Player + " only has 1 unit left. You must withdraw from attacking or start a new attack");
+//                                }
+//                                if(!NotEnoughTroops) {
+//                                    if(defendingTerritory.getTroopCount() >= 2) {
+//                                        DefenderDice = new Integer[2];
+//                                        DefenderDice = dice.roll(2);
+//                                    } else if(defendingTerritory.getTroopCount() == 1) {
+//                                        DefenderDice = new Integer[1];
+//                                        DefenderDice = dice.roll(1);
+//                                    }
+//                                }
+//                                dice.compareFaceValue(AttackerDice, DefenderDice, attackingTerritory, defendingTerritory);
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
     }
 }
