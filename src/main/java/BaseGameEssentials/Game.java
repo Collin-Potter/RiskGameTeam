@@ -1,4 +1,8 @@
 package BaseGameEssentials;
+import org.telegram.telegrambots.ApiContextInitializer;
+import org.telegram.telegrambots.meta.TelegramBotsApi;
+import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -6,7 +10,9 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
-public class Game {
+
+
+public class Game{
     //private static final int MAP_REGION_AMOUNT = 42; //NOT USED
    // private static int UNTOUCHED_TERRITORIES = 42; //NOT USED
     public static ArrayList<Territory> territoryList = new ArrayList<Territory>();
@@ -17,21 +23,36 @@ public class Game {
     public static ArrayList<String> territoryInformation = new ArrayList<String>();
     public static Warning DisplayWarning = new Warning();
     public static Attack invade = new Attack();
+   // public static TelegramBot telebot = new TelegramBot();
     public static TwitterHandler twitterHandler = new TwitterHandler();
+
     private int tweetTerr = 0; //keeps track of how many territories each player won in a turn for tweet functionality
     private int turnCount = 0; //keeps track of current turn number 
-
+//public static Update update;
     public static void main(String[] args){
         readFileTerritories();
+        // Initialize Api Context
+        ApiContextInitializer.init();
+        // Instantiate Telegram Bots API
+        TelegramBotsApi botsApi = new TelegramBotsApi();
+        // Register our bot
+        try {
+            botsApi.registerBot(new TelegramBot());
+        } catch (TelegramApiException e) {
+            e.printStackTrace();
+        }
+
         gameSetUp();
         newTroopDistribution();
         reinforceTerritories(0);
         Deck.generate();
         invade.registerObserver(DisplayWarning);
         invade.attackRegion();
+
     }
 
-    public static void gameSetUp(){
+    public  static void gameSetUp(){
+
         String pAmt;
         Scanner input = new Scanner(System.in);
         boolean isValid = false;
@@ -126,7 +147,7 @@ public class Game {
         }
     }
 
-    private static ArrayList<Territory> getDeepCopy(ArrayList<Territory> original){
+    public static ArrayList<Territory> getDeepCopy(ArrayList<Territory> original){
         ArrayList<Territory> copy = new ArrayList<Territory>();
         copy.addAll(original);
         return copy;
@@ -222,5 +243,33 @@ public class Game {
         for(Player p: playerList){
             p.beginCreditTransaction();
         }
+    }
+    /*
+     TODO: Method to distribute the territories randomly among the three telegram players and sends out the result to telegram bot.
+     TODO: Also sends instruction to the players about the next step for example the format to send a command for reinforcement is
+     TODO: /reinforce@CSGSanaz_bot#42 and the format for attack command is /attack@CSGSanaz_bot#33#40 the first number is territory id attacking from
+     TODO: the second number is the territory id to be attacked.
+     @Param: No parameters required
+     */
+    public static void TelegramTerritoryDistribution() {
+        System.out.println("test1");
+    }
+    /*
+    TODO: Method should implement reinforcement by adding one troop to the requested territory,
+    TODO:checks if its the players turn to reinforce, checks if the given territory ID belong to this player
+    @Param :  player name and territory id to reinforce
+     */
+    public static void TelegramReinforce(String Player, int ID){
+        System.out.println("Player");
+        System.out.println(ID);
+    }
+    /*
+    TODO: Method should implement Telegram attack functionality
+    @Param : player name, Id if the territory that player is attacking from and Id of the territory that the player is invading.
+     */
+    public static void TelegramAttack(String Player, int from, int to){
+        System.out.println("Player");
+        System.out.println(from);
+        System.out.println(to);
     }
 }
