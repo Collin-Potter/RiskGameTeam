@@ -1,4 +1,4 @@
-# RiskGameTeam
+# RiskGameTeam https://travis-ci.com/Caparoonie505/RiskGameTeam.svg?branch=master
 
 Welcome to CSG's Risk Game:
 
