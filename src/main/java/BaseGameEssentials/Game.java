@@ -350,24 +350,24 @@ public class Game{
         Dice dice = new Dice();
         //Notify console which territory is being attacked and roll die based on attacking and defending troopCount
         System.out.println(p.getTeam() + " is attacking " + defendingTerritory.getName() + " from " + attackingTerritory.getName());
-        if(p.getTroopCount() >= 3 && defendingTerritory.getTroopCount() >= 2) {
+        if(attackingTerritory.getTroopCount() >= 3 && defendingTerritory.getTroopCount() >= 2) {
             AttackerDice = dice.roll(3);
             DefenderDice = dice.roll(2);
             dice.compareFaceValue(AttackerDice, DefenderDice, attackingTerritory, defendingTerritory);
-        } else if (p.getTroopCount() == 2 && defendingTerritory.getTroopCount() >= 2) {
+        } else if (attackingTerritory.getTroopCount() == 2 && defendingTerritory.getTroopCount() >= 2) {
             AttackerDice = dice.roll(2);
             DefenderDice = dice.roll(2);
             dice.compareFaceValue(AttackerDice, DefenderDice, attackingTerritory, defendingTerritory);
-        } else if (p.getTroopCount() == 3 && defendingTerritory.getTroopCount() == 1) {
+        } else if (attackingTerritory.getTroopCount() == 3 && defendingTerritory.getTroopCount() == 1) {
             AttackerDice = dice.roll(3);
             DefenderDice = dice.roll(1);
             dice.compareFaceValue(AttackerDice, DefenderDice, attackingTerritory, defendingTerritory);
-        } else if (p.getTroopCount() == 2 && defendingTerritory.getTroopCount() == 1) {
+        } else if (attackingTerritory.getTroopCount() == 2 && defendingTerritory.getTroopCount() == 1) {
             AttackerDice = dice.roll(2);
             DefenderDice = dice.roll(1);
             dice.compareFaceValue(AttackerDice, DefenderDice, attackingTerritory, defendingTerritory);
         }
-        else if (p.getTroopCount() == 1) {
+        else if (attackingTerritory.getTroopCount() == 1) {
             NotEnoughTroops = true;
             System.out.println(p.getTeam() + " only has 1 unit left. You must withdraw from attacking or start a new attack");
         }
