@@ -7,11 +7,7 @@ import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.AmazonS3Exception;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
-
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Replay {
     private static AWSCredentials credentials = new BasicAWSCredentials("", "");
