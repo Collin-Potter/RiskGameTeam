@@ -23,7 +23,7 @@ public class Game{
     public static ArrayList<String> territoryInformation = new ArrayList<String>();
     public static Warning DisplayWarning = new Warning();
     public static Attack invade = new Attack();
-   // public static TelegramBot telebot = new TelegramBot();
+    public static ArrayList<Territory> tempTerritoryHolder = new ArrayList<Territory>();
     public static TwitterHandler twitterHandler = new TwitterHandler();
 
     private int tweetTerr = 0; //keeps track of how many territories each player won in a turn for tweet functionality
@@ -253,16 +253,7 @@ public class Game{
      */
     public static void TelegramTerritoryDistribution() {
         //Delete old tweets
-        System.out.println("Deleting old tweets...");
-        twitterHandler.deleteTweets();
-        //Tweet about game's creation
-        System.out.println("Updating Twitter for new game...");
-        String tweet  = "A new game has been created by: \n";
-        for(int i = 0; i < playerList.size(); i++){
-            tweet = tweet + " -" + playerList.get(i).getTeam() + "\n";
-        }
-        twitterHandler.postTweet(tweet);
-        tweet = "";
+
         System.out.println("Randomizing initial territory control...");
         int player = 1;
         Random random = new Random();
@@ -289,6 +280,16 @@ public class Game{
                 player = 1;
             }
         }
+        System.out.println("Adding one reinforcement to every region...");
+        for(Player p:playerList){
+            for(Territory t:territoryList){
+                if(t.getTeam().equals(p.getTeam())){
+                    p.incTerritoryCount();
+                    p.decTroopCount(1);
+                    t.setTroopCount(1);
+                }
+            }
+        }
     }
     /*
     Method should implement reinforcement by adding one troop to the requested territory,
@@ -306,8 +307,10 @@ public class Game{
         for(Player p: playerList){
             if(p.getTeam().equals(Player) && p.getTroopCount() > 0){
                 for(Territory t: territoryList) {
-                    if(t.getID() == ID) {
+                    if(t.getID() == ID && t.getTeam().equals(Player)) {
                         t.addTroops(1);
+                        p.decTroopCount(1);
+                        tempTerritoryHolder.add(t);
                     }
                 }
                 System.out.println(Player + " has reinforced " + tempTerritoryName);
@@ -347,24 +350,24 @@ public class Game{
         Dice dice = new Dice();
         //Notify console which territory is being attacked and roll die based on attacking and defending troopCount
         System.out.println(p.getTeam() + " is attacking " + defendingTerritory.getName() + " from " + attackingTerritory.getName());
-        if(p.getTroopCount() >= 3 && defendingTerritory.getTroopCount() >= 2) {
+        if(attackingTerritory.getTroopCount() >= 3 && defendingTerritory.getTroopCount() >= 2) {
             AttackerDice = dice.roll(3);
             DefenderDice = dice.roll(2);
             dice.compareFaceValue(AttackerDice, DefenderDice, attackingTerritory, defendingTerritory);
-        } else if (p.getTroopCount() == 2 && defendingTerritory.getTroopCount() >= 2) {
+        } else if (attackingTerritory.getTroopCount() == 2 && defendingTerritory.getTroopCount() >= 2) {
             AttackerDice = dice.roll(2);
             DefenderDice = dice.roll(2);
             dice.compareFaceValue(AttackerDice, DefenderDice, attackingTerritory, defendingTerritory);
-        } else if (p.getTroopCount() == 3 && defendingTerritory.getTroopCount() == 1) {
+        } else if (attackingTerritory.getTroopCount() == 3 && defendingTerritory.getTroopCount() == 1) {
             AttackerDice = dice.roll(3);
             DefenderDice = dice.roll(1);
             dice.compareFaceValue(AttackerDice, DefenderDice, attackingTerritory, defendingTerritory);
-        } else if (p.getTroopCount() == 2 && defendingTerritory.getTroopCount() == 1) {
+        } else if (attackingTerritory.getTroopCount() == 2 && defendingTerritory.getTroopCount() == 1) {
             AttackerDice = dice.roll(2);
             DefenderDice = dice.roll(1);
             dice.compareFaceValue(AttackerDice, DefenderDice, attackingTerritory, defendingTerritory);
         }
-        else if (p.getTroopCount() == 1) {
+        else if (attackingTerritory.getTroopCount() == 1) {
             NotEnoughTroops = true;
             System.out.println(p.getTeam() + " only has 1 unit left. You must withdraw from attacking or start a new attack");
         }

@@ -4,7 +4,8 @@ import javax.swing.*;
 import javax.swing.plaf.ColorUIResource;
 import java.awt.*;
 
-public class Warning implements Observer {
+public class
+Warning implements Observer {
 
 public Frame frame;
     public void Warn(String PlayerName, String Country) {
