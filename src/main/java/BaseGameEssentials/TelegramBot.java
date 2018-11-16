@@ -96,7 +96,7 @@ public class TelegramBot extends TelegramLongPollingBot {
 			Send(message_text);
 		}
 
-		if (input.equals("/join@CSGSanaz_bot") && playerList.size() != 2) {
+		if (input.equals("/join@CSGSanaz_bot") && playerList.size() != 3) {
 			String playerName = update2.getMessage().getFrom().getFirstName();
 			i++;
 			boolean goodToGo = false;
@@ -112,7 +112,7 @@ public class TelegramBot extends TelegramLongPollingBot {
 				message_text = playerName + " you are a Risk player now .";
 				long chat_id = update2.getMessage().getChatId();
 				Send(message_text);
-				if (playerList.size() == 2) {
+				if (playerList.size() == 3) {
 					message_text = " Dividing territories among players, Reinforcement will begin soon .";
 					Send(message_text);
 					TelegramTerritoryDistribution(); // Distribute territories among players
@@ -138,9 +138,9 @@ public class TelegramBot extends TelegramLongPollingBot {
 	 * **/
 	public void ParsTranslate(String message) {
 		if(message.equals("/attack@CSGSanaz_bot") && AttackPhase == true){
-			for(Player p: playerList) {
-				printWhatTerritoriesToAttackFrom(p);
-			}
+			TurnKeeper(playerList);
+			printWhatTerritoriesToAttackFrom(PLAYERTurnKeeper);
+
 		} else{
 		temp.clear();
 		String playerName = update2.getMessage().getFrom().getFirstName();
@@ -339,6 +339,24 @@ public class TelegramBot extends TelegramLongPollingBot {
             e.printStackTrace();
         }
     }
+
+    /**
+	 * Method to keep track of players turns
+	 * @param List : playerList
+	 * **/
+    public void TurnKeeper(ArrayList<Player> List){
+    	if(List.get(0).getTurn()== true && List.get(1).getTurn()==true && List.get(2).getTurn()==true){
+    		for(Player p: playerList ){ p.SetTurn(false);}
+		}
+		for(Player P: playerList){
+			if(P.getTurn() == false){
+				P.SetTurn(true);
+				PLAYERTurnKeeper = P;
+				break;
+			}
+		}
+    }
+
 	//Read in BotToken
 	private void readInCredentials(String filepath){
 		try{

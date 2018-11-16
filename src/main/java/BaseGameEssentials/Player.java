@@ -102,6 +102,8 @@ public class Player extends Game {
     public int setTurn() {
         return (this.ID + 1);
     }
+    public boolean getTurn(){return(this.isTurn);}
+    public void SetTurn(boolean status){ this.isTurn = status;}
 
     public void setTroopCount(int i) {
         this.troopCount = i;
