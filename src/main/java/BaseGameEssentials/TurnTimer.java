@@ -10,7 +10,7 @@
  * is 4, and is the value that will be returned into the Attack class. This value returned by the program causes their
  * turn to be skipped.
  *
- *
+ * 
  * */
 package BaseGameEssentials;
 

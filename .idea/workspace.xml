@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="087f274c-ab32-4c48-b81e-7ced91bde2fe" name="Default Changelist" comment="" />
+    <list default="true" id="087f274c-ab32-4c48-b81e-7ced91bde2fe" name="Default Changelist" comment="jio">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BaseGameEssentials/TurnTimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseGameEssentials/TurnTimer.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -57,12 +61,33 @@
     <session id="1163842037">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="txt" value="4" />
+          <entry key="java" value="4" />
+          <entry key="txt" value="26" />
+          <entry key="xml" value="192" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="JAVA" value="4" />
+          <entry key="PLAIN_TEXT" value="26" />
+          <entry key="XML" value="192" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
     </session>
@@ -81,7 +106,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Replay.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-319">
+            <state relative-caret-position="221">
               <caret line="13" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
@@ -96,48 +121,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Attack.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4012">
+            <state relative-caret-position="489">
               <caret line="268" selection-start-line="268" selection-end-line="268" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/TurnTimer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#3728#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1003">
-              <caret line="59" column="52" selection-start-line="59" selection-start-column="52" selection-end-line="59" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="mock:///riskGame-effective-pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3910">
-              <caret line="80" column="17" selection-start-line="80" selection-start-column="17" selection-end-line="80" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/target/javadoc-bundle-options/javadoc-options-javadoc-resources.xml">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -154,9 +144,11 @@
     <findStrings>
       <find>TelegramTerrito</find>
       <find>ATTACK FROM</find>
+      <find>10/12/18</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -165,7 +157,6 @@
         <option value="$PROJECT_DIR$/src/main/java/Territory.java" />
         <option value="$PROJECT_DIR$/src/main/java/Player.java" />
         <option value="$PROJECT_DIR$/src/main/java/HelperClass.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/SubjectInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/Observer.java" />
         <option value="$PROJECT_DIR$/src/main/java/Attack.java" />
@@ -177,6 +168,9 @@
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/TelegramBot.java" />
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Replay.java" />
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Game.java" />
+        <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/TurnTimer.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/TwitterHandler.java" />
       </list>
     </option>
   </component>
@@ -202,16 +196,33 @@
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="riskGame" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="riskGame" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="clean" type="36feed69:MavenProjectsStructure$PluginNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="riskGame" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="riskGame" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+          <item name="junit:junit:4.12" type="c0821a7e:MavenProjectsStructure$DependencyNode" />
         </path>
       </expand>
       <select />
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="952" />
-    <option name="width" value="975" />
-    <option name="height" value="1088" />
+    <option name="x" value="-15" />
+    <option name="width" value="1950" />
+    <option name="height" value="2175" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -219,8 +230,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -264,66 +273,19 @@
               <item name="CollinRisk" type="462c0819:PsiDirectoryNode" />
               <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="CollinRisk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CollinRisk" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="classes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CollinRisk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CollinRisk" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="generated-sources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CollinRisk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CollinRisk" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="javadoc-bundle-options" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CollinRisk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CollinRisk" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="maven-status" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CollinRisk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CollinRisk" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="maven-status" type="462c0819:PsiDirectoryNode" />
-              <item name="maven-compiler-plugin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CollinRisk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CollinRisk" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="maven-status" type="462c0819:PsiDirectoryNode" />
-              <item name="maven-compiler-plugin" type="462c0819:PsiDirectoryNode" />
-              <item name="compile" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CollinRisk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CollinRisk" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="maven-status" type="462c0819:PsiDirectoryNode" />
-              <item name="maven-compiler-plugin" type="462c0819:PsiDirectoryNode" />
-              <item name="compile" type="462c0819:PsiDirectoryNode" />
-              <item name="default-compile" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542200697792" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542340115406" />
+    <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -346,7 +308,7 @@
   </component>
   <component name="RunManager" selected="Application.Game">
     <configuration name="Game" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Game" />
+      <option name="MAIN_CLASS_NAME" value="BaseGameEssentials.Game" />
       <module name="CollinRisk" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -448,7 +410,14 @@
       <option name="project" value="LOCAL" />
       <updated>1542200567817</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Test">
+      <created>1542200761569</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1542200761569</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -462,7 +431,7 @@
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="877" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.11200537" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11200537" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -471,23 +440,23 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32985386" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.05427975" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49899396" weight="0.23458445" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.54384136" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32881" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.22922252" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32985386" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.011482255" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49899396" weight="0.22922252" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50167674" side_tool="true" visible="true" weight="0.23458445" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49832326" weight="0.010723861" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24965326" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Maven Projects" order="7" weight="0.3293092" />
+      <window_info anchor="right" id="Maven Projects" order="7" weight="0.68075114" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29959515" />
@@ -557,9 +526,11 @@
     <MESSAGE value="Test" />
     <option name="LAST_COMMIT_MESSAGE" value="Test" />
   </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/FillTerritories.java" />
-    <entry file="file://$PROJECT_DIR$/sample.txt" />
     <entry file="file://$PROJECT_DIR$/src/main/java/WorldMap.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/world-map">
       <provider selected="true" editor-type-id="text-editor">
@@ -623,20 +594,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-132">
           <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="59" column="52" selection-start-line="59" selection-start-column="52" selection-end-line="59" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/TwitterHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-595">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -731,6 +688,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/target/javadoc-bundle-options/javadoc-options-javadoc-resources.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/TwitterHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="56" column="31" lean-forward="true" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/TurnTimer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2159">
+          <caret line="132" selection-start-line="132" selection-end-line="132" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="56" column="32" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Replay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Dice.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -740,22 +735,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Attack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4012">
+        <state relative-caret-position="489">
           <caret line="268" selection-start-line="268" selection-end-line="268" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Replay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-319">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="56" column="32" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -837,6 +818,7 @@
     </states>
   </component>
   <component name="mavenExecuteGoalHistory">
-    <option value="" />
+    <option value="$PROJECT_DIR$" />
+    <option value="javadoc::javadoc" />
   </component>
 </project>
