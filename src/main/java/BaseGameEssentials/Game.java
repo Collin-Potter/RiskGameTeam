@@ -11,6 +11,10 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
+import static BaseGameEssentials.TelegramBot.AttackingTerr;
+import static BaseGameEssentials.TelegramBot.NotEnoughTroops;
+import static BaseGameEssentials.TelegramBot.WIN;
+
 
 public class Game{
     //private static final int MAP_REGION_AMOUNT = 42; //NOT USED
@@ -319,57 +323,71 @@ public class Game{
             }
         }
     }
-    /*
-    Method should implement Telegram attack functionality
-    @Param : player name, Id if the territory that player is attacking from and Id of the territory that the player is invading.
-     */
-    public static void TelegramAttack(String Player, int from, int to){
-        //Find attacking player, check if attacking territory is a possible option, and check if defending territory is an enemy
-        for(Player p: playerList){
-            if(p.getTeam().equals(Player)){ // Find attacking player
-                for(Territory attackingTerritory: territoryList){
-                    if(attackingTerritory.getTeam().equals(p.getTeam()) && attackingTerritory.getTroopCount() > 1 && attackingTerritory.getID() == from){ // Guarantee territory chosen to attack with is under Player's control and has more than 1 troop
-                        for(Territory defendingTerritory: territoryList){
-                            if(!(defendingTerritory.getTeam().equals(p.getTeam())) && defendingTerritory.getID() == to){ //Guarantee territory chosen to attack is not under Player's control
-                                //Fulfill attack request
-                                fulfillAttack(p,defendingTerritory,attackingTerritory);
+    // Find territories to attack From
+    public static ArrayList FindWhereToAttackFrom(Player p){
+        ArrayList<Territory> TList = new ArrayList<Territory>();
+        for(Territory t: territoryList){
+            if(t.getTeam().equals(p.getTeam()) && t.getTroopCount()>1){
+                for(int i=0; i<t.getConnections().size();i++){
+                    for(Territory X:territoryList){
+                        if(X.getID() == t.getConnections().get(i) && !X.getTeam().equals(p.getTeam())){
+                           if(!TList.contains(t)){TList.add(t);}
+                        }
+                    }
+                }
+            }
+        } return TList;
+    }
+    // Find territories to attack
+    public static ArrayList FindWhereICanAttack(String country) {
+        ArrayList<Territory> TList2 = new ArrayList<Territory>();
+        for (Territory t : territoryList) {
+            if (t.getName().equals(country)) {
+                AttackingTerr =t;
+                for (int i = 0; i < t.getConnections().size(); i++) {
+                    for (Territory X : territoryList) {
+                        if (X.getID() == t.getConnections().get(i) && !X.getTeam().equals(t.getTeam())) {
+                            if (!TList2.contains(X)) {
+                                TList2.add(X);
                             }
                         }
                     }
                 }
             }
-        }
+        }return TList2;
     }
 
     // Simplifies process of Attacking by requesting attacking Player, defending territory, and attacking territory
     public static void fulfillAttack(Player p, Territory defendingTerritory, Territory attackingTerritory){
         //Initialize variables
-        boolean NotEnoughTroops = false;
+
         Integer[] AttackerDice;
         Integer[] DefenderDice;
         Dice dice = new Dice();
         //Notify console which territory is being attacked and roll die based on attacking and defending troopCount
-        System.out.println(p.getTeam() + " is attacking " + defendingTerritory.getName() + " from " + attackingTerritory.getName());
-        if(attackingTerritory.getTroopCount() >= 3 && defendingTerritory.getTroopCount() >= 2) {
-            AttackerDice = dice.roll(3);
-            DefenderDice = dice.roll(2);
-            dice.compareFaceValue(AttackerDice, DefenderDice, attackingTerritory, defendingTerritory);
-        } else if (attackingTerritory.getTroopCount() == 2 && defendingTerritory.getTroopCount() >= 2) {
-            AttackerDice = dice.roll(2);
-            DefenderDice = dice.roll(2);
-            dice.compareFaceValue(AttackerDice, DefenderDice, attackingTerritory, defendingTerritory);
-        } else if (attackingTerritory.getTroopCount() == 3 && defendingTerritory.getTroopCount() == 1) {
-            AttackerDice = dice.roll(3);
-            DefenderDice = dice.roll(1);
-            dice.compareFaceValue(AttackerDice, DefenderDice, attackingTerritory, defendingTerritory);
-        } else if (attackingTerritory.getTroopCount() == 2 && defendingTerritory.getTroopCount() == 1) {
-            AttackerDice = dice.roll(2);
-            DefenderDice = dice.roll(1);
-            dice.compareFaceValue(AttackerDice, DefenderDice, attackingTerritory, defendingTerritory);
-        }
-        else if (attackingTerritory.getTroopCount() == 1) {
-            NotEnoughTroops = true;
-            System.out.println(p.getTeam() + " only has 1 unit left. You must withdraw from attacking or start a new attack");
+        while(!WIN) {
+            System.out.println(p.getTeam() + " is attacking " + defendingTerritory.getName() + " from " + attackingTerritory.getName());
+            if (attackingTerritory.getTroopCount() >= 3 && defendingTerritory.getTroopCount() >= 2) {
+                AttackerDice = dice.roll(3);
+                DefenderDice = dice.roll(2);
+                dice.compareFaceValue(AttackerDice, DefenderDice, attackingTerritory, defendingTerritory);
+            } else if (attackingTerritory.getTroopCount() == 2 && defendingTerritory.getTroopCount() >= 2) {
+                AttackerDice = dice.roll(2);
+                DefenderDice = dice.roll(2);
+                dice.compareFaceValue(AttackerDice, DefenderDice, attackingTerritory, defendingTerritory);
+            } else if (attackingTerritory.getTroopCount() >= 3 && defendingTerritory.getTroopCount() == 1) {
+                AttackerDice = dice.roll(3);
+                DefenderDice = dice.roll(1);
+                dice.compareFaceValue(AttackerDice, DefenderDice, attackingTerritory, defendingTerritory);
+            } else if (attackingTerritory.getTroopCount() == 2 && defendingTerritory.getTroopCount() == 1) {
+                AttackerDice = dice.roll(2);
+                DefenderDice = dice.roll(1);
+                dice.compareFaceValue(AttackerDice, DefenderDice, attackingTerritory, defendingTerritory);
+            } else if (attackingTerritory.getTroopCount() == 1) {
+                NotEnoughTroops = true;
+                System.out.println(p.getTeam() + " only has 1 unit left. You must withdraw from attacking or start a new attack");
+                break;
+            }
         }
     }
 }
