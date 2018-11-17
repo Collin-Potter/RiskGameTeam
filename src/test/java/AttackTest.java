@@ -6,13 +6,13 @@ import static org.junit.Assert.*;
 
 public class AttackTest {
 
-    @Test
+   /* @Test
     public void setDice() {
          Attack invade = new Attack();
          Dice dice = new Dice();
          invade.setDice(dice);
          assertEquals(dice,dice);
-    }
+    }*/
 
     @Test
     public void attackRegion() {

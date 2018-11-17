@@ -3,7 +3,7 @@ package BaseGameEssentials;
 import BaseGameEssentials.Game;
 import BaseGameEssentials.Player;
 import BaseGameEssentials.Territory;
-
+import static BaseGameEssentials.TelegramBot.WIN;
 import java.util.*;
 import java.util.Random;
 import java.util.Arrays;
@@ -13,6 +13,7 @@ public class Dice extends Game {
     private Integer[] diceArray;
     private Random die;
     public boolean comparison;
+    public boolean telegram = true;
     public Dice() {}
     public Integer[] roll(int numberOfDice) {
         diceArray = new Integer[numberOfDice];
@@ -35,10 +36,9 @@ public class Dice extends Game {
                         " " + invader.getTroopCount());
             }
                if(invader.getTroopCount()==1){
-                   System.out.println(invader.getTeam() +" you may not continue this attack");
+                  // Attack may not continue
                   break;
                 }
-
             if (attacker[i] > defender[i])
             {/*defender loses one army*/
             defend.setTroopCount(defend.getTroopCount()-1);
@@ -51,6 +51,8 @@ public class Dice extends Game {
                     System.out.println(invader.getTeam()+ ", "+ defend.getName()+" now belongs to you"
                     +", You conquered new land, So may get a card, " +
                             "for every Three cards you turn in you will receive extra troops");
+                    WIN = true;
+                    if(!telegram){
                     for(Player p: playerList){
                         if(p.getTeam().equals(x)){
                             p.PlayerHand.add(Deck.drawACard());
@@ -59,6 +61,7 @@ public class Dice extends Game {
                               }
                            }
                         }
+                      }
                     }
                 }
             }
