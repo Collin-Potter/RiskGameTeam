@@ -19,11 +19,19 @@ public class JPane {
     private ArrayList<String> tempArray = new ArrayList<String>();
     private ArrayList<Player> tempPlayerList = new ArrayList<Player>();
 
+    /*
+    Method calls determineMenu in order to translate user-given decision to
+        correct GUI display
+     */
     public void displayGUI(int transactionType, Player currentUser){
         this.currentUser = currentUser;
         determineMenu(transactionType);
     }
 
+    /*
+    Method takes transactionType and calls specific method to display
+        desired transaction prompt GUI
+     */
     public void determineMenu(int transactionType){
         switch(transactionType){
             case(1):
@@ -52,6 +60,7 @@ public class JPane {
         inputIncorrect = true;
         while(inputIncorrect) {
             try {
+                //Enters loop for prompting user credit transaction
                 selectedCreditAmount = pane.showInputDialog(null,
                         "Enter Amount of Credits Desired ",
                         "Credit Purchase Amount Menu",
@@ -81,6 +90,7 @@ public class JPane {
         String[] cardChoiceList = {"Infantry","Cavalry","Artillery","Return"};
         while(inputIncorrect){
             try{
+                //Enters loop for prompting user card transaction request
                 ui.put("OptionPane.minimumSize",new Dimension(600,300));
                 JOptionPane pane = new JOptionPane();
                 cardChoice = pane.showOptionDialog(null,
@@ -195,6 +205,7 @@ public class JPane {
     public void displayUndoActionAmount() {
         inputIncorrect = true;
         while(inputIncorrect){
+            //Enters loop for prompting user undo action transaction
             try{
                 ui.put("OptionPane.minimumSize",new Dimension(600,300));
                 JOptionPane pane = new JOptionPane();
@@ -230,6 +241,7 @@ public class JPane {
         int selectedValue2;
         inputIncorrect = true;
         while(inputIncorrect) {
+            //Enters loop for prompting user credit transfer
             try {
                 selectedTransferAmount = pane.showInputDialog(null,
                         "Enter Amount of Credits to Transfer to " + userSelected +
