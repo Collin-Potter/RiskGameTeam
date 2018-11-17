@@ -7,7 +7,6 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKe
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.util.List;
-import java.util.Random;
 import java.util.ArrayList;
 import java.io.BufferedReader;
 import java.io.File;
@@ -21,16 +20,9 @@ public class TelegramBot extends TelegramLongPollingBot {
 	private static String botKeyStr = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
 	private BufferedReader br;
 	private FileReader fr;
-
-	public TelegramBot(){
-	//Get TelegramBot credentials
-	readInCredentials("/src/main/java/BaseGameEssentials/telegramBotToken");
-	}
 	public static ArrayList<String> temp = new ArrayList<String>();
 	public static String message_text = new String();
 	public int i = 0;
-	public int j = 0;
-	public boolean QueryCompleted = false;
 	public boolean gameOn = false;
 	public boolean AttackPhase = false;
 	public static Territory AttackingTerr, DefendingTerr;
@@ -38,6 +30,11 @@ public class TelegramBot extends TelegramLongPollingBot {
 	public static boolean NotEnoughTroops = false;
 	public Player PLAYERTurnKeeper;
 	public static Update update2;
+
+	public TelegramBot(){
+		//Get TelegramBot credentials
+		readInCredentials("/src/main/java/BaseGameEssentials/telegramBotToken");
+	}
 
 	@Override
 	/**

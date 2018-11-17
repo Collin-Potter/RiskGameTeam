@@ -10,7 +10,6 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
-
 import static BaseGameEssentials.TelegramBot.AttackingTerr;
 import static BaseGameEssentials.TelegramBot.NotEnoughTroops;
 import static BaseGameEssentials.TelegramBot.WIN;
@@ -366,6 +365,11 @@ public class Game{
         Dice dice = new Dice();
         //Notify console which territory is being attacked and roll die based on attacking and defending troopCount
         while(!WIN) {
+            if (attackingTerritory.getTroopCount() == 1) {
+                NotEnoughTroops = true;
+                System.out.println(p.getTeam() + " only has 1 unit left. You must withdraw from attacking or start a new attack");
+                break;
+            }
             System.out.println(p.getTeam() + " is attacking " + defendingTerritory.getName() + " from " + attackingTerritory.getName());
             if (attackingTerritory.getTroopCount() >= 3 && defendingTerritory.getTroopCount() >= 2) {
                 AttackerDice = dice.roll(3);
@@ -383,10 +387,6 @@ public class Game{
                 AttackerDice = dice.roll(2);
                 DefenderDice = dice.roll(1);
                 dice.compareFaceValue(AttackerDice, DefenderDice, attackingTerritory, defendingTerritory);
-            } else if (attackingTerritory.getTroopCount() == 1) {
-                NotEnoughTroops = true;
-                System.out.println(p.getTeam() + " only has 1 unit left. You must withdraw from attacking or start a new attack");
-                break;
             }
         }
     }

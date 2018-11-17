@@ -36,7 +36,7 @@ public class Dice extends Game {
                         " " + invader.getTroopCount());
             }
                if(invader.getTroopCount()==1){
-                   System.out.println(invader.getTeam() +" you may not continue this attack");
+                  // Attack may not continue
                   break;
                 }
             if (attacker[i] > defender[i])
