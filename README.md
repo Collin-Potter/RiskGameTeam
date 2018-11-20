@@ -1,6 +1,6 @@
 # RiskGameTeam   [![Build Status](https://travis-ci.com/Caparoonie505/RiskGameTeam.svg?branch=master)](https://travis-ci.com/Caparoonie505/RiskGameTeam)
 
-[![Coverage Status]((https://travis-ci.com/Caparoonie505/RiskGameTeam.svg?branch=master)](https://travis-ci.com/Caparoonie505/RiskGameTeam)
+[![Coverage Status](https://travis-ci.com/Caparoonie505/RiskGameTeam.svg?branch=master)](https://travis-ci.com/Caparoonie505/RiskGameTeam)
 
 Welcome to CSG's Risk Game:
 
