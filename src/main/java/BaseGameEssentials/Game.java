@@ -54,6 +54,7 @@ public class Game{
 
     }
 
+    //TODO: Simplify gameSetUp and modularize as much as possible
     public  static void gameSetUp(){
 
         String pAmt;
