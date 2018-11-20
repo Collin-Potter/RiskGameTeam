@@ -33,7 +33,7 @@ public class Replay {
         try{
             br.write(input + "\n");
         }catch(Exception e){
-            //DO THIS
+            System.out.println("Error attempting to write to file");
             e.printStackTrace();
         }
     }
@@ -46,11 +46,11 @@ public class Replay {
             e.printStackTrace();
         }
         String bucketName = "risk-playback";
-//        s3client.createBucket(bucketName);                              //  Creation of bucket unnecessary if bucket is manually created in advance
+        //  Creation of bucket unnecessary if bucket is manually created in advance
+//        s3client.createBucket(bucketName);
         try {
             if (s3client.getObject(bucketName, "riskGame") != null) {
                 createFolder(bucketName, "riskGame", s3client);                   //  Creation of folder unnecessary if folder is manually created in advance
-                //TODO: Implement folder checker to not attempt creation of same name replay.
                 try {
                     uploadFile(bucketName, "riskGame");
                 } catch (Exception e) {
@@ -58,8 +58,14 @@ public class Replay {
                 }
             } else {
                 try {
-                    //TODO: Implement folder checker to not attempt creation of same name replay.
-                    uploadFile(bucketName, "riskGame");
+                    //Checks for folder, if no folder, create one
+                    if(s3client.getObject(bucketName, "riskGame")
+                            .getObjectContent().toString().equals("riskGame")) {
+                        uploadFile(bucketName, "riskGame");
+                    } else {
+                        createFolder(bucketName, "riskGame", s3client);
+                        uploadFile(bucketName, "riskGame");
+                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
