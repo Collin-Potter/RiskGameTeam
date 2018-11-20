@@ -13,7 +13,6 @@ public class ProxyCreditTransaction implements CreditInterface {
         Scanner keyboard = new Scanner(System.in);
         boolean inputIncorrect = true;
         while (inputIncorrect) {
-            //Display initial console prompt for transaction requests
             try {
                 System.out.println("Please choose one of the following:\n1.Purchase Credit\n2.Purchase Cards\n3.Purchase Undo Actions\n4.Transfer Credits\n5.Continue Without Credits");
                 String input = keyboard.nextLine();

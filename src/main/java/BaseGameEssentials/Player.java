@@ -144,7 +144,7 @@ public class Player extends Game {
             System.out.println("\n");
         }
     }
-//TODO: Simplify and modularize as much as possible
+
     public void reinforceRegions(int type) {
         if (type == 0) {
             Scanner input = new Scanner(System.in);
