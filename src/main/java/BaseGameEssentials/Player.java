@@ -284,4 +284,99 @@ public class Player extends Game {
                 "The World    : %" + percentageWorld);
     }
 
+    /**
+     * Method takes player input to see whether or not they would like to use an undo, or cards
+     *  and returns an integer value of either:
+     *  0. is a return for only debugging purposes so DO NOT check for it
+     *  1. for undo actions
+     *  2. for infantry cards
+     *  3. for cavalry cards
+     *  4. for artillery cards
+     *  for other methods to take advantage of their decision
+     */
+    public int useHand(){
+        Scanner input = new Scanner(System.in);
+        boolean promptCompleted = false;
+        int userInputTranslated = 0;
+        //Check if user has any available extra actions
+        if(this.getNumUndo() > 0 ||
+                this.getCalvalryCardsList().size() > 0 ||
+                this.getInfantryCardsList().size() > 0 ||
+                this.getArtillaryCardsList().size() > 0) {
+            do {
+                System.out.println("Would you like to take advantage of one of your previously purchased undo actions or cards?\n" +
+                        "1. Yes\n" +
+                        "2. No");
+                String userInput = input.nextLine();
+                try {
+                    userInputTranslated = Integer.parseInt(userInput);
+                    promptCompleted = true;
+                } catch (Exception e) {
+                    System.out.println("Please enter one of the following options in integer format");
+                }
+            } while (!promptCompleted);
+        //Based on user's input, return a specific item of choice
+            switch(userInputTranslated){
+                case 1:
+                    promptCompleted = false;
+                    do {
+                        System.out.println("\'Yes\' selected...\n" +
+                                "Which of the following would you like to take advantage of?");
+                        if (this.getNumUndo() > 0) {
+                            System.out.println("1. Undo Action");
+                        }
+                        if (this.getInfantryCardsList().size() > 0) {
+                            System.out.println("2. Use your Infantry card deck");
+                        }
+                        if (this.getCalvalryCardsList().size() > 0) {
+                            System.out.println("3. Use your Cavalry card deck");
+                        }
+                        if (this.getArtillaryCardsList().size() > 0) {
+                            System.out.println("4. Use your Artillery card deck");
+                        }
+        //If somehow it gets this far and they have no items
+                        if(this.getNumUndo() == 0 &&
+                                this.getInfantryCardsList().size() == 0 &&
+                                this.getCalvalryCardsList().size() == 0 &&
+                                this.getArtillaryCardsList().size() == 0){
+                            System.out.println("You have no items to take advantage of.\n" +
+                                    "Moving on...");
+                            break;
+                        }
+                        String userInput = input.nextLine();
+                        try{
+                            userInputTranslated = Integer.parseInt(userInput);
+        //Checking for what the user wants to use
+                            switch(userInputTranslated){
+                                case 1:
+                                    promptCompleted = true;
+                                    return 1;
+                                case 2:
+                                    promptCompleted = true;
+                                    return 2;
+                                case 3:
+                                    promptCompleted = true;
+                                    return 3;
+                                case 4:
+                                    promptCompleted = true;
+                                    return 4;
+                            }
+                        } catch (Exception e) {
+                            System.out.println("Please enter one of the following options in integer format");
+                        }
+                    } while(!promptCompleted);
+                    break;
+                case 2:
+        // Remove user from prompt
+                    System.out.println("\'No\' selected...\n" +
+                            "Moving on...");
+                    break;
+            }
+        } else {
+            System.out.println("You have no extra actions to take advantage of.\n" +
+                    "Moving on...");
+        }
+        return 0;
+    }
+
 }
