@@ -1,5 +1,7 @@
 # RiskGameTeam   [![Build Status](https://travis-ci.com/Caparoonie505/RiskGameTeam.svg?branch=master)](https://travis-ci.com/Caparoonie505/RiskGameTeam)
 
+# RiskGameTeam [![Coverage Status](https://coveralls.io/repos/github/Caparoonie505/RiskGameTeam/badge.svg?branch=master)](https://coveralls.io/github/Caparoonie505/RiskGameTeam?branch=master)
+
 Welcome to CSG's Risk Game:
 
   Contributors:
