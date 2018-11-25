@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="087f274c-ab32-4c48-b81e-7ced91bde2fe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BaseGameEssentials/WarningTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BaseGameEssentials/WarningTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -212,7 +212,7 @@
           <entry key="telegramBotToken" value="5" />
           <entry key="world-map" value="1" />
           <entry key="xml" value="9" />
-          <entry key="yml" value="1" />
+          <entry key="yml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -222,22 +222,24 @@
           <entry key="PLAIN_TEXT" value="6" />
           <entry key="Scratch" value="1" />
           <entry key="XML" value="9" />
-          <entry key="YAML" value="1" />
+          <entry key="YAML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="16513" />
           <entry key="telegramBotToken" value="2" />
-          <entry key="txt" value="261" />
-          <entry key="xml" value="13" />
+          <entry key="txt" value="267" />
+          <entry key="xml" value="15" />
+          <entry key="yml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="16513" />
-          <entry key="PLAIN_TEXT" value="263" />
-          <entry key="XML" value="13" />
+          <entry key="PLAIN_TEXT" value="269" />
+          <entry key="XML" value="15" />
+          <entry key="YAML" value="2" />
         </counts>
       </usages-collector>
     </session>
@@ -309,8 +311,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
+            <state relative-caret-position="306">
+              <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.travis.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -333,7 +344,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/PaymentDirectory/ProxyCreditTransactionTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="612">
@@ -386,7 +397,6 @@
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Replay.java" />
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/TwitterHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/TelegramBot.java" />
-        <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/src/test/java/AttackTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Observer.java" />
         <option value="$PROJECT_DIR$/src/test/java/BaseGameEssentials/DeckofCardsTest.java" />
@@ -405,10 +415,11 @@
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Dice.java" />
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/DeckofCards.java" />
         <option value="$PROJECT_DIR$/src/test/java/BaseGameEssentials/DiceTest.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/BaseGameEssentials/WarningTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/PaymentDirectory/JPaneTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/PaymentDirectory/ProxyCreditTransactionTest.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
       </list>
     </option>
   </component>
@@ -611,7 +622,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543169692110" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543172531862" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -896,7 +907,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543169610101</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Test fixing">
+      <created>1543170083250</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1543170083250</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1042,7 +1060,8 @@
     <MESSAGE value="coverall reports" />
     <MESSAGE value="Test Coverage almost completed" />
     <MESSAGE value="Test Coverage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test Coverage" />
+    <MESSAGE value="Test fixing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test fixing" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -1061,13 +1080,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="47" lean-forward="true" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -1406,13 +1418,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/WarningTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1434,6 +1439,20 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -1501,7 +1520,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>s</last-edited>
+          <last-edited>4</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
