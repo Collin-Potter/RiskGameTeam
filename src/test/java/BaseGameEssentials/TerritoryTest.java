@@ -1,3 +1,5 @@
+package BaseGameEssentials;
+
 import BaseGameEssentials.Territory;
 import org.junit.Test;
 

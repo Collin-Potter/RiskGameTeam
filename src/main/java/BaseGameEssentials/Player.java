@@ -23,7 +23,6 @@ public class Player extends Game {
     private final int totalAustralia = 4;
     public int TestPrecentage;
     public ArrayList<Card> PlayerHand = new ArrayList();
-    private Dice dice = new Dice();
     private int credits = 0;
     private int numUndo = 0;
     private boolean playerStillShopping = true;
@@ -76,11 +75,7 @@ public class Player extends Game {
         this.credits = credits;
     }
 
-    public void setDice(Dice newDice) {
-        this.dice = dice;
-    }
-
-    private ArrayList<Integer> countryID = new ArrayList<Integer>();
+     //private ArrayList<Integer> countryID = new ArrayList<Integer>();
 
     public Player(int troops, String t, boolean turn, boolean playing, int ID) {
         this.troopCount = troops;
@@ -90,28 +85,33 @@ public class Player extends Game {
         this.ID = ID;
     }
 
-    public ArrayList<Integer> getCountryID(ArrayList<Territory> list) {
+   /** public ArrayList<Integer> getCountryID(ArrayList<Territory> list) {
         for (Territory t : list) {
             if (t.getTeam().equals(this.team)) {
                 countryID.add(t.getID());
             }
         }
         return this.countryID;
-    }
+    }**/
 
-    public int setTurn() {
+    /**public int setTurn() {
         return (this.ID + 1);
+    }**/
+    public boolean getTurn(){
+        return(this.isTurn);
     }
-    public boolean getTurn(){return(this.isTurn);}
-    public void SetTurn(boolean status){ this.isTurn = status;}
+    // Setting player's turn to true or false
+    public void SetTurn(boolean status){
+        this.isTurn = status;
+    }
 
     public void setTroopCount(int i) {
         this.troopCount = i;
     }
 
-    public void addTroops(int i) {
+  /**  public void addTroops(int i) {
         this.troopCount += i;
-    }
+    }**/
 
     public void decTroopCount(int i) {
         this.troopCount -= i;
@@ -129,9 +129,9 @@ public class Player extends Game {
         return this.territoryCount;
     }
 
-    public void setTerritoryCount(int numT) {
+    /**public void setTerritoryCount(int numT) {
         this.territoryCount = numT;
-    }
+    }**/
 
     public void incTerritoryCount() {
         this.territoryCount++;
@@ -145,7 +145,7 @@ public class Player extends Game {
         }
     }
 
-    public void reinforceRegions(int type) {
+  public void reinforceRegions(int type) {
         if (type == 0) {
             Scanner input = new Scanner(System.in);
             if (this.troopCount != 0) {
@@ -190,6 +190,7 @@ public class Player extends Game {
             }
         } else if (type == 1) {
             if (this.troopCount != 0) {
+                Scanner input = new Scanner(System.in);
                 int tempID = 0;
                 boolean inputIncorrect = true;
                 while (inputIncorrect) {

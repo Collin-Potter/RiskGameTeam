@@ -1,3 +1,5 @@
+package BaseGameEssentials;
+
 import BaseGameEssentials.Card;
 import BaseGameEssentials.DeckofCards;
 import BaseGameEssentials.Territory;
@@ -29,6 +31,15 @@ public class DeckofCardsTest {
         Deck.generate();
         Card ACard = Deck.drawACard();
         assertEquals(true,ACard.getInUseStatus());
+    }
+
+    @Test
+    public void showCard(){
+        for(int i=0;i<42;i++)
+            territoryList.add(temp);
+        Deck.generate();
+        Card ACard = Deck.drawACard();
+        Deck.ShowCard(ACard);
     }
 
 }

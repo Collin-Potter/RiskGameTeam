@@ -122,6 +122,7 @@ public class Game{
   		}
   		twitterHandler.postTweet(tweet);
   		tweet = "";
+  		// shared method between console set-up and telegram set-up to distribute territories
         System.out.println("Randomizing initial territory control...");
         int player = 1;
         Random random = new Random();
@@ -148,6 +149,7 @@ public class Game{
                 player = 1;
             }
         }
+
     }
 
     public static ArrayList<Territory> getDeepCopy(ArrayList<Territory> original){
@@ -196,7 +198,7 @@ public class Game{
         }
     }
 
-    public static void reinforcementStage(){
+ /**   public static void reinforcementStage(){
         for (Player p : playerList) {
             if (p.getTroopCount() != 0) {
                 System.out.println(p.getTeam() + " you have " + p.getTroopCount() + " troops to distribute...");
@@ -210,7 +212,7 @@ public class Game{
                 p.percentageInControl();
             }
         }
-    }
+    }**/
 
     public static void readFileTerritories(){
         File currentDir = new File(".");

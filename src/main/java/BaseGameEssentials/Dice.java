@@ -13,7 +13,7 @@ public class Dice extends Game {
     private Integer[] diceArray;
     private Random die;
     public boolean comparison;
-    public boolean telegram = true;
+    public boolean telegram = false; // Set to true if the game is played through Telegram
     public Dice() {}
     public Integer[] roll(int numberOfDice) {
         diceArray = new Integer[numberOfDice];

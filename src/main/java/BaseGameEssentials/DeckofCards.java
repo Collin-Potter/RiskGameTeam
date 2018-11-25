@@ -13,6 +13,7 @@ public class DeckofCards extends Game {
     private ArrayList<Territory> countries = new ArrayList();
     private ArrayList<Card> set = new ArrayList();
 
+
     public DeckofCards( ArrayList<Territory> cr,ArrayList<Card> CardSet ){
         this.countries= cr;
         this.set = CardSet;
@@ -34,9 +35,9 @@ public class DeckofCards extends Game {
      public Card drawACard() {
         Card variable;
         Collections.shuffle(set, new Random());
-        int i = 0 ;
+
         do {
-            i = (int) (Math.random() * (42 - 0)) + 0;
+           int i = (int) (Math.random() * (42 - 0)) + 0;
             variable = set.get(i);
         }while(variable.getInUseStatus()==true);
         variable.isInUse(true);

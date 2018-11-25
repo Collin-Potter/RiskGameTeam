@@ -16,6 +16,7 @@ package BaseGameEssentials;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class TurnTimer
 {
@@ -24,7 +25,6 @@ public class TurnTimer
     public int get_input() {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in)); // looks for user input
         long startTime = System.currentTimeMillis(); // logs the current time.
-
         try
         {
             /*Sets the amount of time a user has for their turn. Uses the time this method

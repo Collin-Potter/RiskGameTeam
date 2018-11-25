@@ -21,13 +21,13 @@ public class Attack extends Game implements SubjectInterface {
      * Calls on TakeTerritoryInput() method to take the user's choice of territory and verify it.
      * Calls on fulFillAttack() method to keep rolling dices until the attack is finalized.
      * On WIN calls the TransferUnit() method to allow the winner to move troops to the new territory
-     * **/
+     * */
     public String attackRegion() {
         for (Player p : playerList) {
-            TurnTimer userinput = new TurnTimer(); // sets variable to start timer in TurnTimer class
-            /*Player is notified its their turn*/
-            System.out.println("\n" + p.getTeam() + " it's your turn!! You ready? (Enter 1 when ready, you have 30sec)");
-            int readyornot = userinput.get_input();// receives return value from TurnTimer
+                TurnTimer userinput = new TurnTimer(); // sets variable to start timer in TurnTimer class
+                /*Player is notified its their turn*/
+                System.out.println("\n" + p.getTeam() + " it's your turn!! You ready? (Enter 1 when ready, you have 30sec)");
+                int readyornot = userinput.get_input();// receives return value from TurnTimer
 
             /*First checks if a user is to be skipped or not based on the value returned from TurnTimer*/
             if (readyornot != 4) {
@@ -36,11 +36,7 @@ public class Attack extends Game implements SubjectInterface {
                     // from is the list of territories that attacking from is possible
                     ArrayList<Territory> from = FindWhereToAttackFrom(p);
                     if (from.size() != 0) {
-                        System.out.println(p.getTeam() + " You may attack from one of the given territories that belongs to you");
-                        for (int i = 0; i < from.size(); i++) {
-                            System.out.println("ID: " + from.get(i).getID() + " NAME: " + from.get(i).getName()+
-                                    " Troops: "+ from.get(i).getTroopCount());
-                        }
+                        Print(from, p);
                     } else {
                         System.out.println("You may not attack at this this time.");
                         InvasionStatus = false;
@@ -49,11 +45,7 @@ public class Attack extends Game implements SubjectInterface {
                     AttackingTerr = TakeTerritoryInput(from);
                     // to is the list of the territories that can be attacked from the chosen territory
                     ArrayList<Territory> to = FindWhereICanAttack(AttackingTerr.getName());
-                    System.out.println(" You may Invade one of the following... ");
-                    for (int i = 0; i < to.size(); i++) {
-                        System.out.println("ID: " + to.get(i).getID() + " NAME: " + to.get(i).getName()
-                                + " Troops: " + to.get(i).getTroopCount());
-                    }
+                    Print(to,p);
                     DefendingTerr = TakeTerritoryInput(to);
                     //Warning that the attack is taking place
                     dataChanged(DefendingTerr.getTeam(), DefendingTerr.getName());
@@ -94,6 +86,17 @@ public class Attack extends Game implements SubjectInterface {
         // A string is returned that verifies attack phase has been completed
         String done = "PhaseTwoComplete";
         return (done);
+    }
+    /**
+     * Method to print ArrayList of Territories
+     * @param List : ArrayList of type Territory
+     * **/
+    public static void Print (ArrayList<Territory> List, Player p) {
+        System.out.println(p.getTeam() + " You may attack from or to one of the given territories.");
+        for (int i = 0; i < List.size(); i++) {
+            System.out.println("ID: " + List.get(i).getID() + " NAME: " + List.get(i).getName() +
+                    " Troops: " + List.get(i).getTroopCount());
+        }
     }
     /**
      * This method infroms the winner of the number troops they have available and enable them to
