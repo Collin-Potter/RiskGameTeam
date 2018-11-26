@@ -2,6 +2,6 @@ package BaseGameEssentials;
 
 public interface Observer {
 
-    public void Warn( String PlayerName, String Country);
+    public void Warn( String PlayerName, String Country, boolean test);
 
 }

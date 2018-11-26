@@ -1,5 +1,6 @@
 package BaseGameEssentials;
 
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
@@ -26,6 +27,12 @@ public class GameTest2 {
         playerList.clear();
         territoryList.clear();
 
+    }
+
+    @AfterClass
+    public static void cleanUp(){
+        playerList.clear();
+        territoryList.clear();
     }
 
     @Test

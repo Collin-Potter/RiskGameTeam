@@ -52,32 +52,14 @@ public class Attack extends Game implements SubjectInterface {
                     //Finalizing the attack
                     fulfillAttack(p, DefendingTerr, AttackingTerr);
                     if (NotEnoughTroops == true) {
-                        System.out.println(AttackingTerr.getTeam() + " If you would like to withdraw from attacking " +
-                                "Type in 1 otherwise Type in 2: ");
-                        boolean TypeInCheck1 = true;
-                        Scanner rolling = new Scanner(System.in);
-                        while (TypeInCheck1 == true) {
-                            String D = rolling.nextLine();
-                            if (D.equals("1")) { InvasionStatus = false; TypeInCheck1 = false; }
-                            if (D.equals("2")) { InvasionStatus = true; TypeInCheck1 = false; }
-                        }
-                        new HelperClass().undo();
+                        InvasionStatus = WithdrawOrNOt();
                         NotEnoughTroops=false;
                     }
 
                     //If Invader wins
                     if (WIN) {
                         TransferUnits();
-                        boolean TypeInCheck3 = true;
-                        while (TypeInCheck3 == true) {
-                            System.out.println(AttackingTerr.getTeam() + " If you would like to withdraw from attacking " +
-                                    "Type in 1 otherwise Type in 2: ");
-                            Scanner AttackControl = new Scanner(System.in);
-                            String D = AttackControl.nextLine();
-                            if (D.equals("1")) { InvasionStatus = false; TypeInCheck3 = false; }
-                            if (D.equals("2")) { InvasionStatus = true; TypeInCheck3 = false; }
-                        }
-                        new HelperClass().undo();
+                        InvasionStatus = WithdrawOrNOt();
                         WIN=false;
                     }
                 }
@@ -86,6 +68,21 @@ public class Attack extends Game implements SubjectInterface {
         // A string is returned that verifies attack phase has been completed
         String done = "PhaseTwoComplete";
         return (done);
+    }
+
+    public static boolean WithdrawOrNOt(){
+        boolean TypeInCheck3 = true;
+        boolean UserInput = true;
+        while (TypeInCheck3 == true) {
+            System.out.println(" If you would like to withdraw from attacking " +
+                    "Type in 1 otherwise Type in 2: ");
+            Scanner AttackControl = new Scanner(System.in);
+            String D = AttackControl.nextLine();
+            if (D.equals("1")) {  TypeInCheck3 = false; UserInput=false;  }
+            if (D.equals("2")) {  TypeInCheck3 = false; UserInput=true; }
+        }
+        new HelperClass().undo();
+        return (UserInput);
     }
     /**
      * Method to print ArrayList of Territories
@@ -178,7 +175,7 @@ public class Attack extends Game implements SubjectInterface {
              observerList.iterator(); it.hasNext();)
         {
             Observer o = it.next();
-            o.Warn(playerName,countryName);
+            o.Warn(playerName,countryName,false);
         }
     }
     /**

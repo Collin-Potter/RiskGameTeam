@@ -10,7 +10,7 @@ public class WarningTest {
 
     @Test
     public void warn() {
-  /**  Warning object = new Warning();
-    object.Warn("Sanaz","World");**/
+   Warning object = new Warning();
+    object.Warn("Sanaz","World", true);
     }
 }

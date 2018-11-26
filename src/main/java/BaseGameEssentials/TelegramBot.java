@@ -100,21 +100,16 @@ public class TelegramBot extends TelegramLongPollingBot {
 			//ensuring the same player does not enroll to the game more than once
 			if (playerList.size() == 1 && !playerName.equals(playerList.get(0).getTeam())) {
 				goodToGo = true;
-			}//else if(playerList.size()==2 && !playerName.equals(playerList.get(0).getTeam()) && !playerName.equals(playerList.get(1).getTeam())) {
-			//goodToGo = true;
-			//}
+			}
 			if (goodToGo == true) {
 				playerList.add(new Player(35, playerName, false, false, (i)));
-				System.out.println(playerName + " is a player now");
 				message_text = playerName + " you are a Risk player now .";
-				long chat_id = update2.getMessage().getChatId();
 				Send(message_text);
 				if (playerList.size() == 3) {
 					message_text = " Dividing territories among players, Reinforcement will begin soon .";
 					Send(message_text);
 					TelegramTerritoryDistribution(); // Distribute territories among players
                     printTerritories();
-					System.out.println(playerList.get(0).getTeam() + "&" + playerList.get(1).getTeam());
 				}
 
 			} else {
