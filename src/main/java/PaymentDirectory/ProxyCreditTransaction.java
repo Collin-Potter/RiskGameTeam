@@ -9,7 +9,7 @@ public class ProxyCreditTransaction implements CreditInterface {
     private RealCreditTransaction realCreditTransaction;
 
     @Override
-    public void display(Player currentPlayer) {
+    public int display(Player currentPlayer) {
         Scanner keyboard = new Scanner(System.in);
         boolean inputIncorrect = true;
         while (inputIncorrect) {
@@ -26,6 +26,6 @@ public class ProxyCreditTransaction implements CreditInterface {
                 System.out.println("Please select one of the previous options...");
             }
         }
-
+        return 0;
     }
 }

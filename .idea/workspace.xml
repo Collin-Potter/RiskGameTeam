@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="087f274c-ab32-4c48-b81e-7ced91bde2fe" name="Default Changelist" comment="">
+    <list default="true" id="087f274c-ab32-4c48-b81e-7ced91bde2fe" name="Default Changelist" comment="81 successful tests with 61% coverage based on intellij">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Attack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Attack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Observer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Observer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Dice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BaseGameEssentials/TelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseGameEssentials/TelegramBot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Warning.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Warning.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BaseGameEssentials/DeckofCardsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BaseGameEssentials/DeckofCardsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BaseGameEssentials/DiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BaseGameEssentials/DiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BaseGameEssentials/GameTest2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BaseGameEssentials/GameTest2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BaseGameEssentials/WarningTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BaseGameEssentials/WarningTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BaseGameEssentials/telegramBotToken" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseGameEssentials/telegramBotToken" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PaymentDirectory/CreditInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PaymentDirectory/CreditInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PaymentDirectory/ProxyCreditTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PaymentDirectory/ProxyCreditTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PaymentDirectory/RealCreditTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PaymentDirectory/RealCreditTransaction.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -30,7 +29,7 @@
     <SUITE FILE_PATH="coverage/RiskGameTeam$PlayerTest_getInfantryCardsList.ic" NAME="PlayerTest.getInfantryCardsList Coverage Results" MODIFIED="1543110707825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>BaseGameEssentials.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/RiskGameTeam$GameTest.ic" NAME="GameTest Coverage Results" MODIFIED="1543205830733" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/RiskGameTeam$GameTest.ic" NAME="GameTest Coverage Results" MODIFIED="1543353641816" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>BaseGameEssentials.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/RiskGameTeam$PlayerTest_setNumUndo.ic" NAME="PlayerTest.setNumUndo Coverage Results" MODIFIED="1543107671432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -48,6 +47,9 @@
     <SUITE FILE_PATH="coverage/RiskGameTeam$GameTest2_newTroopDistribution.ic" NAME="GameTest2.newTroopDistribution Coverage Results" MODIFIED="1543126841200" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>BaseGameEssentials.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/RiskGameTeam$DeckofCards.ic" NAME="DeckofCards Coverage Results" MODIFIED="1543353455827" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>BaseGameEssentials.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/RiskGameTeam$PlayerTest_setShopping.ic" NAME="PlayerTest.setShopping Coverage Results" MODIFIED="1543107535300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>BaseGameEssentials.*</FILTER>
     </SUITE>
@@ -63,7 +65,7 @@
     <SUITE FILE_PATH="coverage/RiskGameTeam$GameTest_telegramReinforce.ic" NAME="GameTest.telegramReinforce Coverage Results" MODIFIED="1543189641982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>BaseGameEssentials.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/RiskGameTeam$ReplayTest.ic" NAME="ReplayTest Coverage Results" MODIFIED="1543205877003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/RiskGameTeam$ReplayTest.ic" NAME="ReplayTest Coverage Results" MODIFIED="1543353725488" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>BaseGameEssentials.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/RiskGameTeam$GameTest_findWhereICanAttack.ic" NAME="GameTest.findWhereICanAttack Coverage Results" MODIFIED="1543027383352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -78,10 +80,10 @@
     <SUITE FILE_PATH="coverage/RiskGameTeam$ReplayTest_createFolder.ic" NAME="ReplayTest.createFolder Coverage Results" MODIFIED="1543128579379" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>BaseGameEssentials.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/RiskGameTeam$WarningTest.ic" NAME="WarningTest Coverage Results" MODIFIED="1543205962077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/RiskGameTeam$WarningTest.ic" NAME="WarningTest Coverage Results" MODIFIED="1543353805642" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>BaseGameEssentials.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/RiskGameTeam$TelegramBotTest.ic" NAME="TelegramBotTest Coverage Results" MODIFIED="1543205897805" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/RiskGameTeam$TelegramBotTest.ic" NAME="TelegramBotTest Coverage Results" MODIFIED="1543353755436" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>BaseGameEssentials.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/RiskGameTeam$PlayerTest_SetTurn.ic" NAME="PlayerTest.SetTurn Coverage Results" MODIFIED="1543108301135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -96,13 +98,13 @@
     <SUITE FILE_PATH="coverage/RiskGameTeam$ReplayTest_recordAction.ic" NAME="ReplayTest.recordAction Coverage Results" MODIFIED="1543112590502" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>BaseGameEssentials.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/RiskGameTeam$TelegramBotTest_getBotUsername.ic" NAME="TelegramBotTest.getBotUsername Coverage Results" MODIFIED="1543113191828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/RiskGameTeam$TelegramBotTest_getBotUsername.ic" NAME="TelegramBotTest.getBotUsername Coverage Results" MODIFIED="1543359187662" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>BaseGameEssentials.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/RiskGameTeam$PlayerTest_getTeam.ic" NAME="PlayerTest.getTeam Coverage Results" MODIFIED="1543109044388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>BaseGameEssentials.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/RiskGameTeam$GameTest2.ic" NAME="GameTest2 Coverage Results" MODIFIED="1543161452304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/RiskGameTeam$GameTest2.ic" NAME="GameTest2 Coverage Results" MODIFIED="1543353668757" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>BaseGameEssentials.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/RiskGameTeam$DiceTest_compareFaceValue2.ic" NAME="DiceTest.compareFaceValue2 Coverage Results" MODIFIED="1543191450402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -112,7 +114,7 @@
       <FILTER>BaseGameEssentials.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/RiskGameTeam$All_in_RiskGameTeam.ic" NAME="All in RiskGameTeam Coverage Results" MODIFIED="1543012433030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/RiskGameTeam$TerritoryTest.ic" NAME="TerritoryTest Coverage Results" MODIFIED="1543205917799" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/RiskGameTeam$TerritoryTest.ic" NAME="TerritoryTest Coverage Results" MODIFIED="1543353782116" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>BaseGameEssentials.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/RiskGameTeam$GameTest_creditTransaction.ic" NAME="GameTest.creditTransaction Coverage Results" MODIFIED="1543023498908" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -124,7 +126,7 @@
     <SUITE FILE_PATH="coverage/RiskGameTeam$PlayerTest_reinforceRegions.ic" NAME="PlayerTest.reinforceRegions Coverage Results" MODIFIED="1543110100882" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>BaseGameEssentials.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/RiskGameTeam$AttackTest.ic" NAME="AttackTest Coverage Results" MODIFIED="1543205660278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/RiskGameTeam$AttackTest.ic" NAME="AttackTest Coverage Results" MODIFIED="1543353305304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>BaseGameEssentials.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/RiskGameTeam$AttackTest_dataChanged.ic" NAME="AttackTest.dataChanged Coverage Results" MODIFIED="1543087352231" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -133,7 +135,7 @@
     <SUITE FILE_PATH="coverage/RiskGameTeam$TelegramBotTest_getBotToken.ic" NAME="TelegramBotTest.getBotToken Coverage Results" MODIFIED="1543113374527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>BaseGameEssentials.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/RiskGameTeam$DiceTest.ic" NAME="DiceTest Coverage Results" MODIFIED="1543205791343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/RiskGameTeam$DiceTest.ic" NAME="DiceTest Coverage Results" MODIFIED="1543353613797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>BaseGameEssentials.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/RiskGameTeam$ReplayTest_stopReplay.ic" NAME="ReplayTest.stopReplay Coverage Results" MODIFIED="1543204217628" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -142,10 +144,10 @@
     <SUITE FILE_PATH="coverage/RiskGameTeam$PlayerTest_percentageInControl.ic" NAME="PlayerTest.percentageInControl Coverage Results" MODIFIED="1543110307281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>BaseGameEssentials.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/RiskGameTeam$CardTest.ic" NAME="CardTest Coverage Results" MODIFIED="1543205748698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/RiskGameTeam$CardTest.ic" NAME="CardTest Coverage Results" MODIFIED="1543353407710" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>BaseGameEssentials.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/RiskGameTeam$DeckofCardsTest.ic" NAME="DeckofCardsTest Coverage Results" MODIFIED="1543205768790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/RiskGameTeam$DeckofCardsTest.ic" NAME="DeckofCardsTest Coverage Results" MODIFIED="1543353500796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>BaseGameEssentials.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/RiskGameTeam$PlayerTest_decTroopCount.ic" NAME="PlayerTest.decTroopCount Coverage Results" MODIFIED="1543108757903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -154,7 +156,7 @@
     <SUITE FILE_PATH="coverage/RiskGameTeam$TelegramBotTest_turnKeeper.ic" NAME="TelegramBotTest.turnKeeper Coverage Results" MODIFIED="1543128027650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>BaseGameEssentials.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/RiskGameTeam$JPaneTest.ic" NAME="JPaneTest Coverage Results" MODIFIED="1543203094896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/RiskGameTeam$JPaneTest.ic" NAME="JPaneTest Coverage Results" MODIFIED="1543353859382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>PaymentDirectory.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/RiskGameTeam$GameTest_findWhereToAttackFrom.ic" NAME="GameTest.findWhereToAttackFrom Coverage Results" MODIFIED="1543124384479" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -169,7 +171,7 @@
     <SUITE FILE_PATH="coverage/RiskGameTeam$JPaneTest_displayGUI.ic" NAME="JPaneTest.displayGUI Coverage Results" MODIFIED="1543116379478" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>PaymentDirectory.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/RiskGameTeam$ProxyCreditTransactionTest.ic" NAME="ProxyCreditTransactionTest Coverage Results" MODIFIED="1543210869618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/RiskGameTeam$ProxyCreditTransactionTest.ic" NAME="ProxyCreditTransactionTest Coverage Results" MODIFIED="1543353883440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>PaymentDirectory.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/RiskGameTeam$PlayerTest_setCredits.ic" NAME="PlayerTest.setCredits Coverage Results" MODIFIED="1543110505855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -190,7 +192,7 @@
     <SUITE FILE_PATH="coverage/RiskGameTeam$PlayerTest_beginCreditTransaction.ic" NAME="PlayerTest.beginCreditTransaction Coverage Results" MODIFIED="1543109750114" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>BaseGameEssentials.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/RiskGameTeam$PlayerTest.ic" NAME="PlayerTest Coverage Results" MODIFIED="1543205855361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/RiskGameTeam$PlayerTest.ic" NAME="PlayerTest Coverage Results" MODIFIED="1543353699255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>BaseGameEssentials.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/RiskGameTeam$Game.ic" NAME="Game Coverage Results" MODIFIED="1543211495061" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
@@ -208,7 +210,7 @@
     <session id="-1895143847">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="16" />
+          <entry key="project.closed" value="17" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.12" value="1" />
@@ -216,15 +218,15 @@
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.8" value="3" />
-          <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="15" />
+          <entry key="project.open.time.9" value="2" />
+          <entry key="project.opened" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="7" />
-          <entry key="java" value="211" />
-          <entry key="telegramBotToken" value="5" />
+          <entry key="java" value="245" />
+          <entry key="telegramBotToken" value="6" />
           <entry key="world-map" value="1" />
           <entry key="xml" value="9" />
           <entry key="yml" value="2" />
@@ -233,8 +235,8 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="7" />
-          <entry key="JAVA" value="210" />
-          <entry key="PLAIN_TEXT" value="6" />
+          <entry key="JAVA" value="244" />
+          <entry key="PLAIN_TEXT" value="7" />
           <entry key="Scratch" value="1" />
           <entry key="XML" value="9" />
           <entry key="YAML" value="2" />
@@ -242,17 +244,17 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="16987" />
+          <entry key="java" value="17606" />
           <entry key="telegramBotToken" value="2" />
-          <entry key="txt" value="288" />
+          <entry key="txt" value="372" />
           <entry key="xml" value="15" />
           <entry key="yml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="16987" />
-          <entry key="PLAIN_TEXT" value="290" />
+          <entry key="JAVA" value="17606" />
+          <entry key="PLAIN_TEXT" value="374" />
           <entry key="XML" value="15" />
           <entry key="YAML" value="4" />
         </counts>
@@ -295,14 +297,106 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Game.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/PlayerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="75" />
+            <state relative-caret-position="372">
+              <caret line="168" column="7" lean-forward="true" selection-start-line="161" selection-start-column="6" selection-end-line="168" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#838#846#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/AttackTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="816">
+              <caret line="53" column="3" selection-start-line="53" selection-start-column="3" selection-end-line="53" selection-end-column="3" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/CardTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/DeckofCardsTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-104">
+              <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/TelegramBotTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1224">
+              <caret line="76" column="8" selection-start-line="76" selection-start-column="8" selection-end-line="76" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/PaymentDirectory/JPaneTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="328">
+              <caret line="29" column="51" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/PaymentDirectory/ProxyCreditTransactionTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-29">
+              <caret line="22" column="32" lean-forward="true" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/GameTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="385">
+              <caret line="58" column="41" lean-forward="true" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/PaymentDirectory/ProxyCreditTransaction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-15">
+              <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/PaymentDirectory/CreditInterface.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -313,8 +407,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -327,6 +421,8 @@
       <find>setTurn</find>
       <find>getTer</find>
       <find>setcre</find>
+      <find>WIN ==</find>
+      <find>undo</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -348,13 +444,9 @@
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Replay.java" />
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/TwitterHandler.java" />
         <option value="$PROJECT_DIR$/src/test/java/AttackTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Player.java" />
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/TelegramBotHandler.java" />
-        <option value="$PROJECT_DIR$/src/test/java/BaseGameEssentials/TelegramBotTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/TurnTimer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/telegramBotToken" />
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Game.java" />
-        <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Dice.java" />
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/DeckofCards.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/.travis.yml" />
@@ -362,16 +454,24 @@
         <option value="$PROJECT_DIR$/src/test/java/BaseGameEssentials/DiceTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/BaseGameEssentials/GameTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/BaseGameEssentials/DeckofCardsTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/BaseGameEssentials/PlayerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Warning.java" />
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Observer.java" />
         <option value="$PROJECT_DIR$/src/test/java/PaymentDirectory/JPaneTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/BaseGameEssentials/ReplayTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/BaseGameEssentials/AttackTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Attack.java" />
         <option value="$PROJECT_DIR$/src/test/java/BaseGameEssentials/WarningTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/TelegramBot.java" />
         <option value="$PROJECT_DIR$/src/test/java/PaymentDirectory/ProxyCreditTransactionTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/telegramBotToken" />
+        <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Dice.java" />
+        <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/TelegramBot.java" />
+        <option value="$PROJECT_DIR$/src/test/java/BaseGameEssentials/TelegramBotTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/BaseGameEssentials/AttackTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/BaseGameEssentials/CreditTransactionTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Player.java" />
+        <option value="$PROJECT_DIR$/src/main/java/PaymentDirectory/ProxyCreditTransaction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/PaymentDirectory/RealCreditTransaction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/PaymentDirectory/CreditInterface.java" />
+        <option value="$PROJECT_DIR$/src/test/java/BaseGameEssentials/PlayerTest.java" />
       </list>
     </option>
   </component>
@@ -432,6 +532,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Tests'; set:Tests; class com.intellij.psi.search.scope.TestsScope">
           <expand>
@@ -461,6 +562,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -566,15 +668,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543211796257" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543359187423" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -610,7 +710,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Game">
+  <component name="RunManager" selected="Maven.test">
     <configuration name="Game" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="BaseGameEssentials.Game" />
       <module name="RiskGameTeam" />
@@ -631,6 +731,52 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AttackTest.transferUnits" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RiskGameTeam" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="BaseGameEssentials.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="BaseGameEssentials" />
+      <option name="MAIN_CLASS_NAME" value="BaseGameEssentials.AttackTest" />
+      <option name="METHOD_NAME" value="transferUnits" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JPaneTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RiskGameTeam" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="PaymentDirectory.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="PaymentDirectory" />
+      <option name="MAIN_CLASS_NAME" value="PaymentDirectory.JPaneTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlayerTest.testGUI" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RiskGameTeam" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="BaseGameEssentials.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="BaseGameEssentials" />
+      <option name="MAIN_CLASS_NAME" value="BaseGameEssentials.PlayerTest" />
+      <option name="METHOD_NAME" value="testGUI" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ProxyCreditTransactionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RiskGameTeam" />
       <extension name="coverage">
@@ -645,21 +791,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReplayTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RiskGameTeam" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="BaseGameEssentials.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="BaseGameEssentials" />
-      <option name="MAIN_CLASS_NAME" value="BaseGameEssentials.ReplayTest" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TelegramBotTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TelegramBotTest.getBotUsername" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RiskGameTeam" />
       <extension name="coverage">
         <pattern>
@@ -669,34 +801,8 @@
       </extension>
       <option name="PACKAGE_NAME" value="BaseGameEssentials" />
       <option name="MAIN_CLASS_NAME" value="BaseGameEssentials.TelegramBotTest" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TerritoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RiskGameTeam" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="BaseGameEssentials.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="BaseGameEssentials" />
-      <option name="MAIN_CLASS_NAME" value="BaseGameEssentials.TerritoryTest" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WarningTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RiskGameTeam" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="BaseGameEssentials.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="BaseGameEssentials" />
-      <option name="MAIN_CLASS_NAME" value="BaseGameEssentials.WarningTest" />
+      <option name="METHOD_NAME" value="getBotUsername" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -729,19 +835,19 @@
     <list>
       <item itemvalue="Application.Game" />
       <item itemvalue="Maven.test" />
-      <item itemvalue="JUnit.ReplayTest" />
-      <item itemvalue="JUnit.TelegramBotTest" />
-      <item itemvalue="JUnit.TerritoryTest" />
-      <item itemvalue="JUnit.WarningTest" />
+      <item itemvalue="JUnit.JPaneTest" />
       <item itemvalue="JUnit.ProxyCreditTransactionTest" />
+      <item itemvalue="JUnit.PlayerTest.testGUI" />
+      <item itemvalue="JUnit.AttackTest.transferUnits" />
+      <item itemvalue="JUnit.TelegramBotTest.getBotUsername" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TelegramBotTest.getBotUsername" />
+        <item itemvalue="JUnit.AttackTest.transferUnits" />
+        <item itemvalue="JUnit.PlayerTest.testGUI" />
         <item itemvalue="JUnit.ProxyCreditTransactionTest" />
-        <item itemvalue="JUnit.WarningTest" />
-        <item itemvalue="JUnit.TerritoryTest" />
-        <item itemvalue="JUnit.TelegramBotTest" />
-        <item itemvalue="JUnit.ReplayTest" />
+        <item itemvalue="JUnit.JPaneTest" />
       </list>
     </recent_temporary>
   </component>
@@ -903,45 +1009,60 @@
       <option name="project" value="LOCAL" />
       <updated>1543174848491</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="81 successful tests with 61% coverage based on intellij">
+      <created>1543211898825</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1543211898825</updated>
+    </task>
+    <task id="LOCAL-00023" summary="added testing functionality">
+      <created>1543359037749</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1543359037750</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DeckofCardsTest - 2018.11.25 at 22h 16m 16s.xml">
-      <configuration name="DeckofCardsTest" configurationId="JUnit" />
+    <history-entry file="PlayerTest_testGUI - 2018.11.27 at 16h 37m 28s.xml">
+      <configuration name="PlayerTest.testGUI" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DiceTest - 2018.11.25 at 22h 16m 39s.xml">
-      <configuration name="DiceTest" configurationId="JUnit" />
+    <history-entry file="PlayerTest_testGUI - 2018.11.27 at 16h 40m 16s.xml">
+      <configuration name="PlayerTest.testGUI" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GameTest - 2018.11.25 at 22h 16m 59s.xml">
-      <configuration name="GameTest" configurationId="JUnit" />
+    <history-entry file="PlayerTest_testGUI - 2018.11.27 at 16h 41m 59s.xml">
+      <configuration name="PlayerTest.testGUI" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GameTest - 2018.11.25 at 22h 17m 18s.xml">
-      <configuration name="GameTest" configurationId="JUnit" />
+    <history-entry file="PlayerTest_testGUI - 2018.11.27 at 16h 42m 52s.xml">
+      <configuration name="PlayerTest.testGUI" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PlayerTest - 2018.11.25 at 22h 17m 44s.xml">
-      <configuration name="PlayerTest" configurationId="JUnit" />
+    <history-entry file="AttackTest_transferUnits - 2018.11.27 at 16h 44m 29s.xml">
+      <configuration name="AttackTest.transferUnits" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ReplayTest - 2018.11.25 at 22h 18m 06s.xml">
-      <configuration name="ReplayTest" configurationId="JUnit" />
+    <history-entry file="AttackTest_transferUnits - 2018.11.27 at 16h 47m 00s.xml">
+      <configuration name="AttackTest.transferUnits" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TelegramBotTest - 2018.11.25 at 22h 18m 26s.xml">
-      <configuration name="TelegramBotTest" configurationId="JUnit" />
+    <history-entry file="PlayerTest_testGUI - 2018.11.27 at 16h 51m 33s.xml">
+      <configuration name="PlayerTest.testGUI" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TerritoryTest - 2018.11.25 at 22h 18m 45s.xml">
-      <configuration name="TerritoryTest" configurationId="JUnit" />
+    <history-entry file="AttackTest_transferUnits - 2018.11.27 at 16h 51m 54s.xml">
+      <configuration name="AttackTest.transferUnits" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WarningTest - 2018.11.25 at 22h 19m 30s.xml">
-      <configuration name="WarningTest" configurationId="JUnit" />
+    <history-entry file="AttackTest_transferUnits - 2018.11.27 at 16h 52m 05s.xml">
+      <configuration name="AttackTest.transferUnits" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ProxyCreditTransactionTest - 2018.11.25 at 23h 41m 38s.xml">
-      <configuration name="ProxyCreditTransactionTest" configurationId="JUnit" />
+    <history-entry file="TelegramBotTest_getBotUsername - 2018.11.27 at 16h 53m 19s.xml">
+      <configuration name="TelegramBotTest.getBotUsername" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18137652" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17004049" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -950,7 +1071,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32985386" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4979757" visible="true" weight="0.8096085" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4979757" visible="true" weight="0.040925268" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.044483986" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1051,27 +1172,15 @@
     <MESSAGE value="Test fixing" />
     <MESSAGE value="Test fixing 2" />
     <MESSAGE value="Test badge fixing attempt 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test badge fixing attempt 3" />
+    <MESSAGE value="81 successful tests with 61% coverage based on intellij" />
+    <MESSAGE value="added testing functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="added testing functionality" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/world-map">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/Assert.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
@@ -1189,9 +1298,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/telegramBotToken">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -1203,16 +1309,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="31" lean-forward="true" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/GameTest2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1244,30 +1340,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/AttackTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Attack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1258">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
+        <state relative-caret-position="1105">
+          <caret line="76" column="31" selection-start-line="76" selection-start-column="31" selection-end-line="76" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/CardTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Observer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="11" column="62" lean-forward="true" selection-start-line="11" selection-start-column="62" selection-end-line="11" selection-end-column="62" />
+        <state relative-caret-position="34">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/DeckofCardsTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Replay.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-541">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Dice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-236">
+          <caret line="21" column="38" lean-forward="true" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/telegramBotToken">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="45" selection-start-column="45" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/DeckofCards.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
         </state>
       </provider>
     </entry>
@@ -1278,37 +1392,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/GameTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/GameTest2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="58" column="41" lean-forward="true" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
+        <state relative-caret-position="339">
+          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/PlayerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1989">
-          <caret line="123" column="25" lean-forward="true" selection-start-line="123" selection-start-column="25" selection-end-line="123" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/ReplayTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/TelegramBotTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="42" column="10" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -1326,48 +1416,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/PaymentDirectory/JPaneTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-229">
-          <caret line="29" column="51" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Attack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1105">
-          <caret line="76" column="31" selection-start-line="76" selection-start-column="31" selection-end-line="76" selection-end-column="31" />
+        <state relative-caret-position="156">
+          <caret line="72" column="47" selection-start-line="72" selection-start-column="43" selection-end-line="72" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/ReplayTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Card.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
+        <state relative-caret-position="17">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/DeckofCards.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/TelegramBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-399">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="-950">
+          <caret line="290" column="43" lean-forward="true" selection-start-line="290" selection-start-column="43" selection-end-line="290" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Observer.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/CreditTransactionTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        <state relative-caret-position="306">
+          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#470#471#0" expanded="true" />
+            <element signature="e#499#500#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4507">
-          <caret line="73" column="22" selection-start-line="73" selection-start-column="16" selection-end-line="73" selection-end-column="22" />
+        <state relative-caret-position="102">
+          <caret line="140" column="18" selection-start-line="140" selection-start-column="18" selection-end-line="140" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2888#2889#0" expanded="true" />
@@ -1378,9 +1473,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/HelperClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/PaymentDirectory/RealCreditTransaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/PaymentDirectory/CreditInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/PaymentDirectory/ProxyCreditTransaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15">
+          <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/GameTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="58" column="41" lean-forward="true" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/PaymentDirectory/ProxyCreditTransactionTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
+        <state relative-caret-position="-29">
           <caret line="22" column="32" lean-forward="true" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1388,55 +1521,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/PaymentDirectory/RealCreditTransaction.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/PaymentDirectory/JPaneTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="63" column="5" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+        <state relative-caret-position="328">
+          <caret line="29" column="51" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/PaymentDirectory/ProxyCreditTransaction.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/TelegramBotTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+        <state relative-caret-position="1224">
+          <caret line="76" column="8" selection-start-line="76" selection-start-column="8" selection-end-line="76" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/HelperClass.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/AttackTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-132">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Replay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-541">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Dice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="57" selection-start-line="57" selection-end-line="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/TelegramBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3631">
-          <caret line="111" column="39" selection-start-line="111" selection-start-column="39" selection-end-line="111" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="75" />
+        <state relative-caret-position="816">
+          <caret line="53" column="3" selection-start-line="53" selection-start-column="3" selection-end-line="53" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#838#846#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/CardTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/DeckofCardsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-104">
+          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/PlayerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="168" column="7" lean-forward="true" selection-start-line="161" selection-start-column="6" selection-end-line="168" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

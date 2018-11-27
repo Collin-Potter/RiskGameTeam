@@ -105,7 +105,7 @@ public class TelegramBot extends TelegramLongPollingBot {
 				playerList.add(new Player(35, playerName, false, false, (i)));
 				message_text = playerName + " you are a Risk player now .";
 				Send(message_text);
-				if (playerList.size() == 3) {
+				if (playerList.size() == 2) {
 					message_text = " Dividing territories among players, Reinforcement will begin soon .";
 					Send(message_text);
 					TelegramTerritoryDistribution(); // Distribute territories among players
@@ -288,7 +288,7 @@ public class TelegramBot extends TelegramLongPollingBot {
             fulfillAttack(playerList.get(0), DefendingTerr, AttackingTerr);
 
             if (WIN == true) {
-                String Mess = playerList.get(0).getTeam() + " you have won. You have " + AttackingTerr.getTroopCount() +
+                String Mess = AttackingTerr.getTeam() + " you have won. You have " + AttackingTerr.getTroopCount() +
                         " troops available, how many do you wanna put in " + DefendingTerr.getName() + "?";
 				long chat_id = update2.getCallbackQuery().getMessage().getChatId();
 				SendMessage messageX = new SendMessage() // Create a message object object
