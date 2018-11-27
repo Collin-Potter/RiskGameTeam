@@ -240,17 +240,17 @@
         <counts>
           <entry key="java" value="17606" />
           <entry key="telegramBotToken" value="2" />
-          <entry key="txt" value="379" />
+          <entry key="txt" value="393" />
           <entry key="xml" value="15" />
-          <entry key="yml" value="21" />
+          <entry key="yml" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="17606" />
-          <entry key="PLAIN_TEXT" value="381" />
+          <entry key="PLAIN_TEXT" value="395" />
           <entry key="XML" value="15" />
-          <entry key="YAML" value="21" />
+          <entry key="YAML" value="24" />
         </counts>
       </usages-collector>
     </session>
@@ -305,8 +305,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="9" lean-forward="true" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+            <state relative-caret-position="119">
+              <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -668,7 +668,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543361547629" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543361755474" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -1031,7 +1031,21 @@
       <option name="project" value="LOCAL" />
       <updated>1543361139789</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="tag trying to fix">
+      <created>1543361399460</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1543361399460</updated>
+    </task>
+    <task id="LOCAL-00027" summary="tag trying to fix">
+      <created>1543361583371</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1543361583371</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1184,7 +1198,8 @@
     <MESSAGE value="added testing functionality" />
     <MESSAGE value="tests" />
     <MESSAGE value="tag" />
-    <option name="LAST_COMMIT_MESSAGE" value="tag" />
+    <MESSAGE value="tag trying to fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="tag trying to fix" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -1577,8 +1592,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="9" lean-forward="true" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="48" />
         </state>
       </provider>
     </entry>
