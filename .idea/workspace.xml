@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="087f274c-ab32-4c48-b81e-7ced91bde2fe" name="Default Changelist" comment="">
+    <list default="true" id="087f274c-ab32-4c48-b81e-7ced91bde2fe" name="Default Changelist" comment="CodeCov">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BaseGameEssentials/TelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseGameEssentials/TelegramBot.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -220,36 +220,36 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="7" />
-          <entry key="java" value="245" />
+          <entry key="java" value="247" />
           <entry key="telegramBotToken" value="6" />
           <entry key="world-map" value="1" />
           <entry key="xml" value="11" />
-          <entry key="yml" value="3" />
+          <entry key="yml" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="7" />
-          <entry key="JAVA" value="244" />
+          <entry key="JAVA" value="246" />
           <entry key="PLAIN_TEXT" value="7" />
           <entry key="Scratch" value="1" />
           <entry key="XML" value="11" />
-          <entry key="YAML" value="3" />
+          <entry key="YAML" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="17606" />
+          <entry key="java" value="17931" />
           <entry key="telegramBotToken" value="2" />
-          <entry key="txt" value="405" />
+          <entry key="txt" value="412" />
           <entry key="xml" value="19" />
           <entry key="yml" value="38" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="17606" />
-          <entry key="PLAIN_TEXT" value="407" />
+          <entry key="JAVA" value="17931" />
+          <entry key="PLAIN_TEXT" value="414" />
           <entry key="XML" value="19" />
           <entry key="YAML" value="38" />
         </counts>
@@ -294,7 +294,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/PlayerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2584">
+            <state relative-caret-position="412">
               <caret line="169" column="1" selection-start-line="169" selection-start-column="1" selection-end-line="169" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -303,20 +303,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/TelegramBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+            <state relative-caret-position="-2737">
+              <caret line="60" column="30" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="35" column="21" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
+            <state relative-caret-position="275">
+              <caret line="313" column="17" selection-start-line="313" selection-start-column="17" selection-end-line="313" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -343,6 +346,8 @@
       <find>setcre</find>
       <find>WIN ==</find>
       <find>undo</find>
+      <find>reinforce</find>
+      <find>printwhereicanattack</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -366,7 +371,6 @@
         <option value="$PROJECT_DIR$/src/test/java/AttackTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/TelegramBotHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/TurnTimer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Game.java" />
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/DeckofCards.java" />
         <option value="$PROJECT_DIR$/src/test/java/BaseGameEssentials/GameTest2.java" />
         <option value="$PROJECT_DIR$/src/test/java/BaseGameEssentials/DiceTest.java" />
@@ -381,7 +385,6 @@
         <option value="$PROJECT_DIR$/src/test/java/PaymentDirectory/ProxyCreditTransactionTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/telegramBotToken" />
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Dice.java" />
-        <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/TelegramBot.java" />
         <option value="$PROJECT_DIR$/src/test/java/BaseGameEssentials/TelegramBotTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/BaseGameEssentials/AttackTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/BaseGameEssentials/CreditTransactionTest.java" />
@@ -392,6 +395,9 @@
         <option value="$PROJECT_DIR$/src/test/java/BaseGameEssentials/PlayerTest.java" />
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/target/codecov.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Game.java" />
+        <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/TelegramBot.java" />
       </list>
     </option>
   </component>
@@ -463,17 +469,6 @@
             <path>
               <item name="RiskGameTeam" type="b2602c69:ProjectViewProjectNode" />
               <item name="RiskGameTeam" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RiskGameTeam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RiskGameTeam" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-              <item name="libraries" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RiskGameTeam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RiskGameTeam" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -502,42 +497,6 @@
               <item name="RiskGameTeam" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="PaymentDirectory" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RiskGameTeam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RiskGameTeam" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RiskGameTeam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RiskGameTeam" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RiskGameTeam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RiskGameTeam" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RiskGameTeam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RiskGameTeam" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="BaseGameEssentials" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RiskGameTeam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RiskGameTeam" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="PaymentDirectory" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -594,7 +553,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543364484578" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543384682606" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -613,6 +572,8 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sanaz\RiskGameTeam\src\main\java\RiskGameTeam" />
+      <recent name="C:\Users\sanaz\RiskGameTeam\src\main\java\RiskGameTeam\.idea" />
       <recent name="C:\Users\sanaz\RiskGameTeam\src\main\java\RiskGameTeam\src\main\java\BaseGameEssentials" />
       <recent name="C:\Users\capar\Desktop\Java Projects\RiskGameTeam\src\test\java" />
       <recent name="C:\Users\capar\Desktop\Java Projects\RiskGameTeam\src\test" />
@@ -1006,7 +967,21 @@
       <option name="project" value="LOCAL" />
       <updated>1543363809512</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="CodeCov">
+      <created>1543375268777</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1543375268778</updated>
+    </task>
+    <task id="LOCAL-00034" summary="CodeCov">
+      <created>1543376455262</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1543376455262</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1135,7 +1110,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="attack warning using observer pattern" />
     <MESSAGE value="finished observer pattern" />
     <MESSAGE value="Implementing methods to simplify TelegramBot utilization of Game functionality" />
     <MESSAGE value="Implementing methods to simplify TelegramBot utilization of Game functionality for Attack" />
@@ -1160,14 +1134,14 @@
     <MESSAGE value="tag" />
     <MESSAGE value="tag trying to fix" />
     <MESSAGE value=" fix the tag" />
-    <option name="LAST_COMMIT_MESSAGE" value=" fix the tag" />
+    <MESSAGE value="CodeCov" />
+    <option name="LAST_COMMIT_MESSAGE" value="CodeCov" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/AttackTest.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/ArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10506">
@@ -1193,6 +1167,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="826" selection-start-line="826" selection-end-line="826" />
+          <folding>
+            <element signature="e#22786#22787#0" expanded="true" />
+            <element signature="e#22821#22822#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1249,6 +1227,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="61">
           <caret line="563" selection-start-line="563" selection-end-line="563" />
+          <folding>
+            <element signature="e#21679#21680#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1374,16 +1355,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="72" column="47" selection-start-line="72" selection-start-column="43" selection-end-line="72" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/ReplayTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1395,13 +1366,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/TelegramBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-950">
-          <caret line="290" column="43" lean-forward="true" selection-start-line="290" selection-start-column="43" selection-end-line="290" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -1445,16 +1409,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-15">
           <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/PlayerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2584">
-          <caret line="169" column="1" selection-start-line="169" selection-start-column="1" selection-end-line="169" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1519,13 +1473,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1533,6 +1480,47 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
           <caret line="35" column="21" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codecov.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/PlayerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="169" column="1" selection-start-line="169" selection-start-column="1" selection-end-line="169" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="313" column="17" selection-start-line="313" selection-start-column="17" selection-end-line="313" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/TelegramBot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2737">
+          <caret line="60" column="30" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
         </state>
       </provider>
     </entry>

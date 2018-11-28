@@ -45,17 +45,13 @@ public class TelegramBot extends TelegramLongPollingBot {
 
 		// receiving commands
 		update2 = update;
-		if (update2.hasCallbackQuery()){
-			//If the update is call back query of a button
+		if (update2.hasCallbackQuery()){ //If the update is call back query of a button
              ParsQuery();
-		}else {
-			//If updates are regular commands
+		}else {//If updates are regular commands
 			String command = update.getMessage().getText();
 			System.out.println(command);
-			if (command.equals("/start") || command.equals("/join@CSGSanaz_bot")) {
+			if (command.equals("/start") || command.equals("/join@CSGSanaz_bot") || command.equals("/attack@CSGSanaz_bot")) {
 				translateMessage(command);
-			} else if (gameOn == true) {
-				ParsTranslate(command);
 			}
 		}
 	}
@@ -63,7 +59,6 @@ public class TelegramBot extends TelegramLongPollingBot {
 	@Override
 	public String getBotUsername() {
 		// Return bot username
-		// If bot username is @MyAmazingBot, it must return 'MyAmazingBot'
 		return "CSGSanaz_bot";
 	}
 
@@ -109,114 +104,35 @@ public class TelegramBot extends TelegramLongPollingBot {
 					message_text = " Dividing territories among players, Reinforcement will begin soon .";
 					Send(message_text);
 					TelegramTerritoryDistribution(); // Distribute territories among players
-                    printTerritories();
+					for(Player p: playerList) {	TelegramReinforce(p.getTeam());	}
+
 				}
 
-			} else {
-					System.out.println("User enrolled already.");
-				}
-
-		}
-
-	}
-
-	/**Method to translate the secondary commands of the game and also the commands that require parsing.
-	 * On /attack calls the method printWhatTerritoriesToAttackFrom(p) which print the counties from where the player can make an attack from
-	 * on anything else parsing at # takes place and the parsing results is saved in the temp array list.
-	 * if the extracted command is /reinforce calls method TelegramReinforce(), the calls the method showReinforcement(playerName) to
-	 * send the reinforcement result back to telegram chat.
-	 * if the extracted command is /put allows transfer of troops to the newly won territory
-	 * @param message : the received message from the telegram bot.
-	 * **/
-	public void ParsTranslate(String message) {
-		if(message.equals("/attack@CSGSanaz_bot") && AttackPhase == true){
-			TurnKeeper(playerList);
-			printWhatTerritoriesToAttackFrom(PLAYERTurnKeeper);
-
-		} else{
-		temp.clear();
-		String playerName = update2.getMessage().getFrom().getFirstName();
-		String[] tokens = message.split("#");
-		for (String t : tokens) {
-			temp.add(t);
-		}
-		String Command = temp.get(0);
-		int LandID = Integer.valueOf(temp.get(1));
-		    if (Command.equals("/reinforce@CSGSanaz_bot")) {
-			TelegramReinforce(playerName, LandID);
-			showReinforcement(playerName);
-		}
-		    if(Command.equals("/put@CSGSanaz_bot")){
-		        if(LandID < AttackingTerr.getTroopCount()){
-		            int RemainingTroops = AttackingTerr.getTroopCount()- LandID;
-		            AttackingTerr.setTroopCount(RemainingTroops);
-		            DefendingTerr.setTroopCount(LandID);
-		            System.out.println("Troop movement was successful.");
-					Send("Troop Transfer was Successful. It's the next player's turn.");
-                }
-            }
-
-		temp.clear();
-		}
-	}
-   /**Telegram print territories method which goes through the list of players then territories and and sends the information of territories
-	* to the players in the order of the players in the playerlist .
-	* **/
-	public void printTerritories() {
-		for (Player p : playerList) {
-			for (Territory t : territoryList) {
-				if (t.getTeam().equals(p.getTeam())) {
-					message_text = p.getTeam() + ":" + "\nTerritory ID: "+t.getID() + "\nCountry: " + t.getName() +
-							" \ntroops:" + t.getTroopCount();
-					Send(message_text);
-				}
 			}
-		} //Message to verify end of printing
-		gameOn = true;
-		message_text = "Players now you know your territories, you may start reinforcing. To reinforce, follow the following command" +
-				"format: /reinforce@CSGSanaz_bot#territory ID ";
-		Send(message_text);
+		}
+		if(input.equals("/attack@CSGSanaz_bot") && AttackPhase==true && gameOn==true) {
+			TurnKeeper(playerList);
+			ArrayList <Territory> AttackFrom = new ArrayList();
+			AttackFrom = FindWhereToAttackFrom(PLAYERTurnKeeper);
+			printWhatTerritories(PLAYERTurnKeeper, "from#", AttackFrom);
+		}
 	}
-	/** method to print to telegram chat each territory after each reinforcement
-	 * @param PName: player Name( as String )**/
-	public void showReinforcement(String PName){
-		if(tempTerritoryHolder.size() != 0){
-			message_text = PName +" has reinforced:"+"\n"+ tempTerritoryHolder.get(0).getName()+
-			"\nTroops: "+ tempTerritoryHolder.get(0).getTroopCount();
-			Send(message_text);
-			tempTerritoryHolder.remove(0);
-		} else {
-			message_text = PName +" you do not have any more troops available or your request is not valid.";
-			Send(message_text);
-		}
-		System.out.println(playerList.get(0).getTroopCount() );
-		System.out.println(playerList.get(1).getTroopCount() );
-		if(playerList.get(0).getTroopCount() == 0 && playerList.get(1).getTroopCount() == 0){
-			AttackPhase = true;
-			message_text = " Attack phase may begin.The format for attack command is " +
-					"/attack@CSGSanaz_bot.";
-			Send(message_text);
-		}
 
-	}
 	/** prints the territories that a given player can attack from as buttons to choose from
 	 * Calls the method FindWhereToAttackFrom(P) to find the eligible territories to attack from
 	 * Setting the call back data from each button to be the name of the country, attached to "from#"
 	 * @param P: a given player
 	 * **/
-	public void printWhatTerritoriesToAttackFrom(Player P){
-
-          	ArrayList<Territory> GoodToAttackFrom = new ArrayList();
-          	GoodToAttackFrom = FindWhereToAttackFrom(P);
+	public void printWhatTerritories(Player P, String direction, ArrayList<Territory> List){
 		    long chat_id = update2.getMessage().getChatId();
-		    for(int i=0; i < GoodToAttackFrom.size();i++){
+		    for(int i=0; i < List.size();i++){
 				SendMessage message = new SendMessage() // Create a message object object
 						.setChatId(chat_id)
-						.setText(P.getTeam()+" You may attack from the following");
+						.setText(P.getTeam()+" You may choose the following");
 				InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
 				List<List<InlineKeyboardButton>> rowsInline = new ArrayList();
 				List<InlineKeyboardButton> rowInline = new ArrayList();
-				rowInline.add(new InlineKeyboardButton().setText(GoodToAttackFrom.get(i).getName()).setCallbackData("from#"+GoodToAttackFrom.get(i).getName()));
+				rowInline.add(new InlineKeyboardButton().setText(List.get(i).getName()).setCallbackData(direction+List.get(i).getName()));
 				// Set the keyboard to the markup
 				rowsInline.add(rowInline);
 				// Add it to the message
@@ -231,36 +147,6 @@ public class TelegramBot extends TelegramLongPollingBot {
 
 		}
 
-	/** Prints countries available to be attacked as buttons
-	 * Setting the call back data from each button to be the name of the country, attached to "to#"
-	 * @param List: an array list of type territory which includes the territories that the player can attack.
-	 * **/
-	public void PrintWhereICanAttack(ArrayList <Territory> List) {
-		long chat_id = update2.getCallbackQuery().getMessage().getChatId();
-		SendMessage message = new SendMessage() // Create a message object object
-				.setChatId(chat_id)
-				.setText(" You may attack the following enemy territory");
-
-		for (int i = 0; i < List.size(); i++) {
-			InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-			List<List<InlineKeyboardButton>> rowsInline = new ArrayList();
-			List<InlineKeyboardButton> rowInline = new ArrayList<InlineKeyboardButton>();
-			rowInline = new ArrayList();
-			rowInline.add(new InlineKeyboardButton().setText(List.get(i).getName()).setCallbackData("to#"+List.get(i).getName()));
-			rowsInline.add(rowInline);
-			// Add it to the message
-			markupInline.setKeyboard(rowsInline);
-			message.setReplyMarkup(markupInline);
-			try {
-				execute(message); // Sending our message object to user
-			} catch (TelegramApiException e) {
-				e.printStackTrace();
-			}
-		}
-		// Set the keyboard to the markup
-
-
-	}
 	/**
 	 * Method to parse the call back query results
 	 * Once a button is pushed , the bot sends a callbackquery and once our onUpdateReceived() method catches the callbackquery,
@@ -280,7 +166,7 @@ public class TelegramBot extends TelegramLongPollingBot {
 		if(temp.get(0).equals("from")){
 			ArrayList<Territory> GoodToAttack = new ArrayList();
 			GoodToAttack = FindWhereICanAttack(temp.get(1));
-			PrintWhereICanAttack(GoodToAttack);
+			printWhatTerritories(PLAYERTurnKeeper,"to",GoodToAttack);
 		}else if(temp.get(0).equals("to")){
 			for(Territory t: territoryList){
 				if(t.getName().equals(temp.get(1))){DefendingTerr=t; System.out.println(DefendingTerr.getTeam());}
@@ -288,31 +174,17 @@ public class TelegramBot extends TelegramLongPollingBot {
             fulfillAttack(playerList.get(0), DefendingTerr, AttackingTerr);
 
             if (WIN == true) {
-                String Mess = AttackingTerr.getTeam() + " you have won. You have " + AttackingTerr.getTroopCount() +
-                        " troops available, how many do you wanna put in " + DefendingTerr.getName() + "?";
-				long chat_id = update2.getCallbackQuery().getMessage().getChatId();
-				SendMessage messageX = new SendMessage() // Create a message object object
-						.setChatId(chat_id)
-						.setText(Mess);
-				try {
-					execute(messageX); // Sending our message object to user
-				} catch (TelegramApiException e) {
-					e.printStackTrace();
-				}
+               	int RemainingTroops = AttackingTerr.getTroopCount()- 1;
+				AttackingTerr.setTroopCount(RemainingTroops);
+				DefendingTerr.setTroopCount(1);
+				System.out.println("Troop movement was successful.");
+				Send(AttackingTerr.getTeam() + " you have won. You have placed 1 troop on"+ DefendingTerr.getName());
 
             }
             if (NotEnoughTroops == true) {
                 String Mess = "You don't have enough troops to continue this attack. Wait for your turn and " +
                         "choose another territory to attack from ";
-				long chat_id = update2.getCallbackQuery().getMessage().getChatId();
-				SendMessage messageX = new SendMessage() // Create a message object object
-						.setChatId(chat_id)
-						.setText(Mess);
-				try {
-					execute(messageX); // Sending our message object to user
-				} catch (TelegramApiException e) {
-					e.printStackTrace();
-				}
+				Send(Mess);
             }
 		}
 	}
