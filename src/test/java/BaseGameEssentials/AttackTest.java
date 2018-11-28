@@ -98,4 +98,6 @@ public class AttackTest {
         Attack test = new Attack();
         test.dataChanged("sanaz","hi");
     }
+
+
 }

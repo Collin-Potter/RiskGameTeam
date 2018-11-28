@@ -47,32 +47,14 @@ public class Replay {
         }
         String bucketName = "risk-playback";
 //        s3client.createBucket(bucketName);                              //  Creation of bucket unnecessary if bucket is manually created in advance
-        try {
-            if (s3client.getObject(bucketName, "riskGame") != null) {
-                createFolder(bucketName, "riskGame", s3client);                   //  Creation of folder unnecessary if folder is manually created in advance
-                //TODO: Implement folder checker to not attempt creation of same name replay.
-                try {
-                    uploadFile(bucketName, "riskGame");
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            } else {
-                try {
-                    //TODO: Implement folder checker to not attempt creation of same name replay.
-                    uploadFile(bucketName, "riskGame");
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        } catch (AmazonS3Exception e) {
-            e.printStackTrace();
+
             try {
                 createFolder(bucketName,"riskGame",s3client);
                 uploadFile(bucketName, "riskGame");
             } catch (Exception x) {
                 x.printStackTrace();
             }
-        }
+        
     }
 
     //Uploads replayDocument to previously created folder in Bucket

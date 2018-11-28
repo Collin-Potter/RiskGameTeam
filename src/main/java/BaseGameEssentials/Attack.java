@@ -11,6 +11,7 @@ public class Attack extends Game implements SubjectInterface {
     public String playerName;
     public String countryName;
     ArrayList<Observer> observerList;
+    boolean InvasionStatus = true; // used to control if the player decides to start a new attack
     public Attack() {
         observerList = new ArrayList<Observer>();
     }
@@ -31,13 +32,11 @@ public class Attack extends Game implements SubjectInterface {
 
             /*First checks if a user is to be skipped or not based on the value returned from TurnTimer*/
             if (readyornot != 4) {
-                boolean InvasionStatus = true; // used to control if the player decides to start a new attack
                 while (InvasionStatus == true) {
                     // from is the list of territories that attacking from is possible
                     ArrayList<Territory> from = FindWhereToAttackFrom(p);
                     if (from.size() == 0) {
                         InvasionStatus = false;
-                        break;
                     }
                     Print(from,p);
                     AttackingTerr = TakeTerritoryInput(from);

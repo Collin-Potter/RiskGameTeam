@@ -105,7 +105,13 @@ public class GameTest {
             if(t.getTeam().equals("Sanaz")){
                 Game.TelegramReinforce("Sanaz", t.getID());
                 Game.TelegramReinforce("Sanaz", t.getID());
+                Game.TelegramReinforce("Sanaz", t.getID());
+                Game.TelegramReinforce("Sanaz", t.getID());
+                Game.TelegramReinforce("Sanaz", t.getID());
+                Game.TelegramReinforce("Sanaz", t.getID());
                 ArrayList<Territory> To = Game.FindWhereICanAttack(t.getName());
+                Game.TelegramReinforce("Collin", To.get(0).getID());
+                Game.TelegramReinforce("Collin", To.get(0).getID());
                 Game.fulfillAttack(playerList.get(0), To.get(0),t);
                 break;
             }

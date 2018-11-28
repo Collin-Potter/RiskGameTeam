@@ -21,10 +21,10 @@ public class JPane {
 
     public void displayGUI(int transactionType, Player currentUser){
         this.currentUser = currentUser;
-        determineMenu(transactionType);
+       // determineMenu(transactionType);
     }
 
-    public void determineMenu(int transactionType){
+ /**   public void determineMenu(int transactionType){
         switch(transactionType){
             case(1):
                 displayCreditAmountPrompt();
@@ -289,5 +289,5 @@ public class JPane {
             System.out.println("ERROR: Failure creating Recipient Selector Menu");
         }
         return 0;
-    }
+    }**/
 }

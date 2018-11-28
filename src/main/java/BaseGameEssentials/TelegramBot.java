@@ -37,7 +37,6 @@ public class TelegramBot extends TelegramLongPollingBot {
 		// receiving commands
 		update2 = update;
 			String command = update.getMessage().getText();
-			System.out.println(command);
 			if (command.equals("/start") || command.equals("/join@CSGSanaz_bot") || command.equals("/attack@CSGSanaz_bot")) {
 				translateMessage(command);
 			}
@@ -68,14 +67,12 @@ public class TelegramBot extends TelegramLongPollingBot {
 		if (input.equals("/start")) {
 			String playerName = update2.getMessage().getFrom().getFirstName();
 			playerList.add(new Player(35, playerName, false, false, (i)));
-			i++;
 			message_text = "Welcome To Risk " + playerName + " you are our first player. We need two more players to play the game." +
 					"If you want to play send /join@CSGSanaz_bot " + "command to become a player.";
 			Send(message_text);
 		}
 		if (input.equals("/join@CSGSanaz_bot") && playerList.size() != 3) {
 			String playerName = update2.getMessage().getFrom().getFirstName();
-			i++;
 			boolean goodToGo = false;
 			//ensuring the same player does not enroll to the game more than once
 			if (playerList.size() == 1 && !playerName.equals(playerList.get(0).getTeam())) {
