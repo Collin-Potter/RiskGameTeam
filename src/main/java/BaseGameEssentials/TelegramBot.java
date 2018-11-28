@@ -18,13 +18,9 @@ import static BaseGameEssentials.Game.*;
 public class TelegramBot extends TelegramLongPollingBot {
 
 	private static String botKeyStr = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
-	private BufferedReader br;
-	private FileReader fr;
 	public static ArrayList <String> temp = new ArrayList <String>();
 	public static String message_text = new String();
 	public int i = 0;
-	public boolean gameOn = false;
-	public boolean AttackPhase = false;
 	public static Territory AttackingTerr, DefendingTerr;
 	public static boolean WIN = false;
 	public static boolean NotEnoughTroops = false;
@@ -88,8 +84,6 @@ public class TelegramBot extends TelegramLongPollingBot {
 			if (goodToGo == true) {
 				playerList.add(new Player(35, playerName, false, false, (i)));
 				if (playerList.size() == 2) {
-					message_text = " Dividing territories among players, Reinforcement will begin soon .";
-					Send(message_text);
 					TelegramTerritoryDistribution(); // Distribute territories among players
 					for (Player p : playerList) {
 						int ID = 0;
@@ -97,19 +91,17 @@ public class TelegramBot extends TelegramLongPollingBot {
 							if (t.getTeam().equals(p.getTeam())) {TelegramReinforce(p.getTeam(), t.getID());}
 						}
 					}
-
+					for(Player p : playerList) {
+						ArrayList <Territory> AttackFrom = new ArrayList(), To = new ArrayList <Territory>();
+						AttackFrom = FindWhereToAttackFrom(PLAYERTurnKeeper);
+						To = Game.FindWhereICanAttack(AttackFrom.get(0).getName());
+						fulfillAttack(p,To.get(0),AttackFrom.get(0));
+					}
 				}
 
 			}
 		}
-		if (input.equals("/attack@CSGSanaz_bot") && AttackPhase == true && gameOn == true) {
-			for(Player p : playerList) {
-				ArrayList <Territory> AttackFrom = new ArrayList(), To = new ArrayList <Territory>();
-				AttackFrom = FindWhereToAttackFrom(PLAYERTurnKeeper);
-				To = Game.FindWhereICanAttack(AttackFrom.get(0).getName());
-				fulfillAttack(p,To.get(0),AttackFrom.get(0));
-			}
-		}
+
 	}
 	/**
 	 * Method to keep track of players turns
@@ -140,6 +132,7 @@ public class TelegramBot extends TelegramLongPollingBot {
 		} catch (TelegramApiException e) {
 			e.printStackTrace();
 		}
+
 	}
 }
 

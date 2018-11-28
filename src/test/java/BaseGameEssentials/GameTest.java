@@ -49,7 +49,7 @@ public class GameTest {
         }
         int currentTroops = terr.getTroopCount();
         System.out.println(terr.getTeam()+" "+ terr.getTroopCount()+"  "+playerList.get(0).getTroopCount());
-        playerList.get(0).setTroopCount(50);
+        playerList.get(0).setTroopCount(1000);
         Game.TelegramReinforce("Sanaz", terr.getID());
         assertEquals(currentTroops+1, terr.getTroopCount());
 
@@ -111,5 +111,6 @@ public class GameTest {
             }
         }
     }
+
 
 }

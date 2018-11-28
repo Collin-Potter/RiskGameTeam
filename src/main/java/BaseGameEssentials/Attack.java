@@ -35,13 +35,11 @@ public class Attack extends Game implements SubjectInterface {
                 while (InvasionStatus == true) {
                     // from is the list of territories that attacking from is possible
                     ArrayList<Territory> from = FindWhereToAttackFrom(p);
-                    if (from.size() != 0) {
-                        Print(from, p);
-                    } else {
-                        System.out.println("You may not attack at this this time.");
+                    if (from.size() == 0) {
                         InvasionStatus = false;
                         break;
                     }
+                    Print(from,p);
                     AttackingTerr = TakeTerritoryInput(from);
                     // to is the list of the territories that can be attacked from the chosen territory
                     ArrayList<Territory> to = FindWhereICanAttack(AttackingTerr.getName());
@@ -51,16 +49,9 @@ public class Attack extends Game implements SubjectInterface {
                     dataChanged(DefendingTerr.getTeam(), DefendingTerr.getName());
                     //Finalizing the attack
                     fulfillAttack(p, DefendingTerr, AttackingTerr);
-                    if (NotEnoughTroops == true) {
-                        InvasionStatus = WithdrawOrNOt();
-                        NotEnoughTroops=false;
-                    }
+                    if (NotEnoughTroops == true) { InvasionStatus = WithdrawOrNOt(); NotEnoughTroops=false; }
                     //If Invader wins
-                    if (WIN) {
-                        TransferUnits();
-                        InvasionStatus = WithdrawOrNOt();
-                        WIN=false;
-                    }
+                    if (WIN) { TransferUnits(); InvasionStatus = WithdrawOrNOt(); WIN=false;  }
                 }
             }
         }
@@ -157,13 +148,7 @@ public class Attack extends Game implements SubjectInterface {
     public void registerObserver(Observer o) {
         observerList.add(o);
     }
-    /**
-     * Method to allow removing Observers(any class that implements observer Interface) from the observer list
-     * **/
-    @Override
-    public void removeObserver(Observer o) {
-        observerList.remove(observerList.indexOf(o));
-    }
+
     /**
      * This method goes through the list of observers and notify them of the changes happened in Attack
      * **/

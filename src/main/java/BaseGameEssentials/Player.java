@@ -316,15 +316,7 @@ public class Player extends Game {
                         if (this.getArtillaryCardsList().size() > 0) {
                             System.out.println("4. Use your Artillery card deck");
                         }
-        //If somehow it gets this far and they have no items
-                        if(this.getNumUndo() == 0 &&
-                                this.getInfantryCardsList().size() == 0 &&
-                                this.getCalvalryCardsList().size() == 0 &&
-                                this.getArtillaryCardsList().size() == 0){
-                            System.out.println("You have no items to take advantage of.\n" +
-                                    "Moving on...");
-                            break;
-                        }
+
                         String userInput = input.nextLine();
                         try{
                             userInputTranslated = Integer.parseInt(userInput);

@@ -157,6 +157,9 @@ public class PlayerTest {
         playerList.get(0).setNumUndo(5);
         systemInMock.provideLines("1","1");
         playerList.get(0).useHand();
+
+        systemInMock.provideLines("1","1");
+        playerList.get(0).useHand();
     }
 
 //    @Test

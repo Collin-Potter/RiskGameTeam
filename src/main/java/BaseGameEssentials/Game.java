@@ -2,8 +2,6 @@ package BaseGameEssentials;
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
-
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -16,8 +14,6 @@ import static BaseGameEssentials.TelegramBot.WIN;
 
 
 public class Game{
-    //private static final int MAP_REGION_AMOUNT = 42; //NOT USED
-   // private static int UNTOUCHED_TERRITORIES = 42; //NOT USED
     public static ArrayList<Territory> territoryList = new ArrayList<Territory>();
     public static ArrayList<Player> playerList = new ArrayList<Player>();
     public static ArrayList<Card> Cards = new ArrayList();
@@ -32,7 +28,7 @@ public class Game{
     private int tweetTerr = 0; //keeps track of how many territories each player won in a turn for tweet functionality
     private int turnCount = 0; //keeps track of current turn number 
 //public static Update update;
-    public static void main(String[] args){
+    public static void main(String[] args) {
         readFileTerritories();
         // Initialize Api Context
         ApiContextInitializer.init();
@@ -44,7 +40,6 @@ public class Game{
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
-
         gameSetUp();
         newTroopDistribution();
         reinforceTerritories(0);
@@ -183,14 +178,6 @@ public class Game{
         for(int i = 0; i < amt*2; i++) {
             for (Player p : playerList) {
                 if (p.getTroopCount() != 0) {
-                    System.out.println(p.getTeam() + " you have " + p.getTroopCount() + " troops to distribute...");
-                    System.out.println("Current territories: \n");
-                    for (Territory t : territoryList) {
-                        if (t.getTeam().equals(p.getTeam())) {
-                            System.out.printf("ID: %-5s Name: %-25s TroopCount: %-5d", t.getID(), t.getName(), t.getTroopCount());
-                            System.out.printf(" Continent: %-10s\n", t.getContinent());
-                        }
-                    }
                     p.reinforceRegions(0);
                     p.percentageInControl();
                 }
