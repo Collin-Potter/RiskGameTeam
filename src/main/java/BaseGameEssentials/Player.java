@@ -85,18 +85,6 @@ public class Player extends Game {
         this.ID = ID;
     }
 
-   /** public ArrayList<Integer> getCountryID(ArrayList<Territory> list) {
-        for (Territory t : list) {
-            if (t.getTeam().equals(this.team)) {
-                countryID.add(t.getID());
-            }
-        }
-        return this.countryID;
-    }**/
-
-    /**public int setTurn() {
-        return (this.ID + 1);
-    }**/
     public boolean getTurn(){
         return(this.isTurn);
     }
@@ -108,10 +96,6 @@ public class Player extends Game {
     public void setTroopCount(int i) {
         this.troopCount = i;
     }
-
-  /**  public void addTroops(int i) {
-        this.troopCount += i;
-    }**/
 
     public void decTroopCount(int i) {
         this.troopCount -= i;
@@ -128,10 +112,6 @@ public class Player extends Game {
     public int getTerritoryCount() {
         return this.territoryCount;
     }
-
-    /**public void setTerritoryCount(int numT) {
-        this.territoryCount = numT;
-    }**/
 
     public void incTerritoryCount() {
         this.territoryCount++;

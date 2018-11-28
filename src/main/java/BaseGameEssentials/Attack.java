@@ -55,7 +55,6 @@ public class Attack extends Game implements SubjectInterface {
                         InvasionStatus = WithdrawOrNOt();
                         NotEnoughTroops=false;
                     }
-
                     //If Invader wins
                     if (WIN) {
                         TransferUnits();
