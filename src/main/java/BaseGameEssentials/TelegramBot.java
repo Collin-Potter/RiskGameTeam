@@ -67,37 +67,15 @@ public class TelegramBot extends TelegramLongPollingBot {
 		if (input.equals("/start")) {
 			String playerName = update2.getMessage().getFrom().getFirstName();
 			playerList.add(new Player(35, playerName, false, false, (i)));
-			message_text = "Welcome To Risk " + playerName + " you are our first player. We need two more players to play the game." +
-					"If you want to play send /join@CSGSanaz_bot " + "command to become a player.";
-			Send(message_text);
 		}
 		if (input.equals("/join@CSGSanaz_bot") && playerList.size() != 3) {
 			String playerName = update2.getMessage().getFrom().getFirstName();
-			boolean goodToGo = false;
-			//ensuring the same player does not enroll to the game more than once
-			if (playerList.size() == 1 && !playerName.equals(playerList.get(0).getTeam())) {
-				goodToGo = true;
-			}
-			if (goodToGo == true) {
 				playerList.add(new Player(35, playerName, false, false, (i)));
 				if (playerList.size() == 2) {
 					TelegramTerritoryDistribution(); // Distribute territories among players
-					for (Player p : playerList) {
-						int ID = 0;
-						for (Territory t : territoryList) {
-							if (t.getTeam().equals(p.getTeam())) {TelegramReinforce(p.getTeam(), t.getID());}
-						}
-					}
-					for(Player p : playerList) {
-						ArrayList <Territory> AttackFrom = new ArrayList(), To = new ArrayList <Territory>();
-						AttackFrom = FindWhereToAttackFrom(PLAYERTurnKeeper);
-						To = Game.FindWhereICanAttack(AttackFrom.get(0).getName());
-						fulfillAttack(p,To.get(0),AttackFrom.get(0));
-					}
 				}
-
 			}
-		}
+
 
 	}
 	/**
@@ -116,20 +94,6 @@ public class TelegramBot extends TelegramLongPollingBot {
 			}
 		}
 	}
-	/** General Method to send Message to telegram chat
-	 * @param mess : String message to be sent
-	 * **/
-	public void Send(String mess){
-		long chat_id = update2.getMessage().getChatId();
-		SendMessage messageX = new SendMessage() // Create a message object object
-				.setChatId(chat_id)
-				.setText(mess);
-		try {
-			execute(messageX); // Sending our message object to user
-		} catch (TelegramApiException e) {
-			e.printStackTrace();
-		}
 
-	}
 }
 

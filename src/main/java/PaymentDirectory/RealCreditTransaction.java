@@ -33,7 +33,7 @@ public class RealCreditTransaction implements CreditInterface {
     }
 
     private void beginTransaction(int userInput) {
-        switch (userInput) {
+        /**switch (userInput) {
             case (1):
                 System.out.println("\"Purchase Credit\" selected...");
                 purchaseCredit();
@@ -73,7 +73,7 @@ public class RealCreditTransaction implements CreditInterface {
         run(3);
     }
     private void transferCredits(){
-        run(4);
+        run(4);**/
     }
 
 }
