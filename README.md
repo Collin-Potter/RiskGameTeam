@@ -1,4 +1,4 @@
-# RiskGameTeam   [![Build Status](https://travis-ci.com/Caparoonie505/RiskGameTeam.svg?branch=master)](https://travis-ci.com/Caparoonie505/RiskGameTeam)  [![Coverage Status](https://coveralls.io/repos/github/Caparoonie505/RiskGameTeam/badge.svg?branch=master)](https://coveralls.io/github/Caparoonie505/RiskGameTeam?branch=master)
+# RiskGameTeam   [![Build Status](https://travis-ci.com/Caparoonie505/RiskGameTeam.svg?branch=master)](https://travis-ci.com/Caparoonie505/RiskGameTeam)  [![codecov](https://codecov.io/gh/Caparoonie505/RiskGameTeam/branch/master/graph/badge.svg](https://codecov.io/gh/Caparoonie505/RiskGameTeam)
 
 Welcome to CSG's Risk Game:
 
