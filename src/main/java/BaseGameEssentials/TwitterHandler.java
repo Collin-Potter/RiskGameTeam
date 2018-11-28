@@ -55,7 +55,7 @@ public class TwitterHandler {
 	}
 	
 	public void deleteTweets(){
-		try {
+	/**	try {
 			List<Status> status = twitterHandler.getUserTimeline();
 			for(Status st: status){
 				twitterHandler.destroyStatus(st.getId());
@@ -66,7 +66,7 @@ public class TwitterHandler {
 		} catch (TwitterException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}**/
 	}
 	
 	private void readInCredentials(String filepath){

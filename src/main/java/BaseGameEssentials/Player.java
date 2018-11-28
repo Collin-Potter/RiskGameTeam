@@ -43,8 +43,8 @@ public class Player extends Game {
         return infantryCardsList;
     }
 
-    public void addInfantryCardsList(BaseGameEssentials.Card infantryCardsList) {
-        this.infantryCardsList.add(infantryCardsList);
+   public void addInfantryCardsList(BaseGameEssentials.Card infantryCardsList) {
+     //   this.infantryCardsList.add(infantryCardsList);
     }
 
     public ArrayList<BaseGameEssentials.Card> getCalvalryCardsList() {
@@ -52,7 +52,7 @@ public class Player extends Game {
     }
 
     public void addCalvalryCardsList(BaseGameEssentials.Card calvalryCardsList) {
-        this.calvalryCardsList.add(calvalryCardsList);
+       // this.calvalryCardsList.add(calvalryCardsList);
     }
 
     public ArrayList<BaseGameEssentials.Card> getArtillaryCardsList() {
@@ -60,7 +60,7 @@ public class Player extends Game {
     }
 
     public void addArtillaryCardsList(BaseGameEssentials.Card artillaryCardsList) {
-        this.artillaryCardsList.add(artillaryCardsList);
+     //   this.artillaryCardsList.add(artillaryCardsList);
     }
 
     private ArrayList<Card> infantryCardsList = new ArrayList<Card>();
@@ -120,7 +120,7 @@ public class Player extends Game {
     public int beginCreditTransaction(){
         while(playerStillShopping) {
             CreditInterface creditTransaction = new ProxyCreditTransaction();
-            creditTransaction.display(this);
+           creditTransaction.display(this);
             System.out.println("\n");
         }
         return 0;
