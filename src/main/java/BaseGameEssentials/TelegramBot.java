@@ -104,7 +104,14 @@ public class TelegramBot extends TelegramLongPollingBot {
 					message_text = " Dividing territories among players, Reinforcement will begin soon .";
 					Send(message_text);
 					TelegramTerritoryDistribution(); // Distribute territories among players
-					for(Player p: playerList) {	TelegramReinforce(p.getTeam());	}
+					for(Player p: playerList) {
+						int ID=0;
+						for (Territory t :territoryList ){
+							if(t.getTeam().equals(p.getTeam())) {
+								TelegramReinforce(p.getTeam(), t.getID());
+							}
+					    }
+					}
 
 				}
 

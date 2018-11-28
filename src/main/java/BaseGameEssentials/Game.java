@@ -301,14 +301,14 @@ public class Game{
     checks if its the players turn to reinforce, checks if the given territory ID belong to this player
     @Param :  player name and territory id to reinforce
      */
-    public static void TelegramReinforce(String Player){
+    public static void TelegramReinforce(String Player, int ID){
 
         for(Player p: playerList){
             if(p.getTeam().equals(Player) && p.getTroopCount() > 0){
                 for(Territory t: territoryList) {
-                    if(t.getTeam().equals(Player)) {
-                        t.addTroops(7);
-                        p.decTroopCount(7);
+                    if(t.getID() == ID && t.getTeam().equals(Player)) {
+                        t.addTroops(1);
+                        p.decTroopCount(1);
                         tempTerritoryHolder.add(t);
                     }
                 }
