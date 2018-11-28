@@ -18,7 +18,7 @@ public class ProxyCreditTransaction implements CreditInterface {
                 String input = keyboard.nextLine();
                 int userInput = Integer.parseInt(input);
                 inputIncorrect = false;
-                if(realCreditTransaction == null){
+               if(realCreditTransaction == null){
                     realCreditTransaction = new RealCreditTransaction(userInput, currentPlayer);
                 }
             } catch (Exception e) {

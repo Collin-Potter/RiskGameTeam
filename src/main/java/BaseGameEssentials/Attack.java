@@ -32,7 +32,7 @@ public class Attack extends Game implements SubjectInterface {
 
             /*First checks if a user is to be skipped or not based on the value returned from TurnTimer*/
             if (readyornot != 4) {
-                while (InvasionStatus == true) {
+             /**   while (InvasionStatus == true) {
                     // from is the list of territories that attacking from is possible
                     ArrayList<Territory> from = FindWhereToAttackFrom(p);
                     if (from.size() == 0) {
@@ -51,7 +51,7 @@ public class Attack extends Game implements SubjectInterface {
                     if (NotEnoughTroops == true) { InvasionStatus = WithdrawOrNOt(); NotEnoughTroops=false; }
                     //If Invader wins
                     if (WIN) { TransferUnits(); InvasionStatus = WithdrawOrNOt(); WIN=false;  }
-                }
+                }**/
             }
         }
         // A string is returned that verifies attack phase has been completed

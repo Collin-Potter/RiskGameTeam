@@ -33,7 +33,7 @@ public class RealCreditTransaction implements CreditInterface {
     }
 
     private void beginTransaction(int userInput) {
-        /**switch (userInput) {
+        switch (userInput) {
             case (1):
                 System.out.println("\"Purchase Credit\" selected...");
                 purchaseCredit();
@@ -59,21 +59,21 @@ public class RealCreditTransaction implements CreditInterface {
                 break;
         }
     }
-    private void run(int transactionType){
+  /**  private void run(int transactionType){
         JPane jpane = new JPane();
         jpane.displayGUI(transactionType, currentPlayer);
-    }
+    }**/
     private void purchaseCredit(){
-        run(1);
+        //run(1);
     }
     private void purchaseCards(){
-        run(2);
+       // run(2);
     }
     private void purchaseUndoActions(){
-        run(3);
+       // run(3);
     }
     private void transferCredits(){
-        run(4);**/
+       // run(4);
     }
 
 }
