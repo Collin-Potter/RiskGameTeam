@@ -23,17 +23,17 @@ public class RealCreditTransaction implements CreditInterface {
 
     @Override
     public int display(Player currentPlayer) {
-        System.out.println("Displaying Selection Menu for " + currentPlayer.getTeam() + "...\n" +
+        /**System.out.println("Displaying Selection Menu for " + currentPlayer.getTeam() + "...\n" +
                 "You currently have " + currentPlayer.getCredits() + " credits\n" +
                 "You currently have " + currentPlayer.getInfantryCardsList().size() + " infantry cards\n" +
                 "You currently have " + currentPlayer.getCalvalryCardsList().size() + " cavalry cards\n" +
                 "You currently have " + currentPlayer.getArtillaryCardsList().size() + " artillery cards\n" +
-                "You currently have " + currentPlayer.getNumUndo() + "undo actions");
+                "You currently have " + currentPlayer.getNumUndo() + "undo actions");**/
         return 0;
     }
 
     private void beginTransaction(int userInput) {
-        switch (userInput) {
+       /** switch (userInput) {
             case (1):
                 System.out.println("\"Purchase Credit\" selected...");
                 purchaseCredit();
@@ -57,7 +57,7 @@ public class RealCreditTransaction implements CreditInterface {
             default:
                 System.out.println("Please enter a valid menu option");
                 break;
-        }
+        }**/
     }
   /**  private void run(int transactionType){
         JPane jpane = new JPane();

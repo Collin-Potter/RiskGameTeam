@@ -117,14 +117,14 @@ public class Player extends Game {
         this.territoryCount++;
     }
 
-    public int beginCreditTransaction(){
+ /**   public int beginCreditTransaction(){
         while(playerStillShopping) {
             CreditInterface creditTransaction = new ProxyCreditTransaction();
            creditTransaction.display(this);
             System.out.println("\n");
         }
         return 0;
-    }
+    }**/
 
   public void reinforceRegions(int type) {
         if (type == 0) {

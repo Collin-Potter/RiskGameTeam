@@ -217,9 +217,9 @@ public class Game{
     }
 
     public static void creditTransaction(){
-        for(Player p: playerList){
-            p.beginCreditTransaction();
-        }
+        //for(Player p: playerList){
+           // p.beginCreditTransaction();
+        //}
     }
     /*
      Method to distribute the territories randomly among the three telegram players and sends out the result to telegram bot.

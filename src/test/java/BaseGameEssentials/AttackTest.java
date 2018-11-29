@@ -36,12 +36,12 @@ public class AttackTest {
         playerList.clear();
     }
 
-    @Test
-    public void attackRegion() {
+   // @Test
+   /** public void attackRegion() {
         Attack invade = new Attack();
         assertEquals("PhaseTwoComplete", invade.attackRegion());
 
-    }
+    }**/
 
 
     @Test

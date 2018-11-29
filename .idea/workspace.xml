@@ -3,9 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="087f274c-ab32-4c48-b81e-7ced91bde2fe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BaseGameEssentials/TwitterHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseGameEssentials/TwitterHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/PaymentDirectory/ProxyCreditTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PaymentDirectory/ProxyCreditTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PaymentDirectory/RealCreditTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PaymentDirectory/RealCreditTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BaseGameEssentials/AttackTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BaseGameEssentials/AttackTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BaseGameEssentials/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BaseGameEssentials/PlayerTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -128,7 +131,7 @@
     <SUITE FILE_PATH="coverage/RiskGameTeam$PlayerTest_reinforceRegions.ic" NAME="PlayerTest.reinforceRegions Coverage Results" MODIFIED="1543110100882" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>BaseGameEssentials.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/RiskGameTeam$AttackTest.ic" NAME="AttackTest Coverage Results" MODIFIED="1543436674288" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/RiskGameTeam$AttackTest.ic" NAME="AttackTest Coverage Results" MODIFIED="1543451920172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>BaseGameEssentials.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/RiskGameTeam$AttackTest_dataChanged.ic" NAME="AttackTest.dataChanged Coverage Results" MODIFIED="1543087352231" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -212,29 +215,29 @@
     </SUITE>
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="359" />
+    <option name="myElementSize" value="37" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-1895143847">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="20" />
+          <entry key="project.closed" value="21" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="3" />
           <entry key="project.open.time.12" value="2" />
           <entry key="project.open.time.13" value="4" />
-          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.8" value="3" />
           <entry key="project.open.time.9" value="3" />
-          <entry key="project.opened" value="19" />
+          <entry key="project.opened" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="TestTwitter" value="1" />
           <entry key="class" value="9" />
-          <entry key="java" value="355" />
+          <entry key="java" value="362" />
           <entry key="telegramBotToken" value="7" />
           <entry key="world-map" value="1" />
           <entry key="xml" value="11" />
@@ -244,7 +247,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="9" />
-          <entry key="JAVA" value="354" />
+          <entry key="JAVA" value="361" />
           <entry key="PLAIN_TEXT" value="9" />
           <entry key="Scratch" value="1" />
           <entry key="XML" value="11" />
@@ -254,7 +257,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="TestTwitter" value="94" />
-          <entry key="java" value="18924" />
+          <entry key="java" value="18972" />
           <entry key="telegramBotToken" value="2" />
           <entry key="txt" value="423" />
           <entry key="xml" value="19" />
@@ -263,7 +266,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="18924" />
+          <entry key="JAVA" value="18972" />
           <entry key="PLAIN_TEXT" value="519" />
           <entry key="XML" value="19" />
           <entry key="YAML" value="38" />
@@ -305,7 +308,85 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Game.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="221" column="10" selection-start-line="221" selection-start-column="10" selection-end-line="221" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3543">
+              <caret line="126" column="8" selection-start-line="126" selection-start-column="8" selection-end-line="126" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/PlayerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-285">
+              <caret line="129" column="10" selection-start-line="129" selection-start-column="10" selection-end-line="129" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/PaymentDirectory/JPane.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="503">
+              <caret line="291" column="8" selection-start-line="291" selection-start-column="8" selection-end-line="291" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/PaymentDirectory/ProxyCreditTransaction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/PaymentDirectory/RealCreditTransaction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="30" column="88" selection-start-line="30" selection-start-column="88" selection-end-line="30" selection-end-column="88" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/AttackTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1394#1395#0" expanded="true" />
+                <element signature="e#1456#1457#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -370,22 +451,22 @@
         <option value="$PROJECT_DIR$/target/codecov.yml" />
         <option value="$PROJECT_DIR$/src/test/java/BaseGameEssentials/HelperClassTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/SubjectInterface.java" />
-        <option value="$PROJECT_DIR$/src/test/java/BaseGameEssentials/PlayerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Dice.java" />
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/TestTwitter" />
         <option value="$PROJECT_DIR$/src/test/java/BaseGameEssentials/TwiterTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Game.java" />
         <option value="$PROJECT_DIR$/src/test/java/BaseGameEssentials/GameTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Replay.java" />
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/TurnTimer.java" />
-        <option value="$PROJECT_DIR$/src/test/java/BaseGameEssentials/AttackTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/PaymentDirectory/JPane.java" />
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/TelegramBot.java" />
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Attack.java" />
-        <option value="$PROJECT_DIR$/src/main/java/PaymentDirectory/RealCreditTransaction.java" />
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/TwitterHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/PaymentDirectory/ProxyCreditTransaction.java" />
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Player.java" />
+        <option value="$PROJECT_DIR$/src/test/java/BaseGameEssentials/PlayerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/PaymentDirectory/ProxyCreditTransaction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/PaymentDirectory/RealCreditTransaction.java" />
+        <option value="$PROJECT_DIR$/src/test/java/BaseGameEssentials/AttackTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Game.java" />
       </list>
     </option>
   </component>
@@ -446,6 +527,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -562,7 +644,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -570,7 +651,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543442984734" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543452119506" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -737,8 +818,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AttackTest.AttackProcess" />
         <item itemvalue="JUnit.AttackTest" />
+        <item itemvalue="JUnit.AttackTest.AttackProcess" />
         <item itemvalue="JUnit.CardTest" />
         <item itemvalue="JUnit.DeckofCardsTest" />
         <item itemvalue="JUnit.DiceTest" />
@@ -1043,16 +1124,17 @@
       <option name="project" value="LOCAL" />
       <updated>1543442570994</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="refactoring">
+      <created>1543443821991</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1543443821991</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GameTest - 2018.11.28 at 14h 23m 22s.xml">
-      <configuration name="GameTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DiceTest - 2018.11.28 at 14h 23m 42s.xml">
-      <configuration name="DiceTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="DeckofCardsTest - 2018.11.28 at 14h 24m 04s.xml">
       <configuration name="DeckofCardsTest" configurationId="JUnit" />
     </history-entry>
@@ -1077,11 +1159,17 @@
     <history-entry file="AttackTest_AttackProcess - 2018.11.28 at 15h 04m 41s.xml">
       <configuration name="AttackTest.AttackProcess" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="AttackTest - 2018.11.28 at 18h 34m 27s.xml">
+      <configuration name="AttackTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AttackTest - 2018.11.28 at 18h 38m 48s.xml">
+      <configuration name="AttackTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.254251" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2582996" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1090,7 +1178,37 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32985386" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4979757" visible="true" weight="0.26156583" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4979757" visible="true" weight="0.37188613" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.12455516" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49966466" weight="0.32740214" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49899396" weight="0.38434163" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5020243" side_tool="true" weight="0.54626334" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4976526" weight="0.2508897" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24939272" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" sideWeight="0.49893844" weight="0.648583" />
+      <window_info anchor="right" id="Coverage" order="8" sideWeight="0.50106156" side_tool="true" visible="true" weight="0.10040486" />
+      <window_info anchor="right" x="93" y="93" width="1095" height="495" id="Byte Code Viewer" order="9" type="FLOATING" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2582996" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32985386" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4979757" weight="0.26156583" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.12455516" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1109,7 +1227,7 @@
       <window_info anchor="right" id="Maven Projects" order="7" sideWeight="0.49893844" weight="0.648583" />
       <window_info anchor="right" id="Coverage" order="8" sideWeight="0.50106156" side_tool="true" weight="0.27125505" />
       <window_info anchor="right" x="93" y="93" width="1095" height="495" id="Byte Code Viewer" order="9" type="FLOATING" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -1250,16 +1368,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/PlayerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1734">
-          <caret line="161" column="36" selection-start-line="161" selection-start-column="36" selection-end-line="161" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1450,16 +1558,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/AttackTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="101" column="3" selection-start-line="101" selection-start-column="3" selection-end-line="101" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/PaymentDirectory/JPaneTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-387">
@@ -1493,31 +1591,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/PaymentDirectory/ProxyCreditTransaction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/HelperClass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-242">
           <caret line="3" column="24" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/PaymentDirectory/JPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4828">
-          <caret line="291" column="8" selection-start-line="291" selection-start-column="8" selection-end-line="291" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/PaymentDirectory/RealCreditTransaction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="75" column="9" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -1547,54 +1624,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Game.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Replay.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="284" column="21" selection-start-line="284" selection-start-column="21" selection-end-line="284" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="448">
+          <caret line="56" column="8" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/PaymentDirectory/JPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="291" column="8" selection-start-line="291" selection-start-column="8" selection-end-line="291" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-827">
-          <caret line="122" column="11" selection-start-line="122" selection-start-column="11" selection-end-line="122" selection-end-column="11" />
+        <state relative-caret-position="-3543">
+          <caret line="126" column="8" selection-start-line="126" selection-start-column="8" selection-end-line="126" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1419#1420#0" expanded="true" />
-            <element signature="e#1459#1460#0" expanded="true" />
-            <element signature="e#1676#1677#0" expanded="true" />
-            <element signature="e#1717#1718#0" expanded="true" />
-            <element signature="e#2117#2118#0" expanded="true" />
-            <element signature="e#2147#2148#0" expanded="true" />
-            <element signature="e#2190#2191#0" expanded="true" />
-            <element signature="e#2228#2229#0" expanded="true" />
-            <element signature="e#2559#2560#0" expanded="true" />
-            <element signature="e#2594#2595#0" expanded="true" />
-            <element signature="e#2681#2682#0" expanded="true" />
-            <element signature="e#2717#2718#0" expanded="true" />
-            <element signature="e#2757#2758#0" expanded="true" />
-            <element signature="e#2792#2793#0" expanded="true" />
-            <element signature="e#2832#2833#0" expanded="true" />
-            <element signature="e#2868#2869#0" expanded="true" />
-            <element signature="e#2902#2903#0" expanded="true" />
-            <element signature="e#2940#2941#0" expanded="true" />
-            <element signature="e#2971#2972#0" expanded="true" />
-            <element signature="e#3003#3004#0" expanded="true" />
-            <element signature="e#3041#3042#0" expanded="true" />
-            <element signature="e#3083#3084#0" expanded="true" />
-            <element signature="e#3122#3123#0" expanded="true" />
-            <element signature="e#3159#3160#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Replay.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/PlayerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="56" column="8" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="8" />
+        <state relative-caret-position="-285">
+          <caret line="129" column="10" selection-start-line="129" selection-start-column="10" selection-end-line="129" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/PaymentDirectory/ProxyCreditTransaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/PaymentDirectory/RealCreditTransaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="30" column="88" selection-start-line="30" selection-start-column="88" selection-end-line="30" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="221" column="10" selection-start-line="221" selection-start-column="10" selection-end-line="221" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/AttackTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1394#1395#0" expanded="true" />
+            <element signature="e#1456#1457#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
