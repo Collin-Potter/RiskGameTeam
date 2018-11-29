@@ -43,8 +43,8 @@ public class Player extends Game {
         return infantryCardsList;
     }
 
-   public void addInfantryCardsList(BaseGameEssentials.Card infantryCardsList) {
-     //   this.infantryCardsList.add(infantryCardsList);
+    public void addInfantryCardsList(BaseGameEssentials.Card infantryCardsList) {
+        this.infantryCardsList.add(infantryCardsList);
     }
 
     public ArrayList<BaseGameEssentials.Card> getCalvalryCardsList() {
@@ -52,7 +52,7 @@ public class Player extends Game {
     }
 
     public void addCalvalryCardsList(BaseGameEssentials.Card calvalryCardsList) {
-       // this.calvalryCardsList.add(calvalryCardsList);
+        this.calvalryCardsList.add(calvalryCardsList);
     }
 
     public ArrayList<BaseGameEssentials.Card> getArtillaryCardsList() {
@@ -60,7 +60,7 @@ public class Player extends Game {
     }
 
     public void addArtillaryCardsList(BaseGameEssentials.Card artillaryCardsList) {
-     //   this.artillaryCardsList.add(artillaryCardsList);
+        this.artillaryCardsList.add(artillaryCardsList);
     }
 
     private ArrayList<Card> infantryCardsList = new ArrayList<Card>();
@@ -85,6 +85,18 @@ public class Player extends Game {
         this.ID = ID;
     }
 
+   /** public ArrayList<Integer> getCountryID(ArrayList<Territory> list) {
+        for (Territory t : list) {
+            if (t.getTeam().equals(this.team)) {
+                countryID.add(t.getID());
+            }
+        }
+        return this.countryID;
+    }**/
+
+    /**public int setTurn() {
+        return (this.ID + 1);
+    }**/
     public boolean getTurn(){
         return(this.isTurn);
     }
@@ -96,6 +108,10 @@ public class Player extends Game {
     public void setTroopCount(int i) {
         this.troopCount = i;
     }
+
+  /**  public void addTroops(int i) {
+        this.troopCount += i;
+    }**/
 
     public void decTroopCount(int i) {
         this.troopCount -= i;
@@ -113,18 +129,22 @@ public class Player extends Game {
         return this.territoryCount;
     }
 
+    /**public void setTerritoryCount(int numT) {
+        this.territoryCount = numT;
+    }**/
+
     public void incTerritoryCount() {
         this.territoryCount++;
     }
 
- /**   public int beginCreditTransaction(){
+    public int beginCreditTransaction(){
         while(playerStillShopping) {
             CreditInterface creditTransaction = new ProxyCreditTransaction();
-           creditTransaction.display(this);
+            creditTransaction.display(this);
             System.out.println("\n");
         }
         return 0;
-    }**/
+    }
 
   public void reinforceRegions(int type) {
         if (type == 0) {
@@ -153,7 +173,7 @@ public class Player extends Game {
                 for (Territory t : territoryList) {
                     if (t.getID() == tempID && t.getTeam().equals(this.team)) {
                         System.out.println("Reinforcing " + t.getName() + "...");
-                       // Replay.recordAction(this.team + " reinforced " + t.getName() + " with 1 troop");
+                        Replay.recordAction(this.team + " reinforced " + t.getName() + " with 1 troop");
                         this.troopCount -= 1;
                         t.addTroops(1);
                         System.out.println("You now have " + this.troopCount + " possible reinforcements left");
@@ -316,7 +336,15 @@ public class Player extends Game {
                         if (this.getArtillaryCardsList().size() > 0) {
                             System.out.println("4. Use your Artillery card deck");
                         }
-
+        //If somehow it gets this far and they have no items
+                        if(this.getNumUndo() == 0 &&
+                                this.getInfantryCardsList().size() == 0 &&
+                                this.getCalvalryCardsList().size() == 0 &&
+                                this.getArtillaryCardsList().size() == 0){
+                            System.out.println("You have no items to take advantage of.\n" +
+                                    "Moving on...");
+                            break;
+                        }
                         String userInput = input.nextLine();
                         try{
                             userInputTranslated = Integer.parseInt(userInput);

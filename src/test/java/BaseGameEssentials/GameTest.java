@@ -49,7 +49,7 @@ public class GameTest {
         }
         int currentTroops = terr.getTroopCount();
         System.out.println(terr.getTeam()+" "+ terr.getTroopCount()+"  "+playerList.get(0).getTroopCount());
-        playerList.get(0).setTroopCount(1000);
+        playerList.get(0).setTroopCount(50);
         Game.TelegramReinforce("Sanaz", terr.getID());
         assertEquals(currentTroops+1, terr.getTroopCount());
 
@@ -105,18 +105,11 @@ public class GameTest {
             if(t.getTeam().equals("Sanaz")){
                 Game.TelegramReinforce("Sanaz", t.getID());
                 Game.TelegramReinforce("Sanaz", t.getID());
-                Game.TelegramReinforce("Sanaz", t.getID());
-                Game.TelegramReinforce("Sanaz", t.getID());
-                Game.TelegramReinforce("Sanaz", t.getID());
-                Game.TelegramReinforce("Sanaz", t.getID());
                 ArrayList<Territory> To = Game.FindWhereICanAttack(t.getName());
-                Game.TelegramReinforce("Collin", To.get(0).getID());
-                Game.TelegramReinforce("Collin", To.get(0).getID());
                 Game.fulfillAttack(playerList.get(0), To.get(0),t);
                 break;
             }
         }
     }
-
 
 }

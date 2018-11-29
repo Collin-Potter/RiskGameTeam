@@ -37,7 +37,7 @@ public class AttackTest {
     }
 
     @Test
-   public void attackRegion() {
+    public void attackRegion() {
         Attack invade = new Attack();
         assertEquals("PhaseTwoComplete", invade.attackRegion());
 
@@ -98,6 +98,4 @@ public class AttackTest {
         Attack test = new Attack();
         test.dataChanged("sanaz","hi");
     }
-
-
 }

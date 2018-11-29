@@ -35,9 +35,25 @@ public class TwitterHandler {
 		twitterHandler = new TwitterFactory().getInstance();
 		String in = "";
 		userInput = new Scanner(System.in);
-
+		
+		/*
+		//Get private Twitter info from user
+		System.out.println("Enter Consumer Key for Twitter API: ");
+		in = userInput.nextLine();
+		consumerKeyStr = in;
+		System.out.println("Enter Consumer Secret Key for Twitter API: ");
+		in = userInput.nextLine();
+		consumerSecretStr = in;
+		System.out.println("Enter Access Token for Twitter API: ");
+		in = userInput.nextLine();
+		accessTokenStr = in;
+		System.out.println("Enter Access Token Secret for Twitter API: ");
+		in = userInput.nextLine();
+		accessTokenSecretStr = in;
+		*/
+		
 		//Get Twitter credentials
-        readInCredentials("/src/main/java/BaseGameEssentials/TestTwitter");
+        readInCredentials("/src/main/resources/twitterCredentials");
 		
 		//Authenticate user
 		twitterHandler.setOAuthConsumer(consumerKeyStr, consumerSecretStr);
@@ -55,7 +71,7 @@ public class TwitterHandler {
 	}
 	
 	public void deleteTweets(){
-	/**	try {
+		try {
 			List<Status> status = twitterHandler.getUserTimeline();
 			for(Status st: status){
 				twitterHandler.destroyStatus(st.getId());
@@ -66,7 +82,7 @@ public class TwitterHandler {
 		} catch (TwitterException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}**/
+		}
 	}
 	
 	private void readInCredentials(String filepath){
@@ -95,8 +111,7 @@ public class TwitterHandler {
 			}
 		}catch(IOException e){
 			e.printStackTrace();
-		}
-		finally{
+		}finally{
 			try{
 				if(br != null){
 					br.close();

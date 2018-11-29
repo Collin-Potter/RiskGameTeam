@@ -54,3 +54,79 @@ public class TurnTimer
         return choice;
     }
 }
+
+//package BaseGameEssentials;
+//
+//        import java.util.Scanner;
+//        import java.lang.InterruptedException;
+//        import java.lang.Runnable;
+//        import java.util.Timer;
+//        import java.util.TimerTask;
+
+
+//public class TimerClass {
+//    private int time = 0;
+//   public int flag = 5;
+//    int secondsPassed = 0;
+//
+//
+//    Timer myTimer = new Timer();
+//    TimerTask task = new TimerTask() {
+//
+//        public int flag =0;
+//
+//        public void run() {
+//            secondsPassed++;
+//
+//            if (secondsPassed == 30) {
+//                this.flag = this.flag = 5;
+//
+//            }
+//
+//        }
+//
+//
+//    };
+
+
+//    public void start() {
+//        myTimer.scheduleAtFixedRate(task, 0, 1000);
+//    }
+
+//    TimerClass() {
+////        sleep(1000);
+////        this.time +=
+//        this.flag = this.flag * 2;
+//        this.time = this.time * 1000;
+
+//
+//    }
+//    public static int ReturnSumthing(String[] args) {
+//
+//        return 4;
+//    }
+//    }
+
+//class Timer implements Runnable {
+//
+//    public int run() {
+//        try {
+//            Thread.sleep(30000);
+//        } catch (Exception e) {}
+//        return 3;
+//    }
+//}
+//public class TimerClass {
+//
+//    //Start Timer here
+//    String userInput = getInput();
+//
+//
+//    public static String getInput() {
+//        Scanner iID = new Scanner(System.in);
+//        String Y = iID.nextLine();
+//        return Y;
+//
+//    }
+//
+//}

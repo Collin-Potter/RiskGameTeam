@@ -29,38 +29,56 @@ public class Replay {
     }
 
     //Takes String value of BaseGameEssentials.Player decision and records to replayDocument through BufferedWriter
-    public static void recordAction(String input)  {
-       try{
+    public static void recordAction(String input){
+        try{
             br.write(input + "\n");
-       }catch(Exception e){
+        }catch(Exception e){
             //DO THIS
-          e.printStackTrace();
+            e.printStackTrace();
         }
     }
 
     //Closes BufferedWriter and calls uploadFile to send new replay to Amazon S3 Bucket
-    public static void stopReplay()  {
-       // try {
-            //br.close();
-       // }catch(IOException e){
-       //     e.printStackTrace();
-        //}
-       // String bucketName = "risk-playback";
+    public static void stopReplay() {
+        try {
+            br.close();
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+        String bucketName = "risk-playback";
 //        s3client.createBucket(bucketName);                              //  Creation of bucket unnecessary if bucket is manually created in advance
-
-          //  try {
-              //  createFolder(bucketName,"riskGame",s3client);
-               // uploadFile(bucketName, "riskGame");
-           // } catch (Exception x) {
-             //   x.printStackTrace();
-            //}
-        
+        try {
+            if (s3client.getObject(bucketName, "riskGame") != null) {
+                createFolder(bucketName, "riskGame", s3client);                   //  Creation of folder unnecessary if folder is manually created in advance
+                //TODO: Implement folder checker to not attempt creation of same name replay.
+                try {
+                    uploadFile(bucketName, "riskGame");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            } else {
+                try {
+                    //TODO: Implement folder checker to not attempt creation of same name replay.
+                    uploadFile(bucketName, "riskGame");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        } catch (AmazonS3Exception e) {
+            e.printStackTrace();
+            try {
+                createFolder(bucketName,"riskGame",s3client);
+                uploadFile(bucketName, "riskGame");
+            } catch (Exception x) {
+                x.printStackTrace();
+            }
+        }
     }
 
     //Uploads replayDocument to previously created folder in Bucket
     private static void uploadFile(String bucketName, String folderName){
-    //    String fileName = folderName + "/" + "replayDocument.txt";
-      //  s3client.putObject(new PutObjectRequest(bucketName, fileName, new File("C:\\Users\\capar\\Desktop\\Java Projects\\RiskGameTeam\\src\\main\\resources\\replayDocument")));
+        String fileName = folderName + "/" + "replayDocument.txt";
+        s3client.putObject(new PutObjectRequest(bucketName, fileName, new File("C:\\Users\\capar\\Desktop\\Java Projects\\RiskGameTeam\\src\\main\\resources\\replayDocument")));
     }
 
 //Meant for setup of folder without manual creation

@@ -32,9 +32,9 @@ public class ProxyCreditTransactionTest {
     }
     @Test
     public void display() {
-      ProxyCreditTransaction object = new ProxyCreditTransaction();
-        //systemInMock.provideLines("1");
-        object.display(playerList.get(0));
+      //ProxyCreditTransaction object = new ProxyCreditTransaction();
+        //systemInMock.provideLines("5");
+        //object.display(playerList.get(0));
 
     }
 }

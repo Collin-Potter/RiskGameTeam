@@ -126,8 +126,8 @@ public class PlayerTest {
 
     @Test
     public void beginCreditTransaction() {
-        //systemInMock.provideLines("5");
-        //playerList.get(1).beginCreditTransaction();
+        systemInMock.provideLines("5");
+        playerList.get(1).beginCreditTransaction();
     }
 
     @Test
@@ -155,9 +155,6 @@ public class PlayerTest {
         playerList.get(0).useHand();
 
         playerList.get(0).setNumUndo(5);
-        systemInMock.provideLines("1","1");
-        playerList.get(0).useHand();
-
         systemInMock.provideLines("1","1");
         playerList.get(0).useHand();
     }

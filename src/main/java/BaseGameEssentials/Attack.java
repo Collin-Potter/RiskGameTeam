@@ -11,7 +11,6 @@ public class Attack extends Game implements SubjectInterface {
     public String playerName;
     public String countryName;
     ArrayList<Observer> observerList;
-    boolean InvasionStatus = true; // used to control if the player decides to start a new attack
     public Attack() {
         observerList = new ArrayList<Observer>();
     }
@@ -32,13 +31,17 @@ public class Attack extends Game implements SubjectInterface {
 
             /*First checks if a user is to be skipped or not based on the value returned from TurnTimer*/
             if (readyornot != 4) {
-             /**   while (InvasionStatus == true) {
+                boolean InvasionStatus = true; // used to control if the player decides to start a new attack
+                while (InvasionStatus == true) {
                     // from is the list of territories that attacking from is possible
                     ArrayList<Territory> from = FindWhereToAttackFrom(p);
-                    if (from.size() == 0) {
+                    if (from.size() != 0) {
+                        Print(from, p);
+                    } else {
+                        System.out.println("You may not attack at this this time.");
                         InvasionStatus = false;
+                        break;
                     }
-                    Print(from,p);
                     AttackingTerr = TakeTerritoryInput(from);
                     // to is the list of the territories that can be attacked from the chosen territory
                     ArrayList<Territory> to = FindWhereICanAttack(AttackingTerr.getName());
@@ -48,10 +51,18 @@ public class Attack extends Game implements SubjectInterface {
                     dataChanged(DefendingTerr.getTeam(), DefendingTerr.getName());
                     //Finalizing the attack
                     fulfillAttack(p, DefendingTerr, AttackingTerr);
-                    if (NotEnoughTroops == true) { InvasionStatus = WithdrawOrNOt(); NotEnoughTroops=false; }
+                    if (NotEnoughTroops == true) {
+                        InvasionStatus = WithdrawOrNOt();
+                        NotEnoughTroops=false;
+                    }
+
                     //If Invader wins
-                    if (WIN) { TransferUnits(); InvasionStatus = WithdrawOrNOt(); WIN=false;  }
-                }**/
+                    if (WIN) {
+                        TransferUnits();
+                        InvasionStatus = WithdrawOrNOt();
+                        WIN=false;
+                    }
+                }
             }
         }
         // A string is returned that verifies attack phase has been completed
@@ -147,7 +158,13 @@ public class Attack extends Game implements SubjectInterface {
     public void registerObserver(Observer o) {
         observerList.add(o);
     }
-
+    /**
+     * Method to allow removing Observers(any class that implements observer Interface) from the observer list
+     * **/
+    @Override
+    public void removeObserver(Observer o) {
+        observerList.remove(observerList.indexOf(o));
+    }
     /**
      * This method goes through the list of observers and notify them of the changes happened in Attack
      * **/
