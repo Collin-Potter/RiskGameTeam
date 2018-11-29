@@ -18,9 +18,9 @@ public Frame frame;
         UI.put("Panel.background",new ColorUIResource(255, 146, 199));
         String Message =  PlayerName +", you will be attacked in "+ Country + ". :( \n"+
                          "you MUST click OK and face your enemy.";
-        if(!test) {
-            JOptionPane.showMessageDialog(frame, Message, "Invasion BaseGameEssentials.Warning", JOptionPane.WARNING_MESSAGE);
-        }
+     //   if(!test) {
+           // JOptionPane.showMessageDialog(frame, Message, "Invasion BaseGameEssentials.Warning", JOptionPane.WARNING_MESSAGE);
+       // }
 
 
     }
