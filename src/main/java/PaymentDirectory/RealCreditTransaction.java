@@ -15,10 +15,10 @@ public class RealCreditTransaction implements CreditInterface {
     private Player currentPlayer;
 
     public RealCreditTransaction(int userInput, Player currentPlayer){
-        this.currentPlayer = currentPlayer;
+       /** this.currentPlayer = currentPlayer;
         this.userInput = userInput;
         display(currentPlayer);
-        beginTransaction(userInput);
+        beginTransaction(userInput);**/
     }
 
     @Override
@@ -63,7 +63,7 @@ public class RealCreditTransaction implements CreditInterface {
         JPane jpane = new JPane();
         jpane.displayGUI(transactionType, currentPlayer);
     }**/
-    private void purchaseCredit(){
+  /**  private void purchaseCredit(){
         //run(1);
     }
     private void purchaseCards(){
@@ -75,5 +75,5 @@ public class RealCreditTransaction implements CreditInterface {
     private void transferCredits(){
        // run(4);
     }
-
+**/
 }

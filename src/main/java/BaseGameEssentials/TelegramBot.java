@@ -64,19 +64,6 @@ public class TelegramBot extends TelegramLongPollingBot {
 	 **/
 	public void translateMessage(String input) {
 
-		if (input.equals("/start")) {
-			String playerName = update2.getMessage().getFrom().getFirstName();
-			playerList.add(new Player(35, playerName, false, false, (i)));
-		}
-		if (input.equals("/join@CSGSanaz_bot") && playerList.size() != 3) {
-			String playerName = update2.getMessage().getFrom().getFirstName();
-				playerList.add(new Player(35, playerName, false, false, (i)));
-				if (playerList.size() == 2) {
-					TelegramTerritoryDistribution(); // Distribute territories among players
-				}
-			}
-
-
 	}
 	/**
 	 * Method to keep track of players turns

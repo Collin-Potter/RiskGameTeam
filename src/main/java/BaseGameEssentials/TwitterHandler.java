@@ -95,7 +95,8 @@ public class TwitterHandler {
 			}
 		}catch(IOException e){
 			e.printStackTrace();
-		}finally{
+		}
+		finally{
 			try{
 				if(br != null){
 					br.close();
