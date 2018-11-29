@@ -29,17 +29,17 @@ public class Replay {
     }
 
     //Takes String value of BaseGameEssentials.Player decision and records to replayDocument through BufferedWriter
-    public static void recordAction(String input) throws IOException {
-      //  try{
+    public static void recordAction(String input)  {
+       try{
             br.write(input + "\n");
-      //  }catch(Exception e){
+       }catch(Exception e){
             //DO THIS
-        //    e.printStackTrace();
-        //}
+          e.printStackTrace();
+        }
     }
 
     //Closes BufferedWriter and calls uploadFile to send new replay to Amazon S3 Bucket
-    public static void stopReplay() throws IOException {
+    public static void stopReplay()  {
        // try {
             //br.close();
        // }catch(IOException e){
