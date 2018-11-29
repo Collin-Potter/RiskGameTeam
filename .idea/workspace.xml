@@ -115,7 +115,7 @@
     <SUITE FILE_PATH="coverage/RiskGameTeam$DiceTest_compareFaceValue2.ic" NAME="DiceTest.compareFaceValue2 Coverage Results" MODIFIED="1543191450402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>BaseGameEssentials.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/RiskGameTeam$AttackTest_attackRegion.ic" NAME="AttackTest.attackRegion Coverage Results" MODIFIED="1543166026184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/RiskGameTeam$AttackTest_attackRegion.ic" NAME="AttackTest.attackRegion Coverage Results" MODIFIED="1543452358068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>BaseGameEssentials.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/RiskGameTeam$All_in_RiskGameTeam.ic" NAME="All in RiskGameTeam Coverage Results" MODIFIED="1543012433030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
@@ -651,7 +651,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543452119506" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543452366766" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -689,7 +689,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Maven.test">
+  <component name="RunManager" selected="JUnit.AttackTest.attackRegion">
     <configuration name="Game" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="BaseGameEssentials.Game" />
       <module name="RiskGameTeam" />
@@ -740,6 +740,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AttackTest.attackRegion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RiskGameTeam" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="BaseGameEssentials.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="BaseGameEssentials" />
+      <option name="MAIN_CLASS_NAME" value="BaseGameEssentials.AttackTest" />
+      <option name="METHOD_NAME" value="attackRegion" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RiskGameTeam" />
       <extension name="coverage">
@@ -764,20 +780,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="BaseGameEssentials" />
       <option name="MAIN_CLASS_NAME" value="BaseGameEssentials.DeckofCardsTest" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RiskGameTeam" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="BaseGameEssentials.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="BaseGameEssentials" />
-      <option name="MAIN_CLASS_NAME" value="BaseGameEssentials.DiceTest" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -810,19 +812,19 @@
     <list>
       <item itemvalue="Application.Game" />
       <item itemvalue="Maven.test" />
-      <item itemvalue="JUnit.DiceTest" />
       <item itemvalue="JUnit.DeckofCardsTest" />
       <item itemvalue="JUnit.CardTest" />
       <item itemvalue="JUnit.AttackTest" />
       <item itemvalue="JUnit.AttackTest.AttackProcess" />
+      <item itemvalue="JUnit.AttackTest.attackRegion" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AttackTest.attackRegion" />
         <item itemvalue="JUnit.AttackTest" />
         <item itemvalue="JUnit.AttackTest.AttackProcess" />
         <item itemvalue="JUnit.CardTest" />
         <item itemvalue="JUnit.DeckofCardsTest" />
-        <item itemvalue="JUnit.DiceTest" />
       </list>
     </recent_temporary>
   </component>
