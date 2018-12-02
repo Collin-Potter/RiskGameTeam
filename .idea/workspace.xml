@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="087f274c-ab32-4c48-b81e-7ced91bde2fe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BaseGameEssentials/TelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseGameEssentials/TelegramBot.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -217,7 +215,7 @@
     <session id="-1895143847">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="24" />
+          <entry key="project.closed" value="25" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.11" value="4" />
           <entry key="project.open.time.12" value="3" />
@@ -255,7 +253,7 @@
           <entry key="TestTwitter" value="94" />
           <entry key="java" value="19338" />
           <entry key="telegramBotToken" value="2" />
-          <entry key="txt" value="509" />
+          <entry key="txt" value="584" />
           <entry key="xml" value="19" />
           <entry key="yml" value="104" />
         </counts>
@@ -263,7 +261,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="19338" />
-          <entry key="PLAIN_TEXT" value="605" />
+          <entry key="PLAIN_TEXT" value="680" />
           <entry key="XML" value="19" />
           <entry key="YAML" value="104" />
         </counts>
@@ -671,7 +669,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543728687814" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543728742375" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -854,20 +852,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1537375482059</updated>
-    </task>
-    <task id="LOCAL-00003" summary="finished observer pattern">
-      <created>1539719655720</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1539719655720</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Implementing methods to simplify TelegramBot utilization of Game functionality">
-      <created>1541622238358</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1541622238358</updated>
     </task>
     <task id="LOCAL-00005" summary="Implementing methods to simplify TelegramBot utilization of Game functionality for Attack">
       <created>1541793536176</created>
@@ -1198,7 +1182,21 @@
       <option name="project" value="LOCAL" />
       <updated>1543723174736</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="some refactoring on telegram, Attack was refactored on 11/17">
+      <created>1543728684453</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1543728684453</updated>
+    </task>
+    <task id="LOCAL-00053" summary="some refactoring">
+      <created>1543728724216</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1543728724216</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1235,7 +1233,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7544484" visible="true" weight="0.21133603" />
       <window_info id="Designer" order="1" />
@@ -1327,8 +1324,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Test" />
-    <MESSAGE value="jio" />
     <MESSAGE value="Updated POM, generating javadocs" />
     <MESSAGE value="Telegram implementation completed" />
     <MESSAGE value="Telegram implementation completed (added player turn keeper)" />
@@ -1352,7 +1347,9 @@
     <MESSAGE value="Final commit" />
     <MESSAGE value="attempt to ignore the parts that are not testable" />
     <MESSAGE value="ignoring Telegram code" />
-    <option name="LAST_COMMIT_MESSAGE" value="ignoring Telegram code" />
+    <MESSAGE value="some refactoring on telegram, Attack was refactored on 11/17" />
+    <MESSAGE value="some refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="some refactoring" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
