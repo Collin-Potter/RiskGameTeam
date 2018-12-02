@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="087f274c-ab32-4c48-b81e-7ced91bde2fe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codecov.yml" beforeDir="false" afterPath="$PROJECT_DIR$/codecov.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BaseGameEssentials/TelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BaseGameEssentials/TelegramBot.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -232,8 +233,8 @@
         <counts>
           <entry key="TestTwitter" value="1" />
           <entry key="class" value="9" />
-          <entry key="java" value="381" />
-          <entry key="telegramBotToken" value="7" />
+          <entry key="java" value="385" />
+          <entry key="telegramBotToken" value="8" />
           <entry key="world-map" value="1" />
           <entry key="xml" value="11" />
           <entry key="yml" value="6" />
@@ -242,8 +243,8 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="9" />
-          <entry key="JAVA" value="380" />
-          <entry key="PLAIN_TEXT" value="9" />
+          <entry key="JAVA" value="384" />
+          <entry key="PLAIN_TEXT" value="10" />
           <entry key="Scratch" value="1" />
           <entry key="XML" value="11" />
           <entry key="YAML" value="6" />
@@ -252,17 +253,17 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="TestTwitter" value="94" />
-          <entry key="java" value="19093" />
+          <entry key="java" value="19338" />
           <entry key="telegramBotToken" value="2" />
-          <entry key="txt" value="486" />
+          <entry key="txt" value="509" />
           <entry key="xml" value="19" />
           <entry key="yml" value="104" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="19093" />
-          <entry key="PLAIN_TEXT" value="582" />
+          <entry key="JAVA" value="19338" />
+          <entry key="PLAIN_TEXT" value="605" />
           <entry key="XML" value="19" />
           <entry key="YAML" value="104" />
         </counts>
@@ -304,11 +305,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Replay.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="39" selection-start-line="39" selection-end-line="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3536">
-              <caret line="221" column="10" selection-start-line="221" selection-start-column="10" selection-end-line="221" selection-end-column="10" />
+            <state relative-caret-position="3383">
+              <caret line="199" selection-start-line="199" selection-end-line="199" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -317,37 +327,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/PaymentDirectory/ProxyCreditTransaction.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/TelegramBotTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/BaseGameEssentials/ReplayTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/PaymentDirectory/ProxyCreditTransactionTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+            <state relative-caret-position="503">
+              <caret line="175" column="25" selection-start-line="175" selection-start-column="25" selection-end-line="175" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -370,11 +356,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/codecov.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="327">
               <caret line="25" column="21" lean-forward="true" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/TelegramBot.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/telegramBotToken">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="45" selection-start-column="45" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -471,18 +475,18 @@
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Attack.java" />
         <option value="$PROJECT_DIR$/src/test/java/BaseGameEssentials/PlayerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/PaymentDirectory/ProxyCreditTransaction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Game.java" />
         <option value="$PROJECT_DIR$/src/test/java/BaseGameEssentials/AttackTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/PaymentDirectory/RealCreditTransaction.java" />
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/TwitterHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/TelegramBot.java" />
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Player.java" />
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Warning.java" />
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/HelperClass.java" />
-        <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Replay.java" />
         <option value="$PROJECT_DIR$/src/test/java/PaymentDirectory/ProxyCreditTransactionTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Dice.java" />
         <option value="$PROJECT_DIR$/codecov.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/TelegramBot.java" />
+        <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Game.java" />
+        <option value="$PROJECT_DIR$/src/main/java/BaseGameEssentials/Replay.java" />
       </list>
     </option>
   </component>
@@ -667,7 +671,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543722922053" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543728496592" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -850,13 +854,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1537375482059</updated>
-    </task>
-    <task id="LOCAL-00002" summary="attack warning using observer pattern">
-      <created>1539483112699</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1539483112699</updated>
     </task>
     <task id="LOCAL-00003" summary="finished observer pattern">
       <created>1539719655720</created>
@@ -1194,7 +1191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543722620863</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="ignoring Telegram code">
+      <created>1543723174736</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1543723174736</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1233,13 +1237,13 @@
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7544484" visible="true" weight="0.27206478" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7544484" visible="true" weight="0.21133603" />
       <window_info id="Designer" order="1" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info id="Structure" order="6" sideWeight="0.2455516" side_tool="true" visible="true" weight="0.27206478" />
+      <window_info id="Structure" order="6" sideWeight="0.2455516" side_tool="true" visible="true" weight="0.21133603" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32985386" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4979757" weight="0.0" />
@@ -1323,7 +1327,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Removing unnecessary commented code" />
     <MESSAGE value="Test" />
     <MESSAGE value="jio" />
     <MESSAGE value="Updated POM, generating javadocs" />
@@ -1348,7 +1351,8 @@
     <MESSAGE value="refactoring" />
     <MESSAGE value="Final commit" />
     <MESSAGE value="attempt to ignore the parts that are not testable" />
-    <option name="LAST_COMMIT_MESSAGE" value="attempt to ignore the parts that are not testable" />
+    <MESSAGE value="ignoring Telegram code" />
+    <option name="LAST_COMMIT_MESSAGE" value="ignoring Telegram code" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -1366,13 +1370,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
           <caret line="40" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/telegramBotToken">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="45" selection-start-column="45" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -1572,13 +1569,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/TelegramBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-13">
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/PaymentDirectory/JPaneTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-160">
@@ -1624,16 +1614,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2363">
-          <caret line="175" column="25" selection-start-line="175" selection-start-column="25" selection-end-line="175" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Warning.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -1641,27 +1621,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Replay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="31" column="50" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Card.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3536">
-          <caret line="221" column="10" selection-start-line="221" selection-start-column="10" selection-end-line="221" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1728,6 +1691,47 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="327">
           <caret line="25" column="21" lean-forward="true" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/telegramBotToken">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="45" selection-start-column="45" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/TelegramBot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3383">
+          <caret line="199" selection-start-line="199" selection-end-line="199" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="175" column="25" selection-start-line="175" selection-start-column="25" selection-end-line="175" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BaseGameEssentials/Replay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
         </state>
       </provider>
     </entry>

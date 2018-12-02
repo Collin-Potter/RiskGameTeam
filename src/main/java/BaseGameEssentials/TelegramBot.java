@@ -31,10 +31,6 @@ public class TelegramBot extends TelegramLongPollingBot {
 	public Player PLAYERTurnKeeper;
 	public static Update update2;
 
-	public TelegramBot(){
-		//Get TelegramBot credentials
-		readInCredentials("/src/main/java/BaseGameEssentials/telegramBotToken");
-	}
 
 	@Override
 	/**
@@ -189,8 +185,6 @@ public class TelegramBot extends TelegramLongPollingBot {
 			message_text = PName +" you do not have any more troops available or your request is not valid.";
 			Send(message_text);
 		}
-		System.out.println(playerList.get(0).getTroopCount() );
-		System.out.println(playerList.get(1).getTroopCount() );
 		if(playerList.get(0).getTroopCount() == 0 && playerList.get(1).getTroopCount() == 0){
 			AttackPhase = true;
 			message_text = " Attack phase may begin.The format for attack command is " +
@@ -208,26 +202,8 @@ public class TelegramBot extends TelegramLongPollingBot {
 
           	ArrayList<Territory> GoodToAttackFrom = new ArrayList();
           	GoodToAttackFrom = FindWhereToAttackFrom(P);
-		    long chat_id = update2.getMessage().getChatId();
-		    for(int i=0; i < GoodToAttackFrom.size();i++){
-				SendMessage message = new SendMessage() // Create a message object object
-						.setChatId(chat_id)
-						.setText(P.getTeam()+" You may attack from the following");
-				InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-				List<List<InlineKeyboardButton>> rowsInline = new ArrayList();
-				List<InlineKeyboardButton> rowInline = new ArrayList();
-				rowInline.add(new InlineKeyboardButton().setText(GoodToAttackFrom.get(i).getName()).setCallbackData("from#"+GoodToAttackFrom.get(i).getName()));
-				// Set the keyboard to the markup
-				rowsInline.add(rowInline);
-				// Add it to the message
-				markupInline.setKeyboard(rowsInline);
-				message.setReplyMarkup(markupInline);
-				try {
-					execute(message); // Sending our message object to user
-				} catch (TelegramApiException e) {
-					e.printStackTrace();
-				}
-			}
+          	Send("You May attack from one of the following:");
+		    TelegramButtons(GoodToAttackFrom,"from#");
 
 		}
 
@@ -236,30 +212,8 @@ public class TelegramBot extends TelegramLongPollingBot {
 	 * @param List: an array list of type territory which includes the territories that the player can attack.
 	 * **/
 	public void PrintWhereICanAttack(ArrayList <Territory> List) {
-		long chat_id = update2.getCallbackQuery().getMessage().getChatId();
-		SendMessage message = new SendMessage() // Create a message object object
-				.setChatId(chat_id)
-				.setText(" You may attack the following enemy territory");
-
-		for (int i = 0; i < List.size(); i++) {
-			InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-			List<List<InlineKeyboardButton>> rowsInline = new ArrayList();
-			List<InlineKeyboardButton> rowInline = new ArrayList<InlineKeyboardButton>();
-			rowInline = new ArrayList();
-			rowInline.add(new InlineKeyboardButton().setText(List.get(i).getName()).setCallbackData("to#"+List.get(i).getName()));
-			rowsInline.add(rowInline);
-			// Add it to the message
-			markupInline.setKeyboard(rowsInline);
-			message.setReplyMarkup(markupInline);
-			try {
-				execute(message); // Sending our message object to user
-			} catch (TelegramApiException e) {
-				e.printStackTrace();
-			}
-		}
-		// Set the keyboard to the markup
-
-
+		Send("You May choose one of the following enemy territories to attack:");
+		TelegramButtons(List,"to#");
 	}
 	/**
 	 * Method to parse the call back query results
@@ -316,7 +270,31 @@ public class TelegramBot extends TelegramLongPollingBot {
             }
 		}
 	}
+/**
+ * Method to create buttons
+ * **/
 
+public void TelegramButtons(ArrayList<Territory> list, String direction){
+	long chat_id = update2.getMessage().getChatId();
+	for(int i=0; i < list.size();i++){
+		SendMessage message = new SendMessage() // Create a message object object
+				.setChatId(chat_id);
+		InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+		List<List<InlineKeyboardButton>> rowsInline = new ArrayList();
+		List<InlineKeyboardButton> rowInline = new ArrayList();
+		rowInline.add(new InlineKeyboardButton().setText(list.get(i).getName()).setCallbackData(direction+list.get(i).getName()));
+		// Set the keyboard to the markup
+		rowsInline.add(rowInline);
+		// Add it to the message
+		markupInline.setKeyboard(rowsInline);
+		message.setReplyMarkup(markupInline);
+		try {
+			execute(message); // Sending our message object to user
+		} catch (TelegramApiException e) {
+			e.printStackTrace();
+		}
+	}
+}
     /** General Method to send Message to telegram chat
 	 * @param mess : String message to be sent
 	 * **/
@@ -348,37 +326,5 @@ public class TelegramBot extends TelegramLongPollingBot {
 			}
 		}
     }
-
-	//Read in BotToken
-	private void readInCredentials(String filepath){
-		try{
-			File currentDir = new File(".");
-			File parentDir = currentDir.getAbsoluteFile();
-			File newFile = new File(parentDir + filepath);
-			fr = new FileReader(newFile);
-			br = new BufferedReader(fr);
-			String line = null;
-			int count = 0;
-			while((line = br.readLine()) != null){
-				if(count == 0){
-					botKeyStr = line;
-				}
-				count++;
-			}
-		}catch(IOException e){
-			e.printStackTrace();
-		}finally{
-			try{
-				if(br != null){
-					br.close();
-				}
-				if(fr != null){
-					fr.close();
-				}
-			}catch(IOException ex){
-				ex.printStackTrace();
-			}
-		}
-	}
 
 }

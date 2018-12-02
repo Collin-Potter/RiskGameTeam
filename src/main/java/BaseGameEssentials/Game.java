@@ -198,22 +198,6 @@ public class Game{
         }
     }
 
- /**   public static void reinforcementStage(){
-        for (Player p : playerList) {
-            if (p.getTroopCount() != 0) {
-                System.out.println(p.getTeam() + " you have " + p.getTroopCount() + " troops to distribute...");
-                System.out.println("Current territories: \n");
-                for (Territory t : territoryList) {
-                    if (t.getTeam().equals(p.getTeam())) {
-                        System.out.printf("ID: %-5s Name: %-25s TroopCount: %-20d", t.getID(), t.getName(), t.getTroopCount());
-                    }
-                }
-                p.reinforceRegions(1);
-                p.percentageInControl();
-            }
-        }
-    }**/
-
     public static void readFileTerritories(){
         File currentDir = new File(".");
         File parentDir = currentDir.getAbsoluteFile();
