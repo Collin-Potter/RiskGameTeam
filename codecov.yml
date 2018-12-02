@@ -27,4 +27,4 @@ comment:
 
 ignore:
 - "/src/main/java/PaymentDirectory"  # ignore folders and all its contents
-
+- "/src/main/java/BaseGameEssentials/TelegramBot.java"  # ignore folders and all its contents
