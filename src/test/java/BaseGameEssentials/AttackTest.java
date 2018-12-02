@@ -79,20 +79,6 @@ public class AttackTest {
         boolean test =Attack.WithdrawOrNOt();
         assertTrue(test);
     }
-
-    @Test
-    public void registerObserver() {
-
-    }
-
-    @Test
-    public void removeObserver() {
-    }
-
-    @Test
-    public void notifyObservers() {
-    }
-
     @Test
     public void dataChanged() {
         Attack test = new Attack();

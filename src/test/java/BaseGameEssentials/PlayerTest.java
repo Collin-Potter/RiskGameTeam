@@ -159,12 +159,5 @@ public class PlayerTest {
         playerList.get(0).useHand();
     }
 
-//    @Test
-//    public void testGUI() {
-//        Player testPlayer = new Player(0,"TestPlayer",true,false,20);
-//        systemInMock.provideLines("1");
-//        int test = testPlayer.beginCreditTransaction();
-//        systemInMock.provideLines("5");
-//        assertEquals(0,test);
-//    }
+
 }

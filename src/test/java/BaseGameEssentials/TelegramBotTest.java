@@ -22,10 +22,6 @@ public class TelegramBotTest {
 
 
     @Test
-    public void onUpdateReceived() {
-    }
-
-    @Test
     public void getBotUsername() {
 
         String test = object.getBotUsername();
@@ -36,39 +32,6 @@ public class TelegramBotTest {
     public void getBotToken() {
         String Token = object.getBotToken();
 
-    }
-
-    @Test
-    public void translateMessage() {
-        //object.translateMessage("/start");
-    }
-
-    @Test
-    public void parsTranslate() {
-    }
-
-    @Test
-    public void printTerritories() {
-    }
-
-    @Test
-    public void showReinforcement() {
-    }
-
-    @Test
-    public void printWhatTerritoriesToAttackFrom() {
-    }
-
-    @Test
-    public void printWhereICanAttack() {
-    }
-
-    @Test
-    public void parsQuery() {
-    }
-
-    @Test
-    public void send() {
     }
 
     @Test
